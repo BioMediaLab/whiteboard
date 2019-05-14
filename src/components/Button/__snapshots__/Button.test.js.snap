@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button can render 1`] = `
+<div>
+  <button
+    class="Button"
+    type="submit"
+  >
+    Save
+  </button>
+</div>
+`;

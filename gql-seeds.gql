@@ -1,0 +1,52 @@
+# queries
+
+# mutations
+mutation {
+  createClass(
+    input: {
+      title: "Example Class"
+      description: "An example class for testing purposes"
+    }
+  ) {
+    id
+    title
+    description
+  }
+}
+
+mutation {
+  createQuiz(
+    input: {
+      title: "Example quiz #1"
+      quizClassId: "80194d01-c812-4c62-8660-1ea66fa93ad7"
+    }
+  ) {
+    title
+  }
+}
+
+query {
+  {
+  listClasses {
+    items {
+      id
+      title
+      description
+      quizzes {
+        items {
+          id
+          title
+          questions {
+            question
+          }
+        }
+      }
+    }
+  }
+  listQuestions {
+    items {
+      id
+      question
+    }
+  }
+}

@@ -1,0 +1,29 @@
+type Class
+  @model(queries: { get: "getClass", list: "listClasses" })
+  @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  title: String!
+  description: String
+  quizzes: [Quiz] @connection(name: "ClassQuizzes")
+}
+
+type Quiz
+  @model(queries: { get: "getQuiz", list: "listQuizzes" })
+  @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  title: String!
+  class: Class! @connection(name: "ClassQuizzes")
+  questions: [Question]
+}
+
+type Question @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  question: String!
+  availableAnswers: [Answer]
+  correctAnswer: Answer
+}
+
+type Answer {
+  key: String!
+  value: String!
+}

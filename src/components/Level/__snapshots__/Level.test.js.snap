@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Level can render 1`] = `
+<div>
+  <div
+    class="Level"
+  >
+    <div
+      class="LevelItem"
+    >
+      first
+    </div>
+    <div
+      class="LevelItem"
+    >
+      second
+    </div>
+    <div
+      class="LevelItem"
+    >
+      third
+    </div>
+  </div>
+</div>
+`;

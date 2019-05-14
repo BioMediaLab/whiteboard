@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropList can render 1`] = `
+<div>
+  <ul
+    class="PropList"
+  >
+    <li>
+      <strong>
+        example1
+      </strong>
+      <span>
+        value
+      </span>
+    </li>
+  </ul>
+</div>
+`;

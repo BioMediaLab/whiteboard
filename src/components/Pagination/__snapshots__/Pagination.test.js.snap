@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination can render 1`] = `
+<div>
+  <div
+    class="Pagination"
+  >
+    <div
+      class="PaginationPrevious"
+    >
+      <button
+        class="Button"
+        type="button"
+      >
+        First
+      </button>
+      <button
+        class="Button"
+        type="button"
+      >
+        Previous
+      </button>
+    </div>
+    <div
+      class="PaginationCenter"
+    >
+      Viewing page 1 of 20
+    </div>
+    <div
+      class="PaginationNext"
+    >
+      <button
+        class="Button"
+        type="button"
+      >
+        Next
+      </button>
+      <button
+        class="Button"
+        type="button"
+      >
+        Last
+      </button>
+    </div>
+  </div>
+</div>
+`;

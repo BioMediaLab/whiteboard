@@ -1,0 +1,19 @@
+.MediaObject {
+  display: flex;
+}
+
+.MediaObjectMedia {
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+}
+
+.MediaObjectMedia img {
+  max-width: 100%;
+  height: auto;
+}
+
+.MediaObjectContent {
+  flex: 1 1 100%;
+  padding: 0 0 0 1rem;
+}

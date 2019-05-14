@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page can render 1`] = `
+<div>
+  <div
+    class="Page"
+  >
+    <p>
+      A little content for the page.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Page can render with all 1`] = `
+<div>
+  <div
+    class="Page"
+  >
+    <div
+      class="PageHeader"
+    >
+      <h1>
+        Example
+      </h1>
+    </div>
+    <div
+      class="PageSidebar"
+    >
+      <p>
+        Sidebar Content
+      </p>
+    </div>
+    <div
+      class="PageContent"
+    >
+      <p>
+        A little content for the page.
+      </p>
+    </div>
+    <div
+      class="PageFooter"
+    >
+      <p>
+        Footer Content
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Page can render with header and content 1`] = `
+<div>
+  <div
+    class="Page"
+  >
+    <div
+      class="PageHeader"
+    >
+      <h1>
+        Example
+      </h1>
+    </div>
+    <div
+      class="PageContent"
+    >
+      <p>
+        A little content for the page.
+      </p>
+    </div>
+  </div>
+</div>
+`;
