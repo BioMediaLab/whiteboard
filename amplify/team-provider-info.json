@@ -1,0 +1,19 @@
+{
+    "develop": {
+        "awscloudformation": {
+            "AuthRoleName": "whiteboard-develop-20190515094050-authRole",
+            "UnauthRoleArn": "arn:aws:iam::709589121319:role/whiteboard-develop-20190515094050-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::709589121319:role/whiteboard-develop-20190515094050-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "whiteboard-develop-20190515094050-deployment",
+            "UnauthRoleName": "whiteboard-develop-20190515094050-unauthRole",
+            "StackName": "whiteboard-develop-20190515094050",
+            "StackId": "arn:aws:cloudformation:us-east-1:709589121319:stack/whiteboard-develop-20190515094050/0d686790-7717-11e9-9983-0a1726208052"
+        },
+        "categories": {
+            "auth": {
+                "cognito2415e09b": {}
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "AppSyncApiName": "whiteboard",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcognito2415e09b",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
