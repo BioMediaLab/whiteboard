@@ -6,24 +6,18 @@
 		}
 	},
 	"auth": {
-		"cognito5ea3458d": {
+		"cognito2415e09b": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation"
 		}
 	},
 	"api": {
-		"lively": {
+		"whiteboard": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
 				"securityType": "AMAZON_COGNITO_USER_POOLS"
 			}
-		}
-	},
-	"storage": {
-		"LivelyStorage": {
-			"service": "S3",
-			"providerPlugin": "awscloudformation"
 		}
 	}
 }
