@@ -1,10 +1,11 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useState } from 'react'
 import Button from 'components/Button'
 import Card from 'components/Card'
 import Page from 'components/Page'
 import Form, { FormLayout } from 'components/Form'
 import TextField from 'components/TextField'
 import Title from 'components/Title'
+import Question from './question'
 
 const reducer = (current, action) => {
   const { type, payload } = action
@@ -20,12 +21,14 @@ const reducer = (current, action) => {
   }
 }
 
-export default ({ mutation, title = '', classId }) => {
+export default ({ mutation, title = '', classId, description = '' }) => {
   const initialState = {
     quizClassId: classId,
     title,
+    description,
     questions: []
   }
+  const [questions, setState, choice] = useState([]);
   const [state, dispatch] = useReducer(reducer, initialState)
   const handleSubmit = event => {
     mutation({ input: state })
@@ -40,25 +43,48 @@ export default ({ mutation, title = '', classId }) => {
           url: '../'
         }
       ]}>
-      <Card sectioned>
-        <Form onSubmit={handleSubmit}>
-          <FormLayout>
-            <TextField
-              label="title"
-              id="title"
-              name="title"
-              value={state.title}
-              onChange={(value, id) => {
-                dispatch({ type: 'UPDATE_TEXT', payload: { id, value } })
-              }}
-            />
+
+      <Form onSubmit={handleSubmit}>
+        <Card primaryFooterAction={{ content: "Save" }}>
+          <Card sectioned>
+            <FormLayout>
+              <TextField
+                label="Title"
+                id="title"
+                name="title"
+                value={state.title}
+                onChange={(value, id) => {
+                  dispatch({ type: 'UPDATE_TEXT', payload: { id, value } })
+                }}
+              />
+              <TextField
+                label="Description"
+                id="description"
+                name="description"
+                value={state.description}
+                onChange={(value, id) => {
+                  dispatch({ type: 'UPDATE_TEXT', payload: { id, value } })
+                }}
+              />
+            </FormLayout>
+          </Card>
+          <Card sectioned>
             <Title element="h3">Questions</Title>
-            <Button primary submit>
-              Create
-            </Button>
-          </FormLayout>
-        </Form>
-      </Card>
+            {questions.map((question, index) => (
+              <Question key={index} />
+            ))}
+            <Button onClick={() => {
+              const newQuestions = [...questions];
+              newQuestions.push({ id: newQuestions.length });
+              setState(newQuestions);
+            }}>Add Question</Button>
+          </Card>
+        </Card>
+      </Form>
+
     </Page>
   )
 }
+
+
+

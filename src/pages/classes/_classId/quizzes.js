@@ -36,7 +36,7 @@ export default ({ data }) => {
       ]}
       primaryAction={{
         content: 'New',
-        url: './new'
+        url: './new',
       }}>
       <Card sectioned>
         <ResourceNav selected={1} baseUrl={`/classes`} id={data.getClass.id} />

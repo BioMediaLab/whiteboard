@@ -66,3 +66,4 @@ export default ({ mutation, title = '', description = '' }) => {
     </Page>
   )
 }
+
