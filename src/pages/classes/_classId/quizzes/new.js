@@ -28,10 +28,11 @@ export default ({ mutation, title = '', classId, description = '' }) => {
     description,
     questions: []
   }
-  const [questions, setState, choice] = useState([]);
+  const [questions, setState] = useState([]);
   const [state, dispatch] = useReducer(reducer, initialState)
   const handleSubmit = event => {
-    mutation({ input: state })
+    console.log(questions);
+    //mutation({ input: state })
   }
 
   return (
@@ -45,7 +46,7 @@ export default ({ mutation, title = '', classId, description = '' }) => {
       ]}>
 
       <Form onSubmit={handleSubmit}>
-        <Card primaryFooterAction={{ content: "Save" }}>
+        <Card primaryFooterAction={{ content: "Save", onAction:function(){console.log(questions)} }}>
           <Card sectioned>
             <FormLayout>
               <TextField
@@ -71,11 +72,18 @@ export default ({ mutation, title = '', classId, description = '' }) => {
           <Card sectioned>
             <Title element="h3">Questions</Title>
             {questions.map((question, index) => (
-              <Question key={index} />
+              <Question key={index} 
+              onChange={(question)=>{
+                console.log("recieved",question);
+                const newquestions=[...questions];
+               newquestions[index]=question;
+                setState(newquestions);
+              }}
+              />
             ))}
             <Button onClick={() => {
               const newQuestions = [...questions];
-              newQuestions.push({ id: newQuestions.length });
+              newQuestions.push({ });
               setState(newQuestions);
             }}>Add Question</Button>
           </Card>
