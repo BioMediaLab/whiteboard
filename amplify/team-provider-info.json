@@ -15,5 +15,22 @@
                 "cognito5608a292": {}
             }
         }
+    },
+    "cliff": {
+        "awscloudformation": {
+            "AuthRoleName": "whiteboard-cliff-20190520172001-authRole",
+            "UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-cliff-20190520172001-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-cliff-20190520172001-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "whiteboard-cliff-20190520172001-deployment",
+            "UnauthRoleName": "whiteboard-cliff-20190520172001-unauthRole",
+            "StackName": "whiteboard-cliff-20190520172001",
+            "StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-cliff-20190520172001/07fd2020-7b45-11e9-88d7-0a743b4c9590"
+        },
+        "categories": {
+            "auth": {
+                "cognito5608a292": {}
+            }
+        }
     }
 }
