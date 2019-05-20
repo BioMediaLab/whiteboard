@@ -1,6 +1,7 @@
 import React from 'react'
 import { Redirect, Router } from '@reach/router'
 import Home from 'pages/home'
+import { QuestionList } from 'containers/Questions'
 import Route from 'components/Route'
 import * as mutations from 'graphql/mutations'
 import * as queries from 'graphql/queries'
@@ -9,6 +10,7 @@ export default () => (
   <Router>
     <Home path="/" />
     <Redirect from="/home" to="/" />
+    <QuestionList path="/questions" />
     <Route path="/classes" query={queries.listClasses} />
     <Route path="/classes/new" mutation={mutations.createClass} />
     <Route

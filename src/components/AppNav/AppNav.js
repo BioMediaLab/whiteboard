@@ -19,6 +19,11 @@ export default () => {
                   url: '/classes',
                   label: 'Classes',
                   icon: 'orders'
+                },
+                {
+                  url: '/questions',
+                  label: 'Questions',
+                  icon: 'orders'
                 }
               ]}
             />
