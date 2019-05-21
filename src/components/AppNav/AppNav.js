@@ -1,7 +1,12 @@
 import React from 'react'
 import { Navigation } from '@shopify/polaris'
 import { AppUserConsumer } from 'components/AppUser'
-import { HomeIcon, CoursesIcon, QuestionsIcon } from 'components/Icon'
+import {
+  HomeIcon,
+  CoursesIcon,
+  QuestionsIcon,
+  QuizzesIcon
+} from 'components/Icon'
 export default () => {
   return (
     <AppUserConsumer>
@@ -19,6 +24,11 @@ export default () => {
                   url: '/courses',
                   label: 'Courses',
                   icon: CoursesIcon
+                },
+                {
+                  url: '/quizzes',
+                  label: 'Quizzes',
+                  icon: QuizzesIcon
                 },
                 {
                   url: '/questions',

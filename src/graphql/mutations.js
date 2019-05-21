@@ -10,6 +10,7 @@ export const createCourse = `mutation CreateCourse($input: CreateCourseInput!) {
       items {
         id
         title
+        description
       }
       nextToken
     }
@@ -25,6 +26,7 @@ export const updateCourse = `mutation UpdateCourse($input: UpdateCourseInput!) {
       items {
         id
         title
+        description
       }
       nextToken
     }
@@ -40,6 +42,7 @@ export const deleteCourse = `mutation DeleteCourse($input: DeleteCourseInput!) {
       items {
         id
         title
+        description
       }
       nextToken
     }
@@ -50,6 +53,7 @@ export const createQuiz = `mutation CreateQuiz($input: CreateQuizInput!) {
   createQuiz(input: $input) {
     id
     title
+    description
     course {
       id
       title
@@ -77,6 +81,7 @@ export const updateQuiz = `mutation UpdateQuiz($input: UpdateQuizInput!) {
   updateQuiz(input: $input) {
     id
     title
+    description
     course {
       id
       title
@@ -104,6 +109,7 @@ export const deleteQuiz = `mutation DeleteQuiz($input: DeleteQuizInput!) {
   deleteQuiz(input: $input) {
     id
     title
+    description
     course {
       id
       title
@@ -112,6 +118,66 @@ export const deleteQuiz = `mutation DeleteQuiz($input: DeleteQuizInput!) {
         nextToken
       }
     }
+    questions {
+      id
+      question
+      choices {
+        key
+        value
+      }
+      answer {
+        key
+        value
+      }
+    }
+  }
+}
+`;
+export const createQuizTemplate = `mutation CreateQuizTemplate($input: CreateQuizTemplateInput!) {
+  createQuizTemplate(input: $input) {
+    id
+    title
+    description
+    questions {
+      id
+      question
+      choices {
+        key
+        value
+      }
+      answer {
+        key
+        value
+      }
+    }
+  }
+}
+`;
+export const updateQuizTemplate = `mutation UpdateQuizTemplate($input: UpdateQuizTemplateInput!) {
+  updateQuizTemplate(input: $input) {
+    id
+    title
+    description
+    questions {
+      id
+      question
+      choices {
+        key
+        value
+      }
+      answer {
+        key
+        value
+      }
+    }
+  }
+}
+`;
+export const deleteQuizTemplate = `mutation DeleteQuizTemplate($input: DeleteQuizTemplateInput!) {
+  deleteQuizTemplate(input: $input) {
+    id
+    title
+    description
     questions {
       id
       question

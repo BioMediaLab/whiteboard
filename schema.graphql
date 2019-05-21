@@ -14,6 +14,12 @@ type Quiz
   questions: [Question]
 }
 
+type QuizTemplate @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  title: String!
+  questions: [Question]
+}
+
 type Question @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   question: String!

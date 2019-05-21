@@ -10,6 +10,7 @@ export const onCreateCourse = `subscription OnCreateCourse {
       items {
         id
         title
+        description
       }
       nextToken
     }
@@ -25,6 +26,7 @@ export const onUpdateCourse = `subscription OnUpdateCourse {
       items {
         id
         title
+        description
       }
       nextToken
     }
@@ -40,6 +42,7 @@ export const onDeleteCourse = `subscription OnDeleteCourse {
       items {
         id
         title
+        description
       }
       nextToken
     }
@@ -50,6 +53,7 @@ export const onCreateQuiz = `subscription OnCreateQuiz {
   onCreateQuiz {
     id
     title
+    description
     course {
       id
       title
@@ -77,6 +81,7 @@ export const onUpdateQuiz = `subscription OnUpdateQuiz {
   onUpdateQuiz {
     id
     title
+    description
     course {
       id
       title
@@ -104,6 +109,7 @@ export const onDeleteQuiz = `subscription OnDeleteQuiz {
   onDeleteQuiz {
     id
     title
+    description
     course {
       id
       title
@@ -112,6 +118,66 @@ export const onDeleteQuiz = `subscription OnDeleteQuiz {
         nextToken
       }
     }
+    questions {
+      id
+      question
+      choices {
+        key
+        value
+      }
+      answer {
+        key
+        value
+      }
+    }
+  }
+}
+`;
+export const onCreateQuizTemplate = `subscription OnCreateQuizTemplate {
+  onCreateQuizTemplate {
+    id
+    title
+    description
+    questions {
+      id
+      question
+      choices {
+        key
+        value
+      }
+      answer {
+        key
+        value
+      }
+    }
+  }
+}
+`;
+export const onUpdateQuizTemplate = `subscription OnUpdateQuizTemplate {
+  onUpdateQuizTemplate {
+    id
+    title
+    description
+    questions {
+      id
+      question
+      choices {
+        key
+        value
+      }
+      answer {
+        key
+        value
+      }
+    }
+  }
+}
+`;
+export const onDeleteQuizTemplate = `subscription OnDeleteQuizTemplate {
+  onDeleteQuizTemplate {
+    id
+    title
+    description
     questions {
       id
       question

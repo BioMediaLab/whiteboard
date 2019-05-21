@@ -10,6 +10,7 @@ export const getCourse = `query GetCourse($id: ID!) {
       items {
         id
         title
+        description
       }
       nextToken
     }
@@ -38,6 +39,7 @@ export const getQuiz = `query GetQuiz($id: ID!) {
   getQuiz(id: $id) {
     id
     title
+    description
     course {
       id
       title
@@ -70,11 +72,51 @@ export const listQuizzes = `query ListQuizzes(
     items {
       id
       title
+      description
       course {
         id
         title
         description
       }
+      questions {
+        id
+        question
+      }
+    }
+    nextToken
+  }
+}
+`;
+export const getQuizTemplate = `query GetQuizTemplate($id: ID!) {
+  getQuizTemplate(id: $id) {
+    id
+    title
+    description
+    questions {
+      id
+      question
+      choices {
+        key
+        value
+      }
+      answer {
+        key
+        value
+      }
+    }
+  }
+}
+`;
+export const listQuizTemplates = `query ListQuizTemplates(
+  $filter: ModelQuizTemplateFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listQuizTemplates(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      title
+      description
       questions {
         id
         question

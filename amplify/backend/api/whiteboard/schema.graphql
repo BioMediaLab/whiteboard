@@ -10,7 +10,15 @@ type Quiz
   @auth(rules: [{ allow: owner }]) {
   id: ID!
   title: String!
+  description: String
   course: Course! @connection(name: "CourseQuizzes")
+  questions: [Question]
+}
+
+type QuizTemplate @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  title: String!
+  description: String
   questions: [Question]
 }
 
