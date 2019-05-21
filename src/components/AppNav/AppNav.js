@@ -16,8 +16,8 @@ export default () => {
                   icon: 'home'
                 },
                 {
-                  url: '/classes',
-                  label: 'Classes',
+                  url: '/courses',
+                  label: 'Courses',
                   icon: 'orders'
                 },
                 {

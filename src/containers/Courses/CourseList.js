@@ -7,14 +7,15 @@ import { SkeletonPage } from 'components/Skeleton'
 import Title from 'components/Title'
 import ResourceList, { ResourceListItem } from 'components/ResourceList'
 
-import { listQuestions } from 'graphql/queries'
+import { listCourses } from 'graphql/queries'
 
-const ListItem = ({ id, question }) => {
+const ListItem = ({ id, title, description }) => {
   const url = `./${id}`
 
   return (
     <ResourceListItem id={id} url={url}>
-      <Title>{question}</Title>
+      <Title>{title}</Title>
+      {description && <p>{description}</p>}
     </ResourceListItem>
   )
 }
@@ -25,20 +26,20 @@ const ListView = ({ items }) => {
 
 export default () => {
   return (
-    <Connect query={graphqlOperation(listQuestions)}>
-      {({ data: { listQuestions }, loading, error }) => {
+    <Connect query={graphqlOperation(listCourses)}>
+      {({ data: { listCourses }, loading, error }) => {
         if (error) return <h3>Error</h3>
-        if (loading || !listQuestions) return <SkeletonPage />
+        if (loading || !listCourses) return <SkeletonPage />
 
         return (
           <Page
-            title="Questions"
+            title="Courses"
             primaryAction={{
               content: 'Create',
               url: './create'
             }}>
             <Card>
-              <ListView items={listQuestions.items} />
+              <ListView items={listCourses.items} />
             </Card>
           </Page>
         )

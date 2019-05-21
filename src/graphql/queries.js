@@ -1,8 +1,8 @@
 // eslint-disable
 // this is an auto generated file. This will be overwritten
 
-export const getClass = `query GetClass($id: ID!) {
-  getClass(id: $id) {
+export const getCourse = `query GetCourse($id: ID!) {
+  getCourse(id: $id) {
     id
     title
     description
@@ -16,12 +16,12 @@ export const getClass = `query GetClass($id: ID!) {
   }
 }
 `;
-export const listClasses = `query ListClasses(
-  $filter: ModelClassFilterInput
+export const listCourses = `query ListCourses(
+  $filter: ModelCourseFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listClasses(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listCourses(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       title
@@ -38,7 +38,7 @@ export const getQuiz = `query GetQuiz($id: ID!) {
   getQuiz(id: $id) {
     id
     title
-    class {
+    course {
       id
       title
       description
@@ -70,7 +70,7 @@ export const listQuizzes = `query ListQuizzes(
     items {
       id
       title
-      class {
+      course {
         id
         title
         description

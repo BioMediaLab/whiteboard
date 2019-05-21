@@ -1,8 +1,8 @@
 // eslint-disable
 // this is an auto generated file. This will be overwritten
 
-export const onCreateClass = `subscription OnCreateClass {
-  onCreateClass {
+export const onCreateCourse = `subscription OnCreateCourse {
+  onCreateCourse {
     id
     title
     description
@@ -16,8 +16,8 @@ export const onCreateClass = `subscription OnCreateClass {
   }
 }
 `;
-export const onUpdateClass = `subscription OnUpdateClass {
-  onUpdateClass {
+export const onUpdateCourse = `subscription OnUpdateCourse {
+  onUpdateCourse {
     id
     title
     description
@@ -31,8 +31,8 @@ export const onUpdateClass = `subscription OnUpdateClass {
   }
 }
 `;
-export const onDeleteClass = `subscription OnDeleteClass {
-  onDeleteClass {
+export const onDeleteCourse = `subscription OnDeleteCourse {
+  onDeleteCourse {
     id
     title
     description
@@ -50,7 +50,7 @@ export const onCreateQuiz = `subscription OnCreateQuiz {
   onCreateQuiz {
     id
     title
-    class {
+    course {
       id
       title
       description
@@ -77,7 +77,7 @@ export const onUpdateQuiz = `subscription OnUpdateQuiz {
   onUpdateQuiz {
     id
     title
-    class {
+    course {
       id
       title
       description
@@ -104,7 +104,7 @@ export const onDeleteQuiz = `subscription OnDeleteQuiz {
   onDeleteQuiz {
     id
     title
-    class {
+    course {
       id
       title
       description

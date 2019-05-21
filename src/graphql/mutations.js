@@ -1,8 +1,8 @@
 // eslint-disable
 // this is an auto generated file. This will be overwritten
 
-export const createClass = `mutation CreateClass($input: CreateClassInput!) {
-  createClass(input: $input) {
+export const createCourse = `mutation CreateCourse($input: CreateCourseInput!) {
+  createCourse(input: $input) {
     id
     title
     description
@@ -16,8 +16,8 @@ export const createClass = `mutation CreateClass($input: CreateClassInput!) {
   }
 }
 `;
-export const updateClass = `mutation UpdateClass($input: UpdateClassInput!) {
-  updateClass(input: $input) {
+export const updateCourse = `mutation UpdateCourse($input: UpdateCourseInput!) {
+  updateCourse(input: $input) {
     id
     title
     description
@@ -31,8 +31,8 @@ export const updateClass = `mutation UpdateClass($input: UpdateClassInput!) {
   }
 }
 `;
-export const deleteClass = `mutation DeleteClass($input: DeleteClassInput!) {
-  deleteClass(input: $input) {
+export const deleteCourse = `mutation DeleteCourse($input: DeleteCourseInput!) {
+  deleteCourse(input: $input) {
     id
     title
     description
@@ -50,7 +50,7 @@ export const createQuiz = `mutation CreateQuiz($input: CreateQuizInput!) {
   createQuiz(input: $input) {
     id
     title
-    class {
+    course {
       id
       title
       description
@@ -77,7 +77,7 @@ export const updateQuiz = `mutation UpdateQuiz($input: UpdateQuizInput!) {
   updateQuiz(input: $input) {
     id
     title
-    class {
+    course {
       id
       title
       description
@@ -104,7 +104,7 @@ export const deleteQuiz = `mutation DeleteQuiz($input: DeleteQuizInput!) {
   deleteQuiz(input: $input) {
     id
     title
-    class {
+    course {
       id
       title
       description
