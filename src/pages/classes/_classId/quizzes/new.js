@@ -30,9 +30,16 @@ export default ({ mutation, title = '', classId, description = '' }) => {
   }
   const [questions, setState] = useState([]);
   const [state, dispatch] = useReducer(reducer, initialState)
-  const handleSubmit = event => {
-    console.log(questions);
-    //mutation({ input: state })
+  const handleSubmit = (event) => {
+    // state.questions = questions
+    // const questionSet= [{question:"abc",
+    // choices:[{}]}]
+    mutation({
+      input: {
+        quizClassId: state.quizClassId,
+        title: state.title
+      }
+    })
   }
 
   return (
@@ -46,50 +53,49 @@ export default ({ mutation, title = '', classId, description = '' }) => {
       ]}>
 
       <Form onSubmit={handleSubmit}>
-        <Card primaryFooterAction={{ content: "Save", onAction:function(){console.log(questions)} }}>
-          <Card sectioned>
-            <FormLayout>
-              <TextField
-                label="Title"
-                id="title"
-                name="title"
-                value={state.title}
-                onChange={(value, id) => {
-                  dispatch({ type: 'UPDATE_TEXT', payload: { id, value } })
-                }}
-              />
-              <TextField
-                label="Description"
-                id="description"
-                name="description"
-                value={state.description}
-                onChange={(value, id) => {
-                  dispatch({ type: 'UPDATE_TEXT', payload: { id, value } })
-                }}
-              />
-            </FormLayout>
-          </Card>
-          <Card sectioned>
-            <Title element="h3">Questions</Title>
-            {questions.map((question, index) => (
-              <Question key={index} 
-              onChange={(question)=>{
-                console.log("recieved",question);
-                const newquestions=[...questions];
-               newquestions[index]=question;
-                setState(newquestions);
+        <Card sectioned primaryFooterAction={{
+          content: "Save", type:"submit" , onAction: handleSubmit
+        }}>
+          <FormLayout>
+            <TextField
+              label="Title"
+              id="title"
+              name="title"
+              value={state.title}
+              onChange={(value, id) => {
+                dispatch({ type: 'UPDATE_TEXT', payload: { id, value } })
               }}
-              />
-            ))}
-            <Button onClick={() => {
-              const newQuestions = [...questions];
-              newQuestions.push({ });
-              setState(newQuestions);
-            }}>Add Question</Button>
-          </Card>
+            />
+            <TextField
+              label="Description"
+              id="description"
+              name="description"
+              value={state.description}
+              onChange={(value, id) => {
+                dispatch({ type: 'UPDATE_TEXT', payload: { id, value } })
+              }}
+            />
+            <Card sectioned>
+              <Title element="h3">Questions</Title>
+              {questions.map((question, index) => (
+                <Question key={index}
+                  onChange={(question) => {
+                    const newquestions = [...questions];
+                    newquestions[index] = question;
+                    setState(newquestions);
+                    dispatch({ type: 'UPDATE_TEXT', payload: { index, newquestions } })
+                  }}
+                />
+              ))}
+              <Button onClick={() => {
+                const newQuestions = [...questions];
+                newQuestions.push({});
+                setState(newQuestions);
+              }}>Add Question</Button>
+            </Card>
+          </FormLayout>
         </Card>
       </Form>
-
     </Page>
   )
 }

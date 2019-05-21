@@ -9,7 +9,11 @@ const ListItem = ({ id, description, title }) => {
   const url = `./${id}`
 
   return (
-    <ResourceListItem id={id} url={url}>
+    <ResourceListItem id={id} url={url} shortcutActions={[{
+      icon: "delete", destructive:true, onClick: () => {
+        // TODO: Implement delete quiz here.
+      }
+    }]}>
       <Title>{title}</Title>
       {description && <p>{description}</p>}
     </ResourceListItem>
