@@ -32,5 +32,22 @@
                 "cognito5608a292": {}
             }
         }
+    },
+    "megha": {
+        "awscloudformation": {
+            "AuthRoleName": "whiteboard-megha-20190521101509-authRole",
+            "UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-megha-20190521101509-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-megha-20190521101509-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "whiteboard-megha-20190521101509-deployment",
+            "UnauthRoleName": "whiteboard-megha-20190521101509-unauthRole",
+            "StackName": "whiteboard-megha-20190521101509",
+            "StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-megha-20190521101509/fcf338c0-7beb-11e9-b128-127a71eef55e"
+        },
+        "categories": {
+            "auth": {
+                "cognito5608a292": {}
+            }
+        }
     }
 }
