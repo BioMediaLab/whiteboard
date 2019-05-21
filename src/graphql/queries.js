@@ -1,8 +1,8 @@
 // eslint-disable
 // this is an auto generated file. This will be overwritten
 
-export const getClass = `query GetClass($id: ID!) {
-  getClass(id: $id) {
+export const getCourse = `query GetCourse($id: ID!) {
+  getCourse(id: $id) {
     id
     title
     description
@@ -10,18 +10,19 @@ export const getClass = `query GetClass($id: ID!) {
       items {
         id
         title
+        description
       }
       nextToken
     }
   }
 }
 `;
-export const listClasses = `query ListClasses(
-  $filter: ModelClassFilterInput
+export const listCourses = `query ListCourses(
+  $filter: ModelCourseFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listClasses(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listCourses(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
       title
@@ -38,7 +39,8 @@ export const getQuiz = `query GetQuiz($id: ID!) {
   getQuiz(id: $id) {
     id
     title
-    class {
+    description
+    course {
       id
       title
       description
@@ -70,11 +72,51 @@ export const listQuizzes = `query ListQuizzes(
     items {
       id
       title
-      class {
+      description
+      course {
         id
         title
         description
       }
+      questions {
+        id
+        question
+      }
+    }
+    nextToken
+  }
+}
+`;
+export const getQuizTemplate = `query GetQuizTemplate($id: ID!) {
+  getQuizTemplate(id: $id) {
+    id
+    title
+    description
+    questions {
+      id
+      question
+      choices {
+        key
+        value
+      }
+      answer {
+        key
+        value
+      }
+    }
+  }
+}
+`;
+export const listQuizTemplates = `query ListQuizTemplates(
+  $filter: ModelQuizTemplateFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listQuizTemplates(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      title
+      description
       questions {
         id
         question

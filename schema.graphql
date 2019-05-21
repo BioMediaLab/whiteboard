@@ -1,10 +1,8 @@
-type Class
-  @model(queries: { get: "getClass", list: "listClasses" })
-  @auth(rules: [{ allow: owner }]) {
+type Course @model @auth(rules: [{ allow: owner }]) {
   id: ID!
   title: String!
   description: String
-  quizzes: [Quiz] @connection(name: "ClassQuizzes")
+  quizzes: [Quiz] @connection(name: "CourseQuizzes")
 }
 
 type Quiz
@@ -12,7 +10,15 @@ type Quiz
   @auth(rules: [{ allow: owner }]) {
   id: ID!
   title: String!
-  class: Class! @connection(name: "ClassQuizzes")
+  description: String
+  course: Course! @connection(name: "CourseQuizzes")
+  questions: [Question]
+}
+
+type QuizTemplate @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  title: String!
+  description: String
   questions: [Question]
 }
 

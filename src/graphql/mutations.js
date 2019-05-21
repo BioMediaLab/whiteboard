@@ -1,8 +1,8 @@
 // eslint-disable
 // this is an auto generated file. This will be overwritten
 
-export const createClass = `mutation CreateClass($input: CreateClassInput!) {
-  createClass(input: $input) {
+export const createCourse = `mutation CreateCourse($input: CreateCourseInput!) {
+  createCourse(input: $input) {
     id
     title
     description
@@ -10,14 +10,15 @@ export const createClass = `mutation CreateClass($input: CreateClassInput!) {
       items {
         id
         title
+        description
       }
       nextToken
     }
   }
 }
 `;
-export const updateClass = `mutation UpdateClass($input: UpdateClassInput!) {
-  updateClass(input: $input) {
+export const updateCourse = `mutation UpdateCourse($input: UpdateCourseInput!) {
+  updateCourse(input: $input) {
     id
     title
     description
@@ -25,14 +26,15 @@ export const updateClass = `mutation UpdateClass($input: UpdateClassInput!) {
       items {
         id
         title
+        description
       }
       nextToken
     }
   }
 }
 `;
-export const deleteClass = `mutation DeleteClass($input: DeleteClassInput!) {
-  deleteClass(input: $input) {
+export const deleteCourse = `mutation DeleteCourse($input: DeleteCourseInput!) {
+  deleteCourse(input: $input) {
     id
     title
     description
@@ -40,6 +42,7 @@ export const deleteClass = `mutation DeleteClass($input: DeleteClassInput!) {
       items {
         id
         title
+        description
       }
       nextToken
     }
@@ -50,7 +53,8 @@ export const createQuiz = `mutation CreateQuiz($input: CreateQuizInput!) {
   createQuiz(input: $input) {
     id
     title
-    class {
+    description
+    course {
       id
       title
       description
@@ -77,7 +81,8 @@ export const updateQuiz = `mutation UpdateQuiz($input: UpdateQuizInput!) {
   updateQuiz(input: $input) {
     id
     title
-    class {
+    description
+    course {
       id
       title
       description
@@ -104,7 +109,8 @@ export const deleteQuiz = `mutation DeleteQuiz($input: DeleteQuizInput!) {
   deleteQuiz(input: $input) {
     id
     title
-    class {
+    description
+    course {
       id
       title
       description
@@ -112,6 +118,66 @@ export const deleteQuiz = `mutation DeleteQuiz($input: DeleteQuizInput!) {
         nextToken
       }
     }
+    questions {
+      id
+      question
+      choices {
+        key
+        value
+      }
+      answer {
+        key
+        value
+      }
+    }
+  }
+}
+`;
+export const createQuizTemplate = `mutation CreateQuizTemplate($input: CreateQuizTemplateInput!) {
+  createQuizTemplate(input: $input) {
+    id
+    title
+    description
+    questions {
+      id
+      question
+      choices {
+        key
+        value
+      }
+      answer {
+        key
+        value
+      }
+    }
+  }
+}
+`;
+export const updateQuizTemplate = `mutation UpdateQuizTemplate($input: UpdateQuizTemplateInput!) {
+  updateQuizTemplate(input: $input) {
+    id
+    title
+    description
+    questions {
+      id
+      question
+      choices {
+        key
+        value
+      }
+      answer {
+        key
+        value
+      }
+    }
+  }
+}
+`;
+export const deleteQuizTemplate = `mutation DeleteQuizTemplate($input: DeleteQuizTemplateInput!) {
+  deleteQuizTemplate(input: $input) {
+    id
+    title
+    description
     questions {
       id
       question
