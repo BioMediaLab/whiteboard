@@ -5,7 +5,7 @@ import Title from 'components/Title'
 import ResourceList, { ResourceListItem } from 'components/ResourceList'
 import TextField from 'components/TextField'
 import Form, { FormLayout } from 'components/Form'
-import Checkbox from 'components/Checkbox'
+import RadioButton from 'components/RadioButton'
 import Button from 'components/Button'
 
 
@@ -63,10 +63,11 @@ export const Question = (props) => {
                     {_choices &&
                         _choices.map((choice, index) => {
                             return (<div key={index}>
-                                <Checkbox
+                                <RadioButton
                                     disabled={disabled}
                                     checked={choice.checked}
-                                ></Checkbox>
+                                    name="choice"
+                                ></RadioButton>
                                 <TextField
                                     id="choice"
                                     value={choice.value}
