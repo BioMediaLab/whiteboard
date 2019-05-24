@@ -6,23 +6,49 @@ import ResourceList, { ResourceListItem } from 'components/ResourceList'
 import TextField from 'components/TextField'
 import Form, { FormLayout } from 'components/Form'
 import Checkbox from 'components/Checkbox'
+import Button from 'components/Button'
+
 
 export const Question = (props) => {
     const { question, disabled } = props;
     const [_question, setQuestion] = useState(question.question)
-    const [_choices, setChoices] = useState(question.choices)
-    const [_answer, setAnswer] = useState(question.answer)
+    const initialChoicesState=[];
+    if (question.choices) {
+        initialChoicesState.push(...question.choices)
+    }
+    if (question.answer) {
+        initialChoicesState.push({
+            key: question.answer.key,
+            value: question.answer.value,
+            //checked true is correct answer
+            checked: true
+        });
+    }
+    const [_choices, setChoices] = useState(initialChoicesState);
     useEffect(() => {
         if ('onQuestionEdit' in props) {
+            const answers = _choices.filter(function(choice){
+                if (choice.checked) {
+                    return true
+                }
+            }).map(function(choice){return {
+                key:choice.key,
+                value:choice.value
+            }});
             props.onQuestionEdit({
                 question: _question,
-                choices: _choices,
-                answer : _answer
+                choices: _choices.filter(function(choice){
+                    if (!choice.checked) {
+                        return true
+                    }
+                }),
+                answer: answers.length>0?answers[0]:null
             });
         }
-    }, [_question, _choices,_answer])
+    }, [_question, _choices])
+
+
     return (
-        <Card>
             <Form>
                 <FormLayout>
                     <TextField
@@ -39,6 +65,7 @@ export const Question = (props) => {
                             return (<div key={index}>
                                 <Checkbox
                                     disabled={disabled}
+                                    checked={choice.checked}
                                 ></Checkbox>
                                 <TextField
                                     id="choice"
@@ -46,30 +73,21 @@ export const Question = (props) => {
                                     disabled={disabled}
                                     onChange={(newText) => {
                                         const newChoices = [..._choices];
-                                        newChoices[index]['value'] = newText;
+                                        newChoices[index]['key'] = newChoices[index]['value'] = newText;
                                         setChoices(newChoices);
                                     }}>
                                 </TextField>
                             </div>);
                         })
                     }
-                    {_answer &&
-                        <div>
-                            <Checkbox checked
-                                disabled={disabled}
-                            ></Checkbox>
-                            <TextField
-                                id="answer"
-                                value={_answer.value}
-                                disabled={disabled}
-                                onChange={(newText, id) => {
-                                    setAnswer(newText)
-                                }}>
-                            </TextField>
-                        </div>
-                    }
+                    <Button disabled={disabled} 
+                    onClick={() => {
+                        const newChoices = [..._choices];
+                        newChoices.push({key:'', value:''})
+                        setChoices(newChoices)
+                    }}
+                    >Add Option</Button>
                 </FormLayout>
             </Form>
-        </Card>
     )
 }
