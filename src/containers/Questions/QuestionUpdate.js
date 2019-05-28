@@ -6,10 +6,9 @@ import Card from 'components/Card'
 import Page from 'components/Page'
 import Form, { FormLayout } from 'components/Form'
 import { SkeletonPage } from 'components/Skeleton'
-import TextField from 'components/TextField'
 import { getQuestion } from 'graphql/queries'
-import { updateQuestion as updateQuestionMutation, listQuestions } from 'graphql/mutations'
-import { Question } from './Questions'
+import { updateQuestion as updateQuestionMutation} from 'graphql/mutations'
+import { Question } from './shared/QuestionForm'
 
 const ResourcePage = ({ id, question, choices, answer }) => {
   const [_question, setQuestion] = useState(question)
