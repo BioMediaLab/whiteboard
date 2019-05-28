@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Card from 'components/Card'
-import Page from 'components/Page'
-import Title from 'components/Title'
-import ResourceList, { ResourceListItem } from 'components/ResourceList'
 import TextField from 'components/TextField'
 import Form, { FormLayout } from 'components/Form'
 import RadioButton from 'components/RadioButton'
 import Button from 'components/Button'
-
 
 export const Question = (props) => {
     const { question, disabled } = props;
