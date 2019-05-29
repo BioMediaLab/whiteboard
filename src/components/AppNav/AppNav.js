@@ -5,7 +5,8 @@ import {
   HomeIcon,
   CoursesIcon,
   QuestionsIcon,
-  QuizzesIcon
+  QuizzesIcon,
+  QuizTemplatesIcon
 } from 'components/Icon'
 export default () => {
   return (
@@ -29,6 +30,11 @@ export default () => {
                   url: '/quizzes',
                   label: 'Quizzes',
                   icon: QuizzesIcon
+                },
+                {
+                  url: '/quiz-templates',
+                  label: 'Quiz Templates',
+                  icon: QuizTemplatesIcon
                 },
                 {
                   url: '/questions',
