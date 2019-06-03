@@ -197,8 +197,39 @@ Resources:
       SmsVerificationMessage: !Ref smsVerificationMessage
       SmsConfiguration: 
         SnsCallerArn: !GetAtt SNSRole.Arn
-        ExternalId: !Ref roleExternalId 
-    
+        ExternalId: !Ref roleExternalId
+  UserPoolAdminGroup:
+    Type: "AWS::Cognito::UserPoolGroup"
+    Properties: 
+      Description: "A user who is an admin"
+      GroupName: "admin"
+      Precedence: 0
+      UserPoolId: !Ref UserPool
+    DependsOn: UserPool
+  UserPoolProfessorGroup:
+    Type: "AWS::Cognito::UserPoolGroup"
+    Properties: 
+      Description: "A user who is a professor"
+      GroupName: "professor"
+      Precedence: 1
+      UserPoolId: !Ref UserPool
+    DependsOn: UserPool
+  UserPoolTeacherAssistantGroup:
+    Type: "AWS::Cognito::UserPoolGroup"
+    Properties: 
+      Description: "A user who is a teacher assistant"
+      GroupName: "teacher_assistant"
+      Precedence: 2
+      UserPoolId: !Ref UserPool
+    DependsOn: UserPool
+  UserPoolStudentGroup:
+    Type: "AWS::Cognito::UserPoolGroup"
+    Properties: 
+      Description: "A user who is a student"
+      GroupName: "student"
+      Precedence: 3
+      UserPoolId: !Ref UserPool
+    DependsOn: UserPool
   UserPoolClientWeb:
   # Created provide application access to user pool
   # Depends on UserPool for ID reference

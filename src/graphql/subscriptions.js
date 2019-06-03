@@ -11,6 +11,7 @@ export const onCreateCourse = `subscription OnCreateCourse {
         id
         title
         description
+        questions
       }
       nextToken
     }
@@ -27,6 +28,7 @@ export const onUpdateCourse = `subscription OnUpdateCourse {
         id
         title
         description
+        questions
       }
       nextToken
     }
@@ -43,6 +45,7 @@ export const onDeleteCourse = `subscription OnDeleteCourse {
         id
         title
         description
+        questions
       }
       nextToken
     }
@@ -62,18 +65,7 @@ export const onCreateQuiz = `subscription OnCreateQuiz {
         nextToken
       }
     }
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -90,18 +82,7 @@ export const onUpdateQuiz = `subscription OnUpdateQuiz {
         nextToken
       }
     }
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -118,18 +99,7 @@ export const onDeleteQuiz = `subscription OnDeleteQuiz {
         nextToken
       }
     }
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -138,18 +108,7 @@ export const onCreateQuizTemplate = `subscription OnCreateQuizTemplate {
     id
     title
     description
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -158,18 +117,7 @@ export const onUpdateQuizTemplate = `subscription OnUpdateQuizTemplate {
     id
     title
     description
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -178,18 +126,7 @@ export const onDeleteQuizTemplate = `subscription OnDeleteQuizTemplate {
     id
     title
     description
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -199,11 +136,8 @@ export const onCreateQuestion = `subscription OnCreateQuestion {
     question
     choices {
       key
-      value
-    }
-    answer {
-      key
-      value
+      answer
+      isCorrect
     }
   }
 }
@@ -214,11 +148,8 @@ export const onUpdateQuestion = `subscription OnUpdateQuestion {
     question
     choices {
       key
-      value
-    }
-    answer {
-      key
-      value
+      answer
+      isCorrect
     }
   }
 }
@@ -229,11 +160,8 @@ export const onDeleteQuestion = `subscription OnDeleteQuestion {
     question
     choices {
       key
-      value
-    }
-    answer {
-      key
-      value
+      answer
+      isCorrect
     }
   }
 }

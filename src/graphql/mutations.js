@@ -11,6 +11,7 @@ export const createCourse = `mutation CreateCourse($input: CreateCourseInput!) {
         id
         title
         description
+        questions
       }
       nextToken
     }
@@ -27,6 +28,7 @@ export const updateCourse = `mutation UpdateCourse($input: UpdateCourseInput!) {
         id
         title
         description
+        questions
       }
       nextToken
     }
@@ -43,6 +45,7 @@ export const deleteCourse = `mutation DeleteCourse($input: DeleteCourseInput!) {
         id
         title
         description
+        questions
       }
       nextToken
     }
@@ -62,18 +65,7 @@ export const createQuiz = `mutation CreateQuiz($input: CreateQuizInput!) {
         nextToken
       }
     }
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -90,18 +82,7 @@ export const updateQuiz = `mutation UpdateQuiz($input: UpdateQuizInput!) {
         nextToken
       }
     }
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -118,18 +99,7 @@ export const deleteQuiz = `mutation DeleteQuiz($input: DeleteQuizInput!) {
         nextToken
       }
     }
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -138,18 +108,7 @@ export const createQuizTemplate = `mutation CreateQuizTemplate($input: CreateQui
     id
     title
     description
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -158,18 +117,7 @@ export const updateQuizTemplate = `mutation UpdateQuizTemplate($input: UpdateQui
     id
     title
     description
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -178,18 +126,7 @@ export const deleteQuizTemplate = `mutation DeleteQuizTemplate($input: DeleteQui
     id
     title
     description
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -199,11 +136,8 @@ export const createQuestion = `mutation CreateQuestion($input: CreateQuestionInp
     question
     choices {
       key
-      value
-    }
-    answer {
-      key
-      value
+      answer
+      isCorrect
     }
   }
 }
@@ -214,11 +148,8 @@ export const updateQuestion = `mutation UpdateQuestion($input: UpdateQuestionInp
     question
     choices {
       key
-      value
-    }
-    answer {
-      key
-      value
+      answer
+      isCorrect
     }
   }
 }
@@ -229,11 +160,8 @@ export const deleteQuestion = `mutation DeleteQuestion($input: DeleteQuestionInp
     question
     choices {
       key
-      value
-    }
-    answer {
-      key
-      value
+      answer
+      isCorrect
     }
   }
 }
