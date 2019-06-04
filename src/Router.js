@@ -7,7 +7,7 @@ import {
   QuestionUpdate
 } from 'containers/Questions'
 import { QuizCreate, QuizList, QuizUpdate } from 'containers/Quizzes'
-import { QuizTemplateList } from 'containers/QuizTemplates'
+import { QuizTemplateList, QuizTemplateCreate } from 'containers/QuizTemplates'
 import { CourseCreate, CourseList, CourseUpdate } from 'containers/Courses'
 
 export default () => (
@@ -24,5 +24,6 @@ export default () => (
     <QuizCreate path="/quizzes/create" />
     <QuizUpdate path="/quizzes/:quizId" />
     <QuizTemplateList path="/quiz-templates" />
+    <QuizTemplateCreate path="/quiz-templates/create" />
   </Router>
 )

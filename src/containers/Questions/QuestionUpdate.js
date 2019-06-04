@@ -4,7 +4,7 @@ import { Connect } from 'aws-amplify-react'
 import Button from 'components/Button'
 import Card from 'components/Card'
 import Page from 'components/Page'
-import Form, { FormLayout } from 'components/Form'
+import Form from 'components/Form'
 import { SkeletonPage } from 'components/Skeleton'
 import { getQuestion } from 'graphql/queries'
 import { updateQuestion as updateQuestionMutation} from 'graphql/mutations'
@@ -55,12 +55,10 @@ const ResourcePage = ({ id, question, choices, answer }) => {
       ]}>
       <Card sectioned>
         <Form onSubmit={handleSubmit}>
-          <FormLayout>
             <Question question={{ question, choices, answer }} disabled={!_isEditable} onQuestionEdit={handleQuestionEdit} />
             <Button primary onClick={toggleEdit}>
               {!_isEditable ? "Edit" : "Save"}
             </Button>
-          </FormLayout>
         </Form>
       </Card>
     </Page>
