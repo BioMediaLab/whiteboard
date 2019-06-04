@@ -6,6 +6,7 @@ import { ReactComponent as IconicLightbulb } from './img/lightbulb.svg'
 import { ReactComponent as IconicQuestionMark } from './img/question-mark.svg'
 import { ReactComponent as IconicFile } from './img/file.svg'
 import { ReactComponent as IconicDocument } from './img/document.svg'
+import { ReactComponent as IconicTrash } from './img/trash.svg'
 
 import './Icon.css'
 
@@ -24,3 +25,4 @@ export const QuestionsIcon = props => (
 )
 export const QuizzesIcon = props => <Icon {...props} source={<IconicFile />} />
 export const QuizTemplatesIcon = props => <Icon {...props} source={<IconicDocument />} />
+export const TrashIcon = props => <Icon {...props} source={<IconicTrash />} />
