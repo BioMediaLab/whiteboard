@@ -39,6 +39,37 @@ export const Question = ({ question = '', choices = [], answer = {}, disabled = 
             });
         }
     }
+
+    const updateAnswer=(choiceID) => {
+        const newChoices = [..._allChoices.map(choice => {
+            delete choice.checked;
+            return choice;
+        })];
+        newChoices[choiceID]['checked'] = true;
+        triggerEvent({
+            question,
+            choices: newChoices
+        })
+    }
+
+    const updateChoice=(index,newText) => {
+        const newChoices = [..._allChoices];
+        newChoices[index]['key'] = newChoices[index]['value'] = newText;
+        triggerEvent({
+            question,
+            choices: newChoices
+        })
+    }
+
+    const addChoice=() => {
+        const newChoices = [..._allChoices];
+        newChoices.push({ key: '', value: '' });
+        triggerEvent({
+            question,
+            choices: newChoices
+        })
+    }
+
     return (
         <FormLayout>
             <TextField
@@ -60,43 +91,19 @@ export const Question = ({ question = '', choices = [], answer = {}, disabled = 
                             disabled={disabled}
                             checked={choice.checked}
                             name="choice"
-                            onChange ={() => {
-                                const newChoices = [..._allChoices.map(choice => {
-                                    delete choice.checked;
-                                    return choice;
-                                })];
-                                newChoices[index]['checked'] = true;
-                                triggerEvent({
-                                    question,
-                                    choices: newChoices
-                                })
-                            }}
-                        ></RadioButton>
+                            onChange = {updateAnswer(index)}>
+                            </RadioButton>
                         <TextField
                             id="choice"
                             value={choice.value}
                             disabled={disabled}
-                            onChange={(newText) => {
-                                const newChoices = [..._allChoices];
-                                newChoices[index]['key'] = newChoices[index]['value'] = newText;
-                                triggerEvent({
-                                    question,
-                                    choices: newChoices
-                                })
-                            }}>
+                            onChange={updateChoice(index,choice)}>
                         </TextField>
                     </div>);
                 })
             }
             <Button disabled={disabled}
-                onClick={() => {
-                    const newChoices = [..._allChoices];
-                    newChoices.push({ key: '', value: '' });
-                    triggerEvent({
-                        question,
-                        choices: newChoices
-                    })
-                }}
+                onClick={addChoice}
             >Add Option</Button>
         </FormLayout>
     )
