@@ -7,11 +7,15 @@ import Page from 'components/Page'
 import Form, { FormLayout } from 'components/Form'
 import { SkeletonPage } from 'components/Skeleton'
 import { getQuestion } from 'graphql/queries'
-import { updateQuestion as updateQuestionMutation} from 'graphql/mutations'
+import { updateQuestion as updateQuestionMutation } from 'graphql/mutations'
 import { Question } from './shared/QuestionForm'
 
 const ResourcePage = ({ id, question, choices, answer }) => {
-  const [_question, setQuestion] = useState(question)
+  const [_question, setQuestion] = useState({
+    question,
+    choices,
+    answer
+  })
   const [_isEditable, setEditable] = useState(false)
   const updateQuestion = () => {
     API.graphql(
@@ -25,7 +29,7 @@ const ResourcePage = ({ id, question, choices, answer }) => {
       })
     )
   }
-  const toggleEdit = function () {
+  const toggleEdit = () => {
     if (_isEditable) {
       handleSubmit()
       setEditable(false)
@@ -38,7 +42,7 @@ const ResourcePage = ({ id, question, choices, answer }) => {
     updateQuestion()
   }
 
-  const handleQuestionEdit = function (questionDetails) {
+  const handleQuestionEdit = (questionDetails)=> {
     setQuestion(questionDetails)
   }
 
@@ -56,7 +60,7 @@ const ResourcePage = ({ id, question, choices, answer }) => {
       <Card sectioned>
         <Form onSubmit={handleSubmit}>
           <FormLayout>
-            <Question question={{ question, choices, answer }} disabled={!_isEditable} onQuestionEdit={handleQuestionEdit} />
+            <Question question={_question.question} choices={_question.choices} answer={_question.answer} disabled={!_isEditable} onQuestionEdit={handleQuestionEdit} />
             <Button primary onClick={toggleEdit}>
               {!_isEditable ? "Edit" : "Save"}
             </Button>
