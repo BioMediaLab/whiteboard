@@ -16,12 +16,12 @@ export const Question = ({ question = '', choices = [], answer = {}, disabled = 
 
     const triggerEvent = ({ question, choices }) => {
         if (onQuestionEdit) {
-            const answers = choices.filter(function (choice) {
+            const answers = choices.filter((choice) =>{
                 if (choice.checked) {
                     return true;
                 }
                 return false;
-            }).map(function (choice) {
+            }).map((choice)=> {
                 return {
                     key: choice.key,
                     value: choice.value
@@ -29,7 +29,7 @@ export const Question = ({ question = '', choices = [], answer = {}, disabled = 
             });
             onQuestionEdit({
                 question,
-                choices: choices.filter(function (choice) {
+                choices: choices.filter((choice)=> {
                     if (!choice.checked) {
                         return true;
                     }

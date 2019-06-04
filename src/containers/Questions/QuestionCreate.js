@@ -7,7 +7,7 @@ import Form, { FormLayout } from 'components/Form'
 import { createQuestion } from 'graphql/mutations'
 import { Question } from './shared/QuestionForm'
 
-export default ({id, question, choices, answer }) => {
+export default ({ id, question, choices, answer }) => {
   const [_question, setQuestion] = useState({
     question,
     choices,
@@ -39,7 +39,7 @@ export default ({id, question, choices, answer }) => {
       })
   }
 
-  const handleQuestionCreate = function (questionDetails) {
+  const handleQuestionCreate = (questionDetails) => {
     setQuestion(questionDetails)
   }
 
@@ -55,7 +55,7 @@ export default ({id, question, choices, answer }) => {
       <Card sectioned>
         <Form onSubmit={handleSubmit}>
           <FormLayout>
-            <Question question={"what is your name"} choices={_question.choices} answer={_question.answer} onQuestionEdit={handleQuestionCreate}/>
+            <Question question={_question.question} choices={_question.choices} answer={_question.answer} onQuestionEdit={handleQuestionCreate} />
             <Button submit>Create</Button>
           </FormLayout>
         </Form>
