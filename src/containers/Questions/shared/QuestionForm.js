@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import TextField from 'components/TextField'
 import { FormLayout } from 'components/Form'
 import RadioButton from 'components/RadioButton'
@@ -91,19 +91,22 @@ export const Question = ({ question = '', choices = [], answer = {}, disabled = 
                             disabled={disabled}
                             checked={choice.checked}
                             name="choice"
-                            onChange = {updateAnswer(index)}>
+                            onChange={() => {
+                                updateAnswer(index);
+                              }}>
                             </RadioButton>
                         <TextField
                             id="choice"
                             value={choice.value}
                             disabled={disabled}
-                            onChange={updateChoice(index,choice)}>
+                            onChange={(newText)=>
+                                {updateChoice(index,newText)}}>
                         </TextField>
                     </div>);
                 })
             }
             <Button disabled={disabled}
-                onClick={addChoice}
+                onClick={()=>{addChoice()}}
             >Add Option</Button>
         </FormLayout>
     )
