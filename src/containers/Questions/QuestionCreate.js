@@ -4,20 +4,28 @@ import Button from 'components/Button'
 import Card from 'components/Card'
 import Page from 'components/Page'
 import Form, { FormLayout } from 'components/Form'
-import TextField from 'components/TextField'
 import { createQuestion } from 'graphql/mutations'
+import { Question } from './shared/QuestionForm'
 
-export default () => {
-  const [question, setQuestion] = useState('')
+export default ({id, question, choices, answer }) => {
+  const [_question, setQuestion] = useState({
+    question,
+    choices,
+    answer
+  })
   const saveQuestion = () => {
     return API.graphql(
       graphqlOperation(createQuestion, {
         input: {
-          question
+          id,
+          question: _question.question,
+          choices: _question.choices,
+          answer: _question.answer
         }
       })
     )
   }
+
   const resetQuestion = () => {
     setQuestion('')
   }
@@ -29,6 +37,10 @@ export default () => {
       .catch(err => {
         console.log(err)
       })
+  }
+
+  const handleQuestionCreate = function (questionDetails) {
+    setQuestion(questionDetails)
   }
 
   return (
@@ -43,13 +55,7 @@ export default () => {
       <Card sectioned>
         <Form onSubmit={handleSubmit}>
           <FormLayout>
-            <TextField
-              label="question"
-              id="question"
-              name="question"
-              value={question}
-              onChange={value => setQuestion(value)}
-            /> 
+            <Question question={"what is your name"} choices={_question.choices} answer={_question.answer} onQuestionEdit={handleQuestionCreate}/>
             <Button submit>Create</Button>
           </FormLayout>
         </Form>

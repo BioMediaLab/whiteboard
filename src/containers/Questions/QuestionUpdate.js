@@ -11,7 +11,11 @@ import { updateQuestion as updateQuestionMutation} from 'graphql/mutations'
 import { Question } from './shared/QuestionForm'
 
 const ResourcePage = ({ id, question, choices, answer }) => {
-  const [_question, setQuestion] = useState(question)
+  const [_question, setQuestion] = useState({
+    question,
+    choices,
+    answer
+  })
   const [_isEditable, setEditable] = useState(false)
   const updateQuestion = () => {
     API.graphql(
@@ -56,7 +60,7 @@ const ResourcePage = ({ id, question, choices, answer }) => {
       <Card sectioned>
         <Form onSubmit={handleSubmit}>
           <FormLayout>
-            <Question question={{ question, choices, answer }} disabled={!_isEditable} onQuestionEdit={handleQuestionEdit} />
+            <Question question={_question.question} choices={_question.choices} answer={_question.answer} disabled={!_isEditable} onQuestionEdit={handleQuestionEdit} />
             <Button primary onClick={toggleEdit}>
               {!_isEditable ? "Edit" : "Save"}
             </Button>
