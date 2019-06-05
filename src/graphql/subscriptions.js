@@ -66,6 +66,14 @@ export const onCreateQuiz = `subscription OnCreateQuiz {
       }
     }
     questions
+    attempts {
+      items {
+        id
+        responses
+        questions
+      }
+      nextToken
+    }
   }
 }
 `;
@@ -83,6 +91,14 @@ export const onUpdateQuiz = `subscription OnUpdateQuiz {
       }
     }
     questions
+    attempts {
+      items {
+        id
+        responses
+        questions
+      }
+      nextToken
+    }
   }
 }
 `;
@@ -99,6 +115,80 @@ export const onDeleteQuiz = `subscription OnDeleteQuiz {
         nextToken
       }
     }
+    questions
+    attempts {
+      items {
+        id
+        responses
+        questions
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const onCreateQuizAttempt = `subscription OnCreateQuizAttempt {
+  onCreateQuizAttempt {
+    id
+    quiz {
+      id
+      title
+      description
+      course {
+        id
+        title
+        description
+      }
+      questions
+      attempts {
+        nextToken
+      }
+    }
+    responses
+    questions
+  }
+}
+`;
+export const onUpdateQuizAttempt = `subscription OnUpdateQuizAttempt {
+  onUpdateQuizAttempt {
+    id
+    quiz {
+      id
+      title
+      description
+      course {
+        id
+        title
+        description
+      }
+      questions
+      attempts {
+        nextToken
+      }
+    }
+    responses
+    questions
+  }
+}
+`;
+export const onDeleteQuizAttempt = `subscription OnDeleteQuizAttempt {
+  onDeleteQuizAttempt {
+    id
+    quiz {
+      id
+      title
+      description
+      course {
+        id
+        title
+        description
+      }
+      questions
+      attempts {
+        nextToken
+      }
+    }
+    responses
     questions
   }
 }
@@ -136,8 +226,11 @@ export const onCreateQuestion = `subscription OnCreateQuestion {
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }
@@ -148,8 +241,11 @@ export const onUpdateQuestion = `subscription OnUpdateQuestion {
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }
@@ -160,8 +256,11 @@ export const onDeleteQuestion = `subscription OnDeleteQuestion {
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }

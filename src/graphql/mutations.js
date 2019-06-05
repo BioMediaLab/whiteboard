@@ -66,6 +66,14 @@ export const createQuiz = `mutation CreateQuiz($input: CreateQuizInput!) {
       }
     }
     questions
+    attempts {
+      items {
+        id
+        responses
+        questions
+      }
+      nextToken
+    }
   }
 }
 `;
@@ -83,6 +91,14 @@ export const updateQuiz = `mutation UpdateQuiz($input: UpdateQuizInput!) {
       }
     }
     questions
+    attempts {
+      items {
+        id
+        responses
+        questions
+      }
+      nextToken
+    }
   }
 }
 `;
@@ -99,6 +115,80 @@ export const deleteQuiz = `mutation DeleteQuiz($input: DeleteQuizInput!) {
         nextToken
       }
     }
+    questions
+    attempts {
+      items {
+        id
+        responses
+        questions
+      }
+      nextToken
+    }
+  }
+}
+`;
+export const createQuizAttempt = `mutation CreateQuizAttempt($input: CreateQuizAttemptInput!) {
+  createQuizAttempt(input: $input) {
+    id
+    quiz {
+      id
+      title
+      description
+      course {
+        id
+        title
+        description
+      }
+      questions
+      attempts {
+        nextToken
+      }
+    }
+    responses
+    questions
+  }
+}
+`;
+export const updateQuizAttempt = `mutation UpdateQuizAttempt($input: UpdateQuizAttemptInput!) {
+  updateQuizAttempt(input: $input) {
+    id
+    quiz {
+      id
+      title
+      description
+      course {
+        id
+        title
+        description
+      }
+      questions
+      attempts {
+        nextToken
+      }
+    }
+    responses
+    questions
+  }
+}
+`;
+export const deleteQuizAttempt = `mutation DeleteQuizAttempt($input: DeleteQuizAttemptInput!) {
+  deleteQuizAttempt(input: $input) {
+    id
+    quiz {
+      id
+      title
+      description
+      course {
+        id
+        title
+        description
+      }
+      questions
+      attempts {
+        nextToken
+      }
+    }
+    responses
     questions
   }
 }
@@ -136,8 +226,11 @@ export const createQuestion = `mutation CreateQuestion($input: CreateQuestionInp
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }
@@ -148,8 +241,11 @@ export const updateQuestion = `mutation UpdateQuestion($input: UpdateQuestionInp
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }
@@ -160,8 +256,11 @@ export const deleteQuestion = `mutation DeleteQuestion($input: DeleteQuestionInp
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }

@@ -25,6 +25,25 @@ type Quiz
   description: String
   course: Course! @connection(name: "CourseQuizzes")
   questions: [AWSJSON!]!
+  attempts: [QuizAttempt!]! @connection(name: "QuizAttempts")
+}
+
+type QuizAttempt
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      {
+        allow: groups
+        groups: ["admin", "professor", "teacher_assistant"]
+        operations: [read]
+      }
+    ]
+  ) {
+  id: ID!
+  quiz: Quiz! @connection(name: "QuizAttempts")
+  responses: [AWSJSON!]!
+  questions: [AWSJSON!]!
 }
 
 type QuizTemplate

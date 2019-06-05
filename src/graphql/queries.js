@@ -50,6 +50,14 @@ export const getQuiz = `query GetQuiz($id: ID!) {
       }
     }
     questions
+    attempts {
+      items {
+        id
+        responses
+        questions
+      }
+      nextToken
+    }
   }
 }
 `;
@@ -68,6 +76,52 @@ export const listQuizzes = `query ListQuizzes(
         title
         description
       }
+      questions
+      attempts {
+        nextToken
+      }
+    }
+    nextToken
+  }
+}
+`;
+export const getQuizAttempt = `query GetQuizAttempt($id: ID!) {
+  getQuizAttempt(id: $id) {
+    id
+    quiz {
+      id
+      title
+      description
+      course {
+        id
+        title
+        description
+      }
+      questions
+      attempts {
+        nextToken
+      }
+    }
+    responses
+    questions
+  }
+}
+`;
+export const listQuizAttempts = `query ListQuizAttempts(
+  $filter: ModelQuizAttemptFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listQuizAttempts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      quiz {
+        id
+        title
+        description
+        questions
+      }
+      responses
       questions
     }
     nextToken
@@ -105,8 +159,11 @@ export const getQuestion = `query GetQuestion($id: ID!) {
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }
@@ -122,8 +179,11 @@ export const listQuestions = `query ListQuestions(
       question
       choices {
         key
-        answer
-        isCorrect
+        value
+      }
+      answer {
+        key
+        value
       }
     }
     nextToken
