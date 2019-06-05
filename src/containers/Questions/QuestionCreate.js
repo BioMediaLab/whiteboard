@@ -5,64 +5,10 @@ import PageActions from 'components/PageActions'
 import { createQuestion } from 'graphql/mutations'
 import QuestionForm from 'components/QuestionForm/'
 
-const questionInitialState = {
-  question: '',
-  choices: [],
-  answer: null
-}
-
-const questionReducer = (state, action) => {
-  const { type, payload } = action
-  switch (type) {
-    case 'UPDATE_QUESTION':
-      // payload = string
-      return {
-        ...state,
-        question: payload
-      }
-    case 'UPDATE_CHOICE':
-      // payload = {key, value}
-      return {
-        ...state,
-        choices: state.choices.map(choice => {
-          if (choice.key !== payload.key) {
-            return choice
-          }
-
-          return {
-            ...payload
-          }
-        }) // payload = {key, value}
-      }
-    case 'ADD_CHOICE':
-      // payload = {key, value}
-      return {
-        ...state,
-        choices: [...state.choices, payload] // payload = {key, value}
-      }
-    case 'REMOVE_CHOICE':
-      // payload = key
-      return {
-        ...state,
-        choices: state.choices.filter(choice => choice.key !== payload.key)
-      }
-    case 'UPDATE_ANSWER':
-      // payload = {key, value}
-      return {
-        ...state,
-        question: payload
-      }
-    case 'RESET_QUESTION':
-      return {
-        ...questionInitialState
-      }
-    default:
-      return state
-  }
-}
+import { initialState, reducer } from './state'
 
 export default () => {
-  const [question, dispatch] = useReducer(questionReducer, questionInitialState)
+  const [question, dispatch] = useReducer(reducer, initialState)
 
   const saveQuestion = () => {
     return API.graphql(
