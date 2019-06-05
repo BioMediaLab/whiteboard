@@ -1,30 +1,27 @@
-import React, { useState } from 'react'
+import React, { useReducer } from 'react'
 import { API, graphqlOperation } from 'aws-amplify'
-import Button from 'components/Button'
-import Card from 'components/Card'
 import Page from 'components/Page'
-import Form, { FormLayout } from 'components/Form'
-import TextField from 'components/TextField'
+import PageActions from 'components/PageActions'
 import { createQuestion } from 'graphql/mutations'
+import QuestionForm from 'components/QuestionForm/'
+
+import { initialState, reducer } from './state'
 
 export default () => {
-  const [question, setQuestion] = useState('')
+  const [question, dispatch] = useReducer(reducer, initialState)
+
   const saveQuestion = () => {
     return API.graphql(
       graphqlOperation(createQuestion, {
-        input: {
-          question
-        }
+        input: question
       })
     )
   }
-  const resetQuestion = () => {
-    setQuestion('')
-  }
+
   const handleSubmit = () => {
     saveQuestion()
       .then(data => {
-        resetQuestion()
+        dispatch({ type: 'RESET_QUESTION' })
       })
       .catch(err => {
         console.log(err)
@@ -39,21 +36,32 @@ export default () => {
           content: 'Questions',
           url: '../'
         }
-      ]}>
-      <Card sectioned>
-        <Form onSubmit={handleSubmit}>
-          <FormLayout>
-            <TextField
-              label="question"
-              id="question"
-              name="question"
-              value={question}
-              onChange={value => setQuestion(value)}
-            /> 
-            <Button submit>Create</Button>
-          </FormLayout>
-        </Form>
-      </Card>
+      ]}
+    >
+      <QuestionForm
+        question={question.question}
+        choices={question.choices}
+        answer={question.answer}
+        onUpdateQuestion={payload => {
+          dispatch({ type: 'UPDATE_QUESTION', payload })
+        }}
+        onUpdateChoice={payload => {
+          dispatch({ type: 'UPDATE_CHOICE', payload })
+        }}
+        onAddChoice={payload => {
+          dispatch({ type: 'ADD_CHOICE', payload })
+        }}
+        onRemoveChoice={payload => {
+          dispatch({ type: 'REMOVE_CHOICE', payload })
+        }}
+        onUpdateAnswer={payload => {
+          dispatch({ type: 'UPDATE_ANSWER', payload })
+        }}
+      />
+
+      <PageActions
+        primaryAction={{ content: 'Create', onAction: handleSubmit }}
+      />
     </Page>
   )
 }
