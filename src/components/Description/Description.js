@@ -20,7 +20,7 @@ export default ({
                     onChange={onUpdateTitle}
                 />
                 <TextField
-                    label="Decsription"
+                    label="Description"
                     id="description"
                     name="description"
                     value={description}

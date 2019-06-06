@@ -1,9 +1,11 @@
 export const initialState = {
-  title:'',
-  description:'',
-  question: '',
-  choices: [],
-  answer: null
+  title: '',
+  description: '',
+  questions: [{
+    question: '',
+    choices: [],
+    answer: null
+  }]
 }
 
 export const reducer = (state, action) => {
@@ -14,45 +16,85 @@ export const reducer = (state, action) => {
       // payload = string
       return {
         ...state,
-        question: payload
+        title: payload
       }
-      case 'UPDATE_DESCRIPTION':
+    case 'UPDATE_DESCRIPTION':
       // payload = string
       return {
         ...state,
-        question: payload
+        description: payload
       }
     case 'UPDATE_QUESTION':
-      // payload = string
+      // payload = {index:number, text:string}
+      const { index, text } = payload
       return {
         ...state,
-        question: payload
+        questions: state.questions.map((question, questionIndex) => {
+          if (questionIndex !== index) {
+            return question
+          }
+          return {
+            ...question,
+            question: text,
+          }
+        })
       }
     case 'UPDATE_CHOICE':
-      // payload = {key, value}
+      // payload = {index:number,choice:{key, value}}
+      const { index: questionIndex, choice } = payload
+      const currentQuestion = state.questions[questionIndex];
+      currentQuestion.choices = currentQuestion.choices.map(item => {
+        if (item.key !== choice.key) {
+          return item
+        }
+        return {
+          ...choice
+        }
+      })
       return {
         ...state,
-        choices: state.choices.map(choice => {
-          if (choice.key !== payload.key) {
-            return choice
+        questions: state.questions.map((item, index) => {
+          if (questionIndex !== index) {
+            return item
           }
-
           return {
-            ...payload
+            ...currentQuestion
           }
-        }) // payload = {key, value}
+        })
       }
     case 'ADD_CHOICE':
-      // payload = {key, value}
-      return {
-        ...state,
-        choices: [...state.choices, payload] // payload = {key, value}
+      {
+        // payload = {index:number,choice:{key, value}}
+        const { index } = payload
+        return {
+          ...state,
+          questions: state.questions.map((item, questionIndex) => {
+            if (questionIndex !== index) {
+              return item
+            }
+            return {
+              ...item,
+              choices: [...item.choices, payload.choice],
+            }
+          })
+        }
       }
-    case 'REMOVE_CHOICE':
-      // payload = key
-      return {
-        ...state,
-        choices: state.choices.filter(choice => choice.key !== payload.key)
+      case 'REMOVE_CHOICE':
+      {
+        // payload = {index:number,choice:{key, value}}
+        const { index, choice } = payload
+        return {
+          ...state,
+          questions: state.questions.map((item, questionIndex) => {
+            if (questionIndex !== index) {
+              return item
+            }
+            return {
+              ...item,
+              choices: item.choices.filter(filterChoice=>filterChoice.key !== choice.key)
+            }
+          })
+        }
       }
     case 'UPDATE_ANSWER':
       // payload = {key, value}
@@ -63,6 +105,14 @@ export const reducer = (state, action) => {
     case 'RESET_QUESTION':
       return {
         ...initialState
+      }
+    case 'ADD_QUESTION':
+      return {
+        ...state,
+        questions: [...state.questions,
+        {question: '',
+        choices: [],
+        answer: null}]
       }
     default:
       return state
