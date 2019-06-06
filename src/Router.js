@@ -7,7 +7,7 @@ import {
   QuestionUpdate
 } from 'containers/Questions'
 import { QuizCreate, QuizList, QuizUpdate } from 'containers/Quizzes'
-import { QuizTemplateList,QuizTemplateCreate } from 'containers/QuizTemplates'
+import { QuizTemplateList, QuizTemplateCreate } from 'containers/QuizTemplates'
 import { CourseCreate, CourseList, CourseUpdate } from 'containers/Courses'
 
 export default () => (
