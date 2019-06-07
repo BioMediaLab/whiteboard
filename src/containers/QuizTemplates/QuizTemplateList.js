@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphqlOperation } from 'aws-amplify'
 import { Connect } from 'aws-amplify-react'
 import Card from 'components/Card'
@@ -6,6 +6,7 @@ import Page from 'components/Page'
 import { SkeletonPage } from 'components/Skeleton'
 import Title from 'components/Title'
 import ResourceList, { ResourceListItem } from 'components/ResourceList'
+import Pagination from 'components/PaginationMarkup'
 
 import { listQuizTemplates } from 'graphql/queries'
 
@@ -25,8 +26,10 @@ const ListView = ({ items }) => {
 }
 
 export default () => {
+  const [nextToken, setNextToken] = useState(null);
+  const [prevTokens, setPrevTokens] = useState([]);
   return (
-    <Connect query={graphqlOperation(listQuizTemplates)}>
+    <Connect query={graphqlOperation(listQuizTemplates, { nextToken })}>
       {({ data: { listQuizTemplates }, loading, error }) => {
         if (error) return <h3>Error</h3>
         if (loading || !listQuizTemplates) return <SkeletonPage />
@@ -40,6 +43,20 @@ export default () => {
             }}>
             <Card>
               <ListView items={listQuizTemplates.items} />
+              <Pagination
+                hasNext={listQuizTemplates.nextToken != null}
+                hasPrevious={prevTokens.length > 0}
+                onPrevious={() => {
+                  const tokens = [...prevTokens]
+                  const nextToken = tokens.pop()
+                  setPrevTokens(tokens);
+                  setNextToken(nextToken);
+                }}
+                onNext={() => {
+                  setPrevTokens([...prevTokens, nextToken]);
+                  setNextToken(listQuizTemplates.nextToken);
+                }}>
+              </Pagination>
             </Card>
           </Page>
         )
