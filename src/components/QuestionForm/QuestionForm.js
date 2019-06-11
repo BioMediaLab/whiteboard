@@ -12,7 +12,8 @@ export default ({
   onUpdateQuestion,
   onUpdateChoice,
   onAddChoice,
-  onRemoveChoice
+  onRemoveChoice,
+  onUpdateAnswer
 }) => {
   const CHOICE_KEYS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 
@@ -41,6 +42,7 @@ export default ({
                     value={value}
                     onRemoveChoice={onRemoveChoice}
                     onUpdateChoice={onUpdateChoice}
+                    onUpdateAnswer={onUpdateAnswer}
                   />
                 )
               })}

@@ -20,6 +20,7 @@ const QuestionUpdate = ({ id, question: initialQuestion, choices, answer }) => {
   const [question, dispatch] = useReducer(reducer, questionInitialState)
 
   const saveQuestion = () => {
+    console.log(question)
     return API.graphql(
       graphqlOperation(updateQuestion, {
         input: {
@@ -85,7 +86,8 @@ export default ({ questionId }) => {
 
         const props = {
           ...getQuestion,
-          choices: getQuestion.choices || []
+          choices: getQuestion.choices || [],
+          answer: getQuestion.answer || {}
         }
         return <QuestionUpdate {...props} />
       }}

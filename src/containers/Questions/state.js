@@ -5,6 +5,7 @@ export const initialState = {
 }
 
 export const reducer = (state, action) => {
+  console.log(action,state)
   const { type, payload } = action
 
   switch (type) {
@@ -44,7 +45,7 @@ export const reducer = (state, action) => {
       // payload = {key, value}
       return {
         ...state,
-        question: payload
+        answer: payload
       }
     case 'RESET_QUESTION':
       return {
