@@ -1,3 +1,4 @@
+import 'jest-extended'
 import fetch from 'node-fetch'
 import { render as rtlRender, fireEvent } from 'react-testing-library'
 import 'jest-dom/extend-expect'

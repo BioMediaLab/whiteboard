@@ -11,6 +11,7 @@ export const getCourse = `query GetCourse($id: ID!) {
         id
         title
         description
+        questions
       }
       nextToken
     }
@@ -48,18 +49,7 @@ export const getQuiz = `query GetQuiz($id: ID!) {
         nextToken
       }
     }
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -78,10 +68,7 @@ export const listQuizzes = `query ListQuizzes(
         title
         description
       }
-      questions {
-        id
-        question
-      }
+      questions
     }
     nextToken
   }
@@ -92,18 +79,7 @@ export const getQuizTemplate = `query GetQuizTemplate($id: ID!) {
     id
     title
     description
-    questions {
-      id
-      question
-      choices {
-        key
-        value
-      }
-      answer {
-        key
-        value
-      }
-    }
+    questions
   }
 }
 `;
@@ -117,10 +93,7 @@ export const listQuizTemplates = `query ListQuizTemplates(
       id
       title
       description
-      questions {
-        id
-        question
-      }
+      questions
     }
     nextToken
   }
@@ -132,11 +105,8 @@ export const getQuestion = `query GetQuestion($id: ID!) {
     question
     choices {
       key
-      value
-    }
-    answer {
-      key
-      value
+      answer
+      isCorrect
     }
   }
 }
@@ -152,11 +122,8 @@ export const listQuestions = `query ListQuestions(
       question
       choices {
         key
-        value
-      }
-      answer {
-        key
-        value
+        answer
+        isCorrect
       }
     }
     nextToken

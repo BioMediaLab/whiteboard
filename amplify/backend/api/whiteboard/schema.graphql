@@ -1,4 +1,11 @@
-type Course @model @auth(rules: [{ allow: owner }]) {
+type Course
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["admin", "professor", "teacher_assistant"] }
+      { allow: groups, groups: ["student"], operations: [read] }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
@@ -7,22 +14,39 @@ type Course @model @auth(rules: [{ allow: owner }]) {
 
 type Quiz
   @model(queries: { get: "getQuiz", list: "listQuizzes" })
-  @auth(rules: [{ allow: owner }]) {
+  @auth(
+    rules: [
+      { allow: groups, groups: ["admin", "professor", "teacher_assistant"] }
+      { allow: groups, groups: ["student"], operations: [read] }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
   course: Course! @connection(name: "CourseQuizzes")
-  questions: [Question]
+  questions: [AWSJSON!]!
 }
 
-type QuizTemplate @model @auth(rules: [{ allow: owner }]) {
+type QuizTemplate
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["admin", "professor", "teacher_assistant"] }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
-  questions: [Question]
+  questions: [AWSJSON!]!
 }
 
-type Question @model @auth(rules: [{ allow: owner }]) {
+type Question
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["admin", "professor", "teacher_assistant"] }
+    ]
+  ) {
   id: ID!
   question: String!
   choices: [Answer]
