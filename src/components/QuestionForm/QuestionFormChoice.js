@@ -11,7 +11,6 @@ export default ({ _key, value, onRemoveChoice, onUpdateChoice,onUpdateAnswer }) 
     value={value}
     onChange={() => {
       onUpdateAnswer({key: _key, value:value});
-      console.log(_key,value)
     }}
     > </RadioButton>
     <TextField
