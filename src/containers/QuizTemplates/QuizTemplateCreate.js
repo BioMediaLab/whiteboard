@@ -4,7 +4,7 @@ import Page from 'components/Page'
 import PageActions from 'components/PageActions'
 import { createQuizTemplate } from 'graphql/mutations'
 import QuestionForm from 'components/QuestionForm/'
-import Description from 'components/Description/'
+import PageHeader from 'components/PageHeader/'
 import Button from 'components/Button'
 import Card from 'components/Card'
 
@@ -23,7 +23,7 @@ export default () => {
     const handleSubmit = () => {
         saveQuizTemplate()
             .then(data => {
-                dispatch({ type: 'RESET_QUIZ' })
+                dispatch({ type: 'RESET_QUIZ_TEMPLATE' })
             })
             .catch(err => {
                 console.log(err)
@@ -39,7 +39,7 @@ export default () => {
                 }
             ]}
         >
-            <Description
+            <PageHeader
                 title={quiztemplate.title}
                 description={quiztemplate.description}
                 onUpdateTitle={payload => {
@@ -48,7 +48,7 @@ export default () => {
                 onUpdateDescription={payload => {
                     dispatch({ type: 'UPDATE_DESCRIPTION', payload })
                 }}
-            ></Description>
+            ></PageHeader>
             {quiztemplate.questions.map((item, index) => {
                 return (<QuestionForm key={index}
                     question={item.question}

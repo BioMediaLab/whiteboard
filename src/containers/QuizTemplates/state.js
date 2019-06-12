@@ -102,7 +102,7 @@ export const reducer = (state, action) => {
         ...state,
         question: payload
       }
-    case 'RESET_QUESTION':
+    case 'RESET_QUIZ_TEMPLATE':
       return {
         ...initialState
       }
