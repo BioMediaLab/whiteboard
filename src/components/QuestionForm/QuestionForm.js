@@ -9,6 +9,7 @@ import QuestionFormChoice from './QuestionFormChoice'
 export default ({
   question = '',
   choices = [],
+  answer={},
   onUpdateQuestion,
   onUpdateChoice,
   onAddChoice,
@@ -16,7 +17,6 @@ export default ({
   onUpdateAnswer
 }) => {
   const CHOICE_KEYS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
-
   return (
     <Form>
       <Card>
@@ -40,6 +40,7 @@ export default ({
                     key={key}
                     _key={key}
                     value={value}
+                    checked={key===answer.key}
                     onRemoveChoice={onRemoveChoice}
                     onUpdateChoice={onUpdateChoice}
                     onUpdateAnswer={onUpdateAnswer}

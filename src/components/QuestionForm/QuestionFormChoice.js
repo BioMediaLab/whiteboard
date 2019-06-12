@@ -4,11 +4,13 @@ import Button from 'components/Button'
 import { TrashIcon } from 'components/Icon'
 import RadioButton from 'components/RadioButton'
 
-export default ({ _key, value, onRemoveChoice, onUpdateChoice,onUpdateAnswer }) => {
+export default ({ _key, value, onRemoveChoice, onUpdateChoice,onUpdateAnswer,checked }) => {
   return (
     <div>
     <RadioButton
     value={value}
+    name="answer"
+    checked={checked}
     onChange={() => {
       onUpdateAnswer({key: _key, value:value});
     }}
