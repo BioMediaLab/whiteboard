@@ -10,7 +10,7 @@ import { deleteQuestion } from 'graphql/mutations'
 import { onDeleteQuestion } from 'graphql/subscriptions'
 import { listQuestions } from 'graphql/queries'
 import { TrashIcon } from 'components/Icon'
-import Pagination from 'components/PaginationMarkup'
+import Pagination from 'components/Pagination'
 
 const ListItem = ({ id, question }) => {
   const url = `./${id}`

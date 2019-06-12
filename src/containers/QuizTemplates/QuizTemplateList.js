@@ -6,7 +6,7 @@ import Page from 'components/Page'
 import { SkeletonPage } from 'components/Skeleton'
 import Title from 'components/Title'
 import ResourceList, { ResourceListItem } from 'components/ResourceList'
-import Pagination from 'components/PaginationMarkup'
+import Pagination from 'components/Pagination'
 
 import { listQuizTemplates } from 'graphql/queries'
 
