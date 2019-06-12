@@ -79,7 +79,7 @@ export const reducer = (state, action) => {
           })
         }
       }
-      case 'REMOVE_CHOICE':
+    case 'REMOVE_CHOICE':
       {
         // payload = {index:number,choice:{key, value}}
         const { index, choice } = payload
@@ -91,17 +91,30 @@ export const reducer = (state, action) => {
             }
             return {
               ...item,
-              choices: item.choices.filter(filterChoice=>filterChoice.key !== choice.key)
+              choices: item.choices.filter(filterChoice => filterChoice.key !== choice.key)
             }
           })
         }
       }
     case 'UPDATE_ANSWER':
       // payload = {key, value}
-      return {
-        ...state,
-        question: payload
+      {
+        const { questionIndex, ...payloadData } = payload
+        return {
+          ...state,
+          questions: state.questions.map((item, index) => {
+            console.log(questionIndex, index);
+            if (questionIndex !== index) {
+              return item
+            }
+            return {
+              ...item,
+              answer:payloadData
+            }
+          })
+        }
       }
+
     case 'RESET_QUIZ_TEMPLATE':
       return {
         ...initialState
@@ -110,9 +123,11 @@ export const reducer = (state, action) => {
       return {
         ...state,
         questions: [...state.questions,
-        {question: '',
-        choices: [],
-        answer: null}]
+        {
+          question: '',
+          choices: [],
+          answer: null
+        }]
       }
     default:
       return state

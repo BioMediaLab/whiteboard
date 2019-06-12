@@ -2,9 +2,19 @@ import React from 'react'
 import TextField from 'components/TextField'
 import Button from 'components/Button'
 import { TrashIcon } from 'components/Icon'
+import RadioButton from 'components/RadioButton'
 
-export default ({ _key, value, onRemoveChoice, onUpdateChoice }) => {
+export default ({ _key, value, onRemoveChoice, onUpdateChoice,onUpdateAnswer,checked }) => {
   return (
+    <div>
+    <RadioButton
+    value={value}
+    name="answer"
+    checked={checked}
+    onChange={() => {
+      onUpdateAnswer({key: _key, value:value});
+    }}
+    > </RadioButton>
     <TextField
       id="choice"
       label={`Choice ${_key.toUpperCase()}`}
@@ -22,5 +32,6 @@ export default ({ _key, value, onRemoveChoice, onUpdateChoice }) => {
         </Button>
       }
     />
+    </div>
   )
 }

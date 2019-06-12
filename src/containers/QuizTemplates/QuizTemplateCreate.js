@@ -12,6 +12,7 @@ import { initialState, reducer } from './state'
 
 export default () => {
     const [quiztemplate, dispatch] = useReducer(reducer, initialState)
+    console.log(quiztemplate)
     const saveQuizTemplate = () => {
         return API.graphql(
             graphqlOperation(createQuizTemplate, {
@@ -73,7 +74,7 @@ export default () => {
                         dispatch({ type: 'ADD_CHOICE', payload })
                     }}
                     onUpdateAnswer={payload => {
-                        dispatch({ type: 'UPDATE_ANSWER', payload })
+                        dispatch({ type: 'UPDATE_ANSWER', payload: {...payload, questionIndex: index} })
                     }}
                     onRemoveChoice={choice => {
                         const payload = {

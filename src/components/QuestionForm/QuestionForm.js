@@ -9,12 +9,15 @@ import QuestionFormChoice from './QuestionFormChoice'
 export default ({
   question = '',
   choices = [],
+  answer,
   onUpdateQuestion,
   onUpdateChoice,
   onAddChoice,
-  onRemoveChoice
+  onRemoveChoice,
+  onUpdateAnswer
 }) => {
   const CHOICE_KEYS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+  answer=answer||{}
 
   return (
     <Form>
@@ -39,8 +42,10 @@ export default ({
                     key={key}
                     _key={key}
                     value={value}
+                    checked={key===answer.key}
                     onRemoveChoice={onRemoveChoice}
                     onUpdateChoice={onUpdateChoice}
+                    onUpdateAnswer={onUpdateAnswer}
                   />
                 )
               })}
