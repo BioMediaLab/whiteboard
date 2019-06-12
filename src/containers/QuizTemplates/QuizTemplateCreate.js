@@ -12,7 +12,6 @@ import { initialState, reducer } from './state'
 
 export default () => {
     const [quiztemplate, dispatch] = useReducer(reducer, initialState)
-    console.log(quiztemplate)
     const saveQuizTemplate = () => {
         return API.graphql(
             graphqlOperation(createQuizTemplate, {
