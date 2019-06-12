@@ -136,8 +136,11 @@ export const onCreateQuestion = `subscription OnCreateQuestion {
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }
@@ -148,8 +151,11 @@ export const onUpdateQuestion = `subscription OnUpdateQuestion {
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }
@@ -160,8 +166,11 @@ export const onDeleteQuestion = `subscription OnDeleteQuestion {
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }
