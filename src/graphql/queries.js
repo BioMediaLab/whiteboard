@@ -105,8 +105,11 @@ export const getQuestion = `query GetQuestion($id: ID!) {
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }
@@ -122,8 +125,11 @@ export const listQuestions = `query ListQuestions(
       question
       choices {
         key
-        answer
-        isCorrect
+        value
+      }
+      answer {
+        key
+        value
       }
     }
     nextToken

@@ -66,5 +66,22 @@
                 "cognito5608a292": {}
             }
         }
+    },
+    "andyk": {
+        "awscloudformation": {
+            "AuthRoleName": "whiteboard-andyk-20190612151341-authRole",
+            "UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-andyk-20190612151341-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-andyk-20190612151341-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "whiteboard-andyk-20190612151341-deployment",
+            "UnauthRoleName": "whiteboard-andyk-20190612151341-unauthRole",
+            "StackName": "whiteboard-andyk-20190612151341",
+            "StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-andyk-20190612151341/31149390-8d46-11e9-9859-12ece74fd46e"
+        },
+        "categories": {
+            "auth": {
+                "cognito5608a292": {}
+            }
+        }
     }
 }

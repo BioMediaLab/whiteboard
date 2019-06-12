@@ -136,8 +136,11 @@ export const createQuestion = `mutation CreateQuestion($input: CreateQuestionInp
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }
@@ -148,8 +151,11 @@ export const updateQuestion = `mutation UpdateQuestion($input: UpdateQuestionInp
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }
@@ -160,8 +166,11 @@ export const deleteQuestion = `mutation DeleteQuestion($input: DeleteQuestionInp
     question
     choices {
       key
-      answer
-      isCorrect
+      value
+    }
+    answer {
+      key
+      value
     }
   }
 }
