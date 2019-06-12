@@ -9,7 +9,7 @@ import QuestionFormChoice from './QuestionFormChoice'
 export default ({
   question = '',
   choices = [],
-  answer={},
+  answer,
   onUpdateQuestion,
   onUpdateChoice,
   onAddChoice,
@@ -17,6 +17,7 @@ export default ({
   onUpdateAnswer
 }) => {
   const CHOICE_KEYS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+  answer=answer||{}
   return (
     <Form>
       <Card>
