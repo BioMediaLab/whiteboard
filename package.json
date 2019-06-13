@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@reach/router": "1.2.1",
-    "@shopify/polaris": "3.16.0",
+    "@shopify/polaris": "3.17.0",
     "aws-amplify": "1.1.27",
     "aws-amplify-react": "2.3.7",
     "gravatar-url": "3.0.1",
