@@ -6,7 +6,7 @@
     "@reach/router": "1.2.1",
     "@shopify/polaris": "3.17.0",
     "aws-amplify": "1.1.27",
-    "aws-amplify-react": "2.3.8",
+    "aws-amplify-react": "2.3.9",
     "gravatar-url": "3.0.1",
     "react": "16.8.6",
     "react-dom": "16.8.6",
