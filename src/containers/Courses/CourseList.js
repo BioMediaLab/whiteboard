@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { graphqlOperation } from 'aws-amplify'
+import { API, graphqlOperation } from 'aws-amplify'
 import { Connect } from 'aws-amplify-react'
 import Card from 'components/Card'
 import Page from 'components/Page'
 import { SkeletonPage } from 'components/Skeleton'
 import Title from 'components/Title'
 import ResourceList, { ResourceListItem } from 'components/ResourceList'
-import { TextField, FilterType } from '@shopify/polaris'
+import { FilterType } from '@shopify/polaris'
 
 import { listCourses } from 'graphql/queries'
 
@@ -44,14 +44,35 @@ const ListItem = ({ id, title, description }) => {
 
 const ListView = ({ items }) => {
   const [searchValue, setSearchValue] = useState('')
+  const [courseItems, setCourseItems] = useState(null)
 
   const filterControl = (
     <ResourceList.FilterControl
       filters={filters}
       searchValue={searchValue}
-      onSearchChange={value => setSearchValue(value)}
+      onSearchChange={async value => {
+        setSearchValue(value)
+
+        try {
+          const { data } = await API.graphql(
+            graphqlOperation(listCourses, {
+              filter: {
+                title: {
+                  contains: value
+                }
+              }
+            })
+          )
+
+          setCourseItems(data.listCourses.items)
+        } catch (e) {
+          console.log(e)
+        }
+      }}
     />
   )
+
+  items = courseItems ? courseItems : items
 
   return (
     <ResourceList
