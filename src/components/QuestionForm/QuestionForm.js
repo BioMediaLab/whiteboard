@@ -44,6 +44,7 @@ export default ({
                   />
                 )
               })}
+              <div data-cy="choice">
             <Button
               onClick={() => {
                 onAddChoice({
@@ -54,6 +55,7 @@ export default ({
             >
               Add Option
             </Button>
+            </div>
           </FormLayout>
         </Card.Section>
       </Card>
