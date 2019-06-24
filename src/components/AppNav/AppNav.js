@@ -3,7 +3,6 @@ import { Navigation } from '@shopify/polaris'
 import { AppUserConsumer } from 'components/AppUser'
 import {
   HomeIcon,
-  CoursesIcon,
   QuestionsIcon,
   QuizzesIcon,
   QuizTemplatesIcon
