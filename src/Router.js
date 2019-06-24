@@ -12,6 +12,7 @@ import { CourseCreate, CourseList, CourseUpdate } from 'containers/Courses'
 export default () => (
   <Router>
     <CourseList path="/" />
+    <CourseList path="/courses" />
     <CourseCreate path="/courses/create" />
     <CourseUpdate path="/courses/:courseId" />
     <QuestionList path="/questions" />
