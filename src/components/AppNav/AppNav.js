@@ -17,14 +17,9 @@ export default () => {
             <Navigation.Section
               items={[
                 {
-                  url: '/home',
+                  url: '/',
                   label: 'Home',
                   icon: HomeIcon
-                },
-                {
-                  url: '/courses',
-                  label: 'Courses',
-                  icon: CoursesIcon
                 },
                 {
                   url: '/quizzes',
