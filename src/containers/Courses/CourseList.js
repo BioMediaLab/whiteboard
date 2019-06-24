@@ -36,8 +36,9 @@ export default () => {
             title="Courses"
             primaryAction={{
               content: 'Create',
-              url: './create'
-            }}>
+              url: '/courses/create'
+            }}
+          >
             <Card>
               <ListView items={listCourses.items} />
             </Card>
