@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect, Router } from '@reach/router'
+import { Router } from '@reach/router'
 import {
   QuestionCreate,
   QuestionList,
