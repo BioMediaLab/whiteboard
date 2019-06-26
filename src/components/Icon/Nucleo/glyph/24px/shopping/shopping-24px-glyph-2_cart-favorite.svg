@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-glyph-2_cart-favorite</title>
+  <path d="M5,5h5V3H5V1A1,1,0,0,0,4,0H0V2H3V16a1,1,0,0,0,1,1H24V15H5Z" fill="#1d1d1b"/>
+  <path d="M22.2,5.731a2.8,2.8,0,0,0,0-3.919A2.7,2.7,0,0,0,18,2.24a2.7,2.7,0,0,0-4.2-.428,2.8,2.8,0,0,0,0,3.919L18,10Z" fill="#1d1d1b"/>
+  <circle cx="5.5" cy="21.5" r="2.5" fill="#1d1d1b"/>
+  <circle cx="21.5" cy="21.5" r="2.5" fill="#1d1d1b"/>
+</svg>

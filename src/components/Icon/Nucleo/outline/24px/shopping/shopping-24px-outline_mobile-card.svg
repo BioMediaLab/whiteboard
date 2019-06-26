@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline_mobile-card</title>
+  <circle cx="7.5" cy="18.5" r="1.5"/>
+  <path d="M6,2H3A3,3,0,0,0,0,5V21a3,3,0,0,0,3,3h9a3,3,0,0,0,3-3V14h9V0H6Zm7,19a1,1,0,0,1-1,1H3a1,1,0,0,1-1-1V5A1,1,0,0,1,3,4H6V14h7Zm9-9H8V6H22ZM22,2V4H8V2Z"/>
+  <rect x="10" y="8" width="4" height="2"/>
+</svg>

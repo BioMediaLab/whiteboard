@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>users-16px-2_focus</title>
+  <path d="M2,2H5V0H1A1,1,0,0,0,0,1V5H2Z"/>
+  <path d="M15,0H11V2h3V5h2V1A1,1,0,0,0,15,0Z"/>
+  <path d="M14,14H11v2h4a1,1,0,0,0,1-1V11H14Z"/>
+  <path d="M2,11H0v4a1,1,0,0,0,1,1H5V14H2Z"/>
+  <path d="M4,10v2h8V10A4.333,4.333,0,0,0,8,8,4.333,4.333,0,0,0,4,10Z"/>
+  <circle cx="8" cy="5" r="2"/>
+</svg>

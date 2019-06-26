@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>users-16px_multiple</title>
+  <circle cx="8" cy="3" r="3"/>
+  <polygon points="12 7 4 7 4 10 6 12 6 16 10 16 10 12 12 10 12 7"/>
+  <circle cx="2" cy="3" r="2"/>
+  <polygon points="1 14 4 14 4 11.414 3 10.414 3 6 0 6 0 9 1 10 1 14"/>
+  <circle cx="14" cy="3" r="2"/>
+  <polygon points="13 10.414 12 11.414 12 14 15 14 15 10 16 9 16 6 13 6 13 10.414"/>
+</svg>

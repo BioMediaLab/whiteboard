@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>users-16px_badge_2</title>
+  <path d="M15,5H11V3A3,3,0,0,0,5,3V5H1A1,1,0,0,0,0,6v9a1,1,0,0,0,1,1H15a1,1,0,0,0,1-1V6A1,1,0,0,0,15,5ZM7,3A1,1,0,0,1,9,3V5H7Zm7,11H2V7H14Z"/>
+  <rect x="4" y="9" width="3" height="3"/>
+  <rect x="8" y="9" width="4" height="1"/>
+  <rect x="8" y="11" width="4" height="1"/>
+</svg>

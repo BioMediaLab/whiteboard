@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>shopping-16px_cart-simple-in</title>
+  <circle cx="5" cy="14" r="2"/>
+  <circle cx="13" cy="14" r="2"/>
+  <path d="M15,3H10V6h2L9,9,6,6H8V3H4.469L3.976.783A1,1,0,0,0,3,0H0V2H2.2l1.826,8.217A1,1,0,0,0,5,11h8a1,1,0,0,0,.949-.684l2-6A1.013,1.013,0,0,0,15,3Z"/>
+</svg>

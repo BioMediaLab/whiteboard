@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>shopping-16px_box</title>
+  <path d="M9.667,2h5.747L13.707.293A1,1,0,0,0,13,0H9Z"/>
+  <path d="M6.333,2,7,0H3a1,1,0,0,0-.707.293L.586,2Z"/>
+  <path d="M10,9,8,8,6,9V3H0V15a1,1,0,0,0,1,1H15a1,1,0,0,0,1-1V3H10Z"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48"><g >
+<path fill="#0EA651" d="M48,40c0,1.105-0.895,2-2,2H2c-1.105,0-2-0.895-2-2v-6h48V40z"/>
+<rect y="24" fill="#FFD505" width="48" height="10"/>
+<rect y="14" fill="#2B2B69" width="48" height="10"/>
+<path fill="#E52635" d="M48,14H0V8c0-1.105,0.895-2,2-2h44c1.105,0,2,0.895,2,2V14z"/>
+</g></svg>

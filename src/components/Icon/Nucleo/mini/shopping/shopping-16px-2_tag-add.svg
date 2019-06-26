@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>tag-add</title>
+  <path d="M7,14H2V6.414l4-4L9.293,5.707a1,1,0,0,0,1.414-1.414l-4-4a1,1,0,0,0-1.414,0l-5,5A1,1,0,0,0,0,6v9a1,1,0,0,0,1,1H7a1,1,0,0,0,0-2Z" fill="#1d1d1b"/>
+  <polygon points="13 8 11 8 11 11 8 11 8 13 11 13 11 16 13 16 13 13 16 13 16 11 13 11 13 8" fill="#1d1d1b"/>
+</svg>

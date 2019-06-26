@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+<path fill="#444444" d="M8,12c0-1.8582764,1.2797241-3.4107056,3-3.8579712V2H1C0.4477539,2,0,2.4477539,0,3v4h5v10H0v4
+	c0,0.5522461,0.4477539,1,1,1h10v-6.1420288C9.2797241,15.4107056,8,13.8582764,8,12z"/>
+<rect data-color="color-2" y="9" fill="#444444" width="3" height="6"/>
+<path fill="#444444" d="M19,17V7h5V3c0-0.5522461-0.4477539-1-1-1H13v6.1420288C14.7202759,8.5892944,16,10.1417236,16,12
+	s-1.2797241,3.4107056-3,3.8579712V22h10c0.5522461,0,1-0.4477539,1-1v-4H19z"/>
+<circle data-color="color-2" fill="#444444" cx="12" cy="12" r="2"/>
+<rect data-color="color-2" x="21" y="9" fill="#444444" width="3" height="6"/>
+</svg>

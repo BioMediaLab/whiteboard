@@ -1,0 +1,51 @@
+.Question {
+}
+
+.Question__choices {
+  padding: 1.6rem;
+}
+
+.Question_key {
+  padding-right: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.Question__key-val {
+  display: flex;
+  align-items: baseline;
+}
+.Question_key {
+}
+.Question__value {
+  width: 100%;
+}
+
+.Question .Polaris-Card {
+  box-shadow: none;
+}
+
+.Question .Polaris-Card__Section {
+  padding: 0;
+}
+
+.Question .Polaris-SettingAction {
+  flex-wrap: nowrap;
+}
+
+.Question .Polaris-SettingAction__Setting {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.Question .Polaris-SettingAction__Action,
+.Question .Polaris-SettingAction__Setting {
+}
+
+.Question .Polaris-TextField {
+  width: 100%;
+}
+
+.Question__choices .Polaris-Heading {
+  padding-bottom: 1.4rem;
+}

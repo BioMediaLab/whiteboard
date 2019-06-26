@@ -1,27 +1,43 @@
 import React from 'react'
 import { Router } from '@reach/router'
+import { LoadingPage } from 'components'
+import { useCurrentUser } from 'hooks'
+import Home from 'professor/Home'
+import { Course, CourseList, CourseCreate } from 'professor/Course'
 import {
-  QuestionCreate,
-  QuestionList,
-  QuestionUpdate
-} from 'containers/Questions'
-import { QuizCreate, QuizList, QuizUpdate } from 'containers/Quizzes'
-import { QuizTemplateList, QuizTemplateCreate } from 'containers/QuizTemplates'
-import { CourseCreate, CourseList, CourseUpdate } from 'containers/Courses'
+  QuestionBank,
+  QuestionBankList,
+  QuestionBankCreate
+} from 'professor/QuestionBank'
+import { Quiz, QuizCreate } from 'professor/Quiz'
 
-export default () => (
-  <Router>
-    <CourseList path="/" />
-    <CourseList path="/courses" />
-    <CourseCreate path="/courses/create" />
-    <CourseUpdate path="/courses/:courseId" />
-    <QuestionList path="/questions" />
-    <QuestionCreate path="/questions/create" />
-    <QuestionUpdate path="/questions/:questionId" />
-    <QuizList path="/quizzes" />
-    <QuizCreate path="/quizzes/create" />
-    <QuizUpdate path="/quizzes/:quizId" />
-    <QuizTemplateList path="/quiz-templates" />
-    <QuizTemplateCreate path="/quiz-templates/create" />
-  </Router>
-)
+const ProfessorsRouter = () => {
+  return (
+    <Router>
+      <Home path="/" />
+      <Home path="/home" />
+
+      <CourseList path="/courses" />
+      <CourseCreate path="/courses/create" />
+      <Course path="/courses/:courseId" />
+      <Course path="/courses/:courseId/:tabName" />
+
+      <QuizCreate path="/quizzes/create" />
+      <Quiz path="/quizzes/:quizId" />
+
+      <QuestionBankList path="/question-banks" />
+      <QuestionBankCreate path="/question-banks/create" />
+      <QuestionBank path="/question-banks/:questionBankId" />
+    </Router>
+  )
+}
+
+export default () => {
+  const currentUser = useCurrentUser()
+
+  if (currentUser.isProfessor) {
+    return <ProfessorsRouter />
+  } else {
+    return <LoadingPage />
+  }
+}

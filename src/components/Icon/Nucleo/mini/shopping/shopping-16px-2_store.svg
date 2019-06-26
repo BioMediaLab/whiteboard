@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>store</title>
+  <path d="M14,1a1,1,0,0,0-1-1H3A1,1,0,0,0,2,1V3L0,6H16L14,3Z" fill="#1d1d1b"/>
+  <path d="M2,15a1,1,0,0,0,1,1H6V12h4v4h3a1,1,0,0,0,1-1V8H2Z" fill="#1d1d1b"/>
+</svg>

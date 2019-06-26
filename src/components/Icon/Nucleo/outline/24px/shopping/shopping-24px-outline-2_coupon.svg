@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline-2_coupon</title>
+  <path d="M0,10H1a2,2,0,0,1,0,4H0v7H24V14H23a2,2,0,0,1,0-4h1V3H0ZM2,5H22V8.121a4.008,4.008,0,0,0,0,7.758V19H2V15.879A4.008,4.008,0,0,0,2,8.121Z" fill="#1d1d1b"/>
+  <rect x="6.757" y="11" width="10.485" height="2" transform="translate(-4.971 12) rotate(-45)" fill="#1d1d1b"/>
+  <circle cx="9.5" cy="8.5" r="1.5" fill="#1d1d1b"/>
+  <circle cx="14.5" cy="15.5" r="1.5" fill="#1d1d1b"/>
+</svg>

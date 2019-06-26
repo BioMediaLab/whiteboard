@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>tech-16px-2_dock</title>
+  <circle cx="8" cy="8" r="1"/>
+  <path d="M15,14H1a1,1,0,0,0,0,2H15a1,1,0,0,0,0-2Z"/>
+  <path d="M5,12h6a2,2,0,0,0,2-2V2a2,2,0,0,0-2-2H5A2,2,0,0,0,3,2v8A2,2,0,0,0,5,12ZM5,2h6v8H5Z"/>
+</svg>

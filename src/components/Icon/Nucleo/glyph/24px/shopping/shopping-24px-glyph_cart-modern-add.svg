@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-glyph_cart-modern-add</title>
+  <path d="M18,0a6,6,0,1,0,6,6A6.007,6.007,0,0,0,18,0Zm3,7H19V9H17V7H15V5h2V3h2V5h2Z"/>
+  <path d="M5,6h5V4H5V1A1,1,0,0,0,4,0H0V2H3V16a1,1,0,0,0,1,1H24V15H5Z"/>
+  <circle cx="5.5" cy="21.5" r="2.5"/>
+  <circle cx="20.5" cy="21.5" r="2.5"/>
+</svg>

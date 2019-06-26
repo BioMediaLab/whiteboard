@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-glyph_bardcode-qr</title>
+  <path d="M11,0H0V11H11ZM9,9H2V2H9Z"/>
+  <path d="M13,11H24V0H13Zm2-9h7V9H15Z"/>
+  <path d="M11,13H0V24H11ZM9,22H2V15H9Z"/>
+  <polygon points="18 16 16 16 16 13 14 13 14 18 20 18 20 15 22 15 22 20 24 20 24 13 18 13 18 16"/>
+  <polygon points="16 20 14 20 14 24 24 24 24 22 16 22 16 20"/>
+  <rect x="4" y="4" width="3" height="3"/>
+  <rect x="17" y="4" width="3" height="3"/>
+  <rect x="4" y="17" width="3" height="3"/>
+</svg>

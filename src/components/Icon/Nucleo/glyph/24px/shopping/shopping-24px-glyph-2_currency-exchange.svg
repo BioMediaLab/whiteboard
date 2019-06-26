@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-glyph-2_currency-exchange</title>
+  <circle cx="5" cy="5" r="5" fill="#1d1d1b"/>
+  <circle cx="19" cy="19" r="5" fill="#1d1d1b"/>
+  <path d="M17,6h3v5h2V5a1,1,0,0,0-1-1H17V1L12,5l5,4Z" fill="#1d1d1b"/>
+  <path d="M12,19,7,15v3H4V13H2v6a1,1,0,0,0,1,1H7v3Z" fill="#1d1d1b"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>delivery</title>
+  <path d="M3,0H0V2H2v8a.945.945,0,0,0,1,1H15V9H4V1A.945.945,0,0,0,3,0Z" fill="#1d1d1b"/>
+  <circle cx="3" cy="14" r="2" fill="#1d1d1b"/>
+  <circle cx="14" cy="14" r="2" fill="#1d1d1b"/>
+  <rect x="6" y="1" width="8.963" height="6" fill="#1d1d1b"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-glyph_cart-remove</title>
+  <circle cx="4" cy="22" r="2"/>
+  <circle cx="20" cy="22" r="2"/>
+  <path d="M23,16H3l1.5-2H19a1,1,0,0,0,.948-.684l1.8-5.392A4.961,4.961,0,0,1,21,8a5,5,0,0,1-5-5H4.414L1.707.293A1,1,0,0,0,.293,1.707L3,4.414v8.252L.2,16.4A1,1,0,0,0,1,18H23a1,1,0,0,0,0-2Z"/>
+  <rect x="18" y="2" width="6" height="2"/>
+</svg>

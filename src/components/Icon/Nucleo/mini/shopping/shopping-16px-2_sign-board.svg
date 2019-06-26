@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>sign-board</title>
+  <path d="M15,4H12.4L8.7.3A.967.967,0,0,0,7.3.3L3.6,4H1A.945.945,0,0,0,0,5V15a.945.945,0,0,0,1,1H15a.945.945,0,0,0,1-1V5A.945.945,0,0,0,15,4ZM8,2.4,9.6,4H6.4ZM14,14H2V6H14Z" fill="#1d1d1b"/>
+  <rect x="3" y="7" width="10" height="6" fill="#1d1d1b"/>
+</svg>

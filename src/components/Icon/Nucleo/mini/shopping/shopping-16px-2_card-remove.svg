@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>card-remove</title>
+  <path d="M15,1H1A1,1,0,0,0,0,2V12a1,1,0,0,0,1,1H5V11H2V7H14v3h2V2A1,1,0,0,0,15,1ZM14,5H2V3H14Z" fill="#1d1d1b"/>
+  <rect x="7" y="12" width="8" height="2" fill="#1d1d1b"/>
+</svg>

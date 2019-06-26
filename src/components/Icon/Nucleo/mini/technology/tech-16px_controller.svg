@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>tech-16px_controller</title>
+  <rect x="7" width="2" height="5"/>
+  <path d="M11.5,7h-7a4.5,4.5,0,0,0,0,9h7a4.5,4.5,0,0,0,0-9ZM6,12H5v1H4V12H3V11H4V10H5v1H6Zm5,1H10V12h1Zm0-2V10h1v1Zm2,2H12V12h1Z"/>
+</svg>

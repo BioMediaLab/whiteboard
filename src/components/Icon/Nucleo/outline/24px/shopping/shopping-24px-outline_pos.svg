@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline_pos</title>
+  <path d="M9,24h9V18.9A5.008,5.008,0,0,0,22,14V0H2V14a5.008,5.008,0,0,0,4,4.9V24ZM8,22V14H9v8Zm8,0H11V14h5v8ZM4,14V2H20V14a3,3,0,0,1-2,2.816V12H6v4.816A3,3,0,0,1,4,14Z"/>
+  <path d="M18,4H6v6H18ZM16,8H8V6h8Z"/>
+  <rect x="13" y="18" width="2" height="3"/>
+</svg>

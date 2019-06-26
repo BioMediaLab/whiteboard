@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-glyph-2_cart-refresh</title>
+  <path d="M5,5h5V3H5V1A1,1,0,0,0,4,0H0V2H3V16a1,1,0,0,0,1,1H24V15H5Z" fill="#1d1d1b"/>
+  <path d="M22.792,5,23.22.649,21.754,1.714a4.989,4.989,0,0,0-8.6,2.036l1.938.5a3,3,0,0,1,5.036-1.356L18.522,4.061Z" fill="#1d1d1b"/>
+  <path d="M14.246,9.286a4.989,4.989,0,0,0,8.6-2.036l-1.937-.5a3,3,0,0,1-5.036,1.356l1.608-1.168L13.208,6l-.428,4.351Z" fill="#1d1d1b"/>
+  <circle cx="5.5" cy="21.5" r="2.5" fill="#1d1d1b"/>
+  <circle cx="21.5" cy="21.5" r="2.5" fill="#1d1d1b"/>
+</svg>

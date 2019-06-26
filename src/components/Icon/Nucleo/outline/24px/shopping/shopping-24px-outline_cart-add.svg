@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline_cart-add</title>
+  <polygon points="12 5 12 3 4.414 3 1.707 0.293 0.293 1.707 3 4.414 3 13.764 0.382 19 23 19 23 17 3.618 17 4.618 15 20 15 20 11 18 11 18 13 5 13 5 5 12 5"/>
+  <circle cx="4" cy="22" r="2"/>
+  <circle cx="20" cy="22" r="2"/>
+  <polygon points="18 0 18 3 15 3 15 5 18 5 18 8 20 8 20 5 23 5 23 3 20 3 20 0 18 0"/>
+</svg>

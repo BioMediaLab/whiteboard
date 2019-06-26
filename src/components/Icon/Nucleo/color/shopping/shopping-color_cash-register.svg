@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48"><g >
+<rect x="28" y="9" fill="#444444" width="4" height="6"/>
+<path fill="#666666" d="M36,2H24c-0.552,0-1,0.447-1,1v6c0,0.553,0.448,1,1,1h12c0.552,0,1-0.447,1-1V3C37,2.447,36.552,2,36,2z"/>
+<rect x="25" y="4" fill="#9BCED3" width="10" height="4"/>
+<rect x="12" y="17" fill="#9EDB9E" width="24" height="6"/>
+<path fill="#666666" d="M47,35l-8-11v-9c0-0.553-0.448-1-1-1H10c-0.265,0-0.52,0.105-0.707,0.293S9,14.734,9,15v9L1,35l23,3L47,35z"/>
+<path fill="#444444" d="M47,35H1v10c0,0.552,0.448,1,1,1h44c0.552,0,1-0.448,1-1V35z"/>
+<polygon fill="#AFAFAF" points="14,26 34,26 38,32 10,32 "/>
+<rect x="14" y="18" fill="#9BCED3" width="20" height="4"/>
+<circle fill="#AFAFAF" cx="24" cy="40" r="2"/>
+</g></svg>

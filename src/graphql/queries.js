@@ -4,14 +4,64 @@
 export const getCourse = `query GetCourse($id: ID!) {
   getCourse(id: $id) {
     id
+    createdAt
+    updatedAt
+    courseId
     title
     description
+    semester {
+      season
+      year
+    }
+    settings {
+      key
+      value
+    }
     quizzes {
       items {
         id
+        createdAt
+        updatedAt
         title
         description
-        questions
+      }
+      nextToken
+    }
+    enrollments {
+      items {
+        id
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    instructor {
+      id
+      createdAt
+      updatedAt
+      profile {
+        id
+        createdAt
+        updatedAt
+        firstName
+        middleInitial
+        lastName
+        email
+      }
+      courses {
+        nextToken
+      }
+      settings {
+        key
+        value
+      }
+    }
+    quizAttempts {
+      items {
+        id
+        student
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -26,9 +76,31 @@ export const listCourses = `query ListCourses(
   listCourses(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      createdAt
+      updatedAt
+      courseId
       title
       description
+      semester {
+        season
+        year
+      }
+      settings {
+        key
+        value
+      }
       quizzes {
+        nextToken
+      }
+      enrollments {
+        nextToken
+      }
+      instructor {
+        id
+        createdAt
+        updatedAt
+      }
+      quizAttempts {
         nextToken
       }
     }
@@ -39,17 +111,56 @@ export const listCourses = `query ListCourses(
 export const getQuiz = `query GetQuiz($id: ID!) {
   getQuiz(id: $id) {
     id
+    createdAt
+    updatedAt
     title
     description
     course {
       id
+      createdAt
+      updatedAt
+      courseId
       title
       description
+      semester {
+        season
+        year
+      }
+      settings {
+        key
+        value
+      }
       quizzes {
         nextToken
       }
+      enrollments {
+        nextToken
+      }
+      instructor {
+        id
+        createdAt
+        updatedAt
+      }
+      quizAttempts {
+        nextToken
+      }
     }
-    questions
+    questions {
+      key
+      question
+      choices {
+        key
+        value
+      }
+      answers {
+        key
+        value
+      }
+    }
+    settings {
+      key
+      value
+    }
   }
 }
 `;
@@ -61,75 +172,319 @@ export const listQuizzes = `query ListQuizzes(
   listQuizzes(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      createdAt
+      updatedAt
       title
       description
       course {
         id
+        createdAt
+        updatedAt
+        courseId
         title
         description
       }
-      questions
+      questions {
+        key
+        question
+      }
+      settings {
+        key
+        value
+      }
     }
     nextToken
   }
 }
 `;
-export const getQuizTemplate = `query GetQuizTemplate($id: ID!) {
-  getQuizTemplate(id: $id) {
+export const getStudent = `query GetStudent($id: ID!) {
+  getStudent(id: $id) {
     id
-    title
-    description
-    questions
+    createdAt
+    updatedAt
+    profile {
+      id
+      createdAt
+      updatedAt
+      firstName
+      middleInitial
+      lastName
+      email
+    }
+    enrollments {
+      items {
+        id
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    settings {
+      key
+      value
+    }
   }
 }
 `;
-export const listQuizTemplates = `query ListQuizTemplates(
-  $filter: ModelQuizTemplateFilterInput
+export const listStudents = `query ListStudents(
+  $filter: ModelStudentFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listQuizTemplates(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listStudents(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      title
-      description
-      questions
+      createdAt
+      updatedAt
+      profile {
+        id
+        createdAt
+        updatedAt
+        firstName
+        middleInitial
+        lastName
+        email
+      }
+      enrollments {
+        nextToken
+      }
+      settings {
+        key
+        value
+      }
     }
     nextToken
   }
 }
 `;
-export const getQuestion = `query GetQuestion($id: ID!) {
-  getQuestion(id: $id) {
+export const getInstructor = `query GetInstructor($id: ID!) {
+  getInstructor(id: $id) {
     id
-    question
-    choices {
-      key
-      value
+    createdAt
+    updatedAt
+    profile {
+      id
+      createdAt
+      updatedAt
+      firstName
+      middleInitial
+      lastName
+      email
     }
-    answer {
+    courses {
+      items {
+        id
+        createdAt
+        updatedAt
+        courseId
+        title
+        description
+      }
+      nextToken
+    }
+    settings {
       key
       value
     }
   }
 }
 `;
-export const listQuestions = `query ListQuestions(
-  $filter: ModelQuestionFilterInput
+export const listInstructors = `query ListInstructors(
+  $filter: ModelInstructorFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listQuestions(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listInstructors(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
+      id
+      createdAt
+      updatedAt
+      profile {
+        id
+        createdAt
+        updatedAt
+        firstName
+        middleInitial
+        lastName
+        email
+      }
+      courses {
+        nextToken
+      }
+      settings {
+        key
+        value
+      }
+    }
+    nextToken
+  }
+}
+`;
+export const getProfile = `query GetProfile($id: ID!) {
+  getProfile(id: $id) {
+    id
+    createdAt
+    updatedAt
+    firstName
+    middleInitial
+    lastName
+    email
+  }
+}
+`;
+export const listProfiles = `query ListProfiles(
+  $filter: ModelProfileFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProfiles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      createdAt
+      updatedAt
+      firstName
+      middleInitial
+      lastName
+      email
+    }
+    nextToken
+  }
+}
+`;
+export const getQuizAttempt = `query GetQuizAttempt($id: ID!) {
+  getQuizAttempt(id: $id) {
+    id
+    student
+    createdAt
+    updatedAt
+    responses {
       id
       question
       choices {
         key
         value
       }
-      answer {
+      answers {
         key
         value
+      }
+    }
+    questions {
+      key
+      question
+      choices {
+        key
+        value
+      }
+      answers {
+        key
+        value
+      }
+    }
+    course {
+      id
+      createdAt
+      updatedAt
+      courseId
+      title
+      description
+      semester {
+        season
+        year
+      }
+      settings {
+        key
+        value
+      }
+      quizzes {
+        nextToken
+      }
+      enrollments {
+        nextToken
+      }
+      instructor {
+        id
+        createdAt
+        updatedAt
+      }
+      quizAttempts {
+        nextToken
+      }
+    }
+  }
+}
+`;
+export const listQuizAttempts = `query ListQuizAttempts(
+  $filter: ModelQuizAttemptFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listQuizAttempts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      student
+      createdAt
+      updatedAt
+      responses {
+        id
+        question
+      }
+      questions {
+        key
+        question
+      }
+      course {
+        id
+        createdAt
+        updatedAt
+        courseId
+        title
+        description
+      }
+    }
+    nextToken
+  }
+}
+`;
+export const getQuestionBank = `query GetQuestionBank($id: ID!) {
+  getQuestionBank(id: $id) {
+    id
+    createdAt
+    updatedAt
+    title
+    courseId
+    description
+    questions {
+      key
+      question
+      choices {
+        key
+        value
+      }
+      answers {
+        key
+        value
+      }
+    }
+  }
+}
+`;
+export const listQuestionBanks = `query ListQuestionBanks(
+  $filter: ModelQuestionBankFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listQuestionBanks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      createdAt
+      updatedAt
+      title
+      courseId
+      description
+      questions {
+        key
+        question
       }
     }
     nextToken

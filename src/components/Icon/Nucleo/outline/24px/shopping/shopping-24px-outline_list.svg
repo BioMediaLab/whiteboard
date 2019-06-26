@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline_list</title>
+  <path d="M2,24H22V0H2ZM4,2H20V22H4Z"/>
+  <rect x="11" y="13" width="7" height="2"/>
+  <rect x="6" y="13" width="3" height="2"/>
+  <rect x="11" y="17" width="4" height="2"/>
+  <rect x="6" y="17" width="3" height="2"/>
+  <rect x="11" y="9" width="5" height="2"/>
+  <rect x="6" y="9" width="3" height="2"/>
+  <rect x="11" y="5" width="7" height="2"/>
+  <rect x="6" y="5" width="3" height="2"/>
+</svg>

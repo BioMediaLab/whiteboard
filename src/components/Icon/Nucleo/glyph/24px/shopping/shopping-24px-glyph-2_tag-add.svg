@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-glyph-2_tag-add</title>
+  <path d="M6,9.414l6-6,6,6V14h2V9a1,1,0,0,0-.293-.707l-7-7a1,1,0,0,0-1.414,0l-7,7A1,1,0,0,0,4,9V23a1,1,0,0,0,1,1h8V22H6Z" fill="#1d1d1b"/>
+  <circle cx="12" cy="10" r="2" fill="#1d1d1b"/>
+  <polygon points="20 16 18 16 18 19 15 19 15 21 18 21 18 24 20 24 20 21 23 21 23 19 20 19 20 16" fill="#1d1d1b"/>
+</svg>

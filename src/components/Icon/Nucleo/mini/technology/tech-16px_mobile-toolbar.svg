@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>tech-16px_mobile-toolbar</title>
+  <path d="M4,16h8a2,2,0,0,0,2-2V2a2,2,0,0,0-2-2H4A2,2,0,0,0,2,2V14A2,2,0,0,0,4,16ZM4,2h8V14H4Z"/>
+  <circle cx="8" cy="11" r="1"/>
+</svg>

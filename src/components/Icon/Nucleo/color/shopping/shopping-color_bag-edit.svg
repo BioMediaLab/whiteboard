@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48"><g >
+<path fill="#8680D8" d="M36,47H4c-1.105,0-2-0.895-2-2V13c0-1.105,0.895-2,2-2h32c1.105,0,2,0.895,2,2v32C38,46.105,37.105,47,36,47
+	z"/>
+<circle fill="#5C5CAD" cx="12" cy="18" r="3"/>
+<circle fill="#5C5CAD" cx="28" cy="18" r="3"/>
+<path fill="#B3B3B3" d="M28,19c-0.553,0-1-0.448-1-1v-8c0-3.86-3.141-7-7-7s-7,3.14-7,7v8c0,0.552-0.447,1-1,1s-1-0.448-1-1v-8
+	c0-4.962,4.037-9,9-9s9,4.038,9,9v8C29,18.552,28.553,19,28,19z"/>
+<circle fill="#5C5CAD" cx="38" cy="34" r="8"/>
+<polygon fill="#FFFFFF" points="40,29 34,35 34,38 37,38 43,32 "/>
+</g></svg>

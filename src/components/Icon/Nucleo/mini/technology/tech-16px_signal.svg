@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>tech-16px_signal</title>
+  <path d="M6,6A3,3,0,0,1,9,9h2A5.006,5.006,0,0,0,6,4Z"/>
+  <path d="M13,9h2A9.01,9.01,0,0,0,6,0V2A7.008,7.008,0,0,1,13,9Z"/>
+  <rect x="1" y="8" width="6" height="8" rx="1" ry="1"/>
+</svg>

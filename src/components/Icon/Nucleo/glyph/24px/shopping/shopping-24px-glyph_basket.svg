@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-glyph_basket</title>
+  <path d="M23,7H19.58L15.868.5a1,1,0,1,0-1.736.992L17.277,7H6.723L9.868,1.5A1,1,0,1,0,8.132.5L4.42,7H1A1,1,0,0,0,0,8v2a1,1,0,0,0,1,1H23a1,1,0,0,0,1-1V8A1,1,0,0,0,23,7Z"/>
+  <path d="M3,24H21a1,1,0,0,0,1-1V13H2V23A1,1,0,0,0,3,24Zm12-8h2v5H15Zm-4,0h2v5H11ZM7,16H9v5H7Z"/>
+</svg>

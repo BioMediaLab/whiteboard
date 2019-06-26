@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>tech-16px_watch-time</title>
+  <polygon points="8 5 6 5 6 9 10 9 10 7 8 7 8 5"/>
+  <path d="M3,14v1a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14a2,2,0,0,0,2-2V10h1V6H13V4a2,2,0,0,0-2-2V1a1,1,0,0,0-1-1H4A1,1,0,0,0,3,1V2A2,2,0,0,0,1,4v8A2,2,0,0,0,3,14ZM3,4h8v8H3Z"/>
+</svg>

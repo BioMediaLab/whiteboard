@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline_barcode</title>
+  <rect width="2" height="24"/>
+  <rect x="22" width="2" height="24"/>
+  <rect x="11" width="2" height="19"/>
+  <path d="M15,0V19h5V0Zm3,17H17V2h1Z"/>
+  <path d="M4,0V19H9V0ZM7,17H6V2H7Z"/>
+</svg>

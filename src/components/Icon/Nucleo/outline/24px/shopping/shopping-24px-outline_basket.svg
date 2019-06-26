@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline_basket</title>
+  <rect x="11" y="15" width="2" height="5"/>
+  <rect x="7" y="15" width="2" height="5"/>
+  <rect x="15" y="15" width="2" height="5"/>
+  <path d="M19.58,7,15.868.5,14.132,1.5,17.277,7H6.723L9.868,1.5,8.132.5,4.42,7H0v6H2V24H22V13h2V7ZM20,22H4V13H20Zm2-11H2V9H22Z"/>
+</svg>
