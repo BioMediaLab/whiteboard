@@ -10,7 +10,7 @@ import ResourceList, { ResourceListItem } from 'components/ResourceList'
 import { listCourses } from 'graphql/queries'
 
 const ListItem = ({ id, title, description }) => {
-  const url = `./${id}`
+  const url = `/courses/${id}`
 
   return (
     <ResourceListItem id={id} url={url}>
@@ -36,8 +36,9 @@ export default () => {
             title="Courses"
             primaryAction={{
               content: 'Create',
-              url: './create'
-            }}>
+              url: '/courses/create'
+            }}
+          >
             <Card>
               <ListView items={listCourses.items} />
             </Card>

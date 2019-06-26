@@ -1,6 +1,5 @@
 import React from 'react'
-import { Redirect, Router } from '@reach/router'
-import Home from 'pages/home'
+import { Router } from '@reach/router'
 import {
   QuestionCreate,
   QuestionList,
@@ -12,8 +11,7 @@ import { CourseCreate, CourseList, CourseUpdate } from 'containers/Courses'
 
 export default () => (
   <Router>
-    <Home path="/" />
-    <Redirect from="/home" to="/" />
+    <CourseList path="/" />
     <CourseList path="/courses" />
     <CourseCreate path="/courses/create" />
     <CourseUpdate path="/courses/:courseId" />
