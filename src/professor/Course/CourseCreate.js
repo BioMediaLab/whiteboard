@@ -19,7 +19,6 @@ const CourseCreatePage = ({
   return (
     <Page
       title="Create Course"
-      primaryAction={{ content: 'Create', onAction: onSave }}
     >
       <Card sectioned>
         <Form>
@@ -57,10 +56,10 @@ export const CourseCreate = () => {
     courseId: ''
   }
   const [course, updateCourse] = useState(initialState)
-  const api = useApi()
+  const [createCourseState, createCourse] = useApi('createCourse')
 
   const onSave = async () => {
-    api.execute('createCourse', course)
+    createCourse(course)
   }
 
   const onTextFieldChange = (value, elementId) => {
