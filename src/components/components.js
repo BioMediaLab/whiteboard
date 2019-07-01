@@ -28,7 +28,8 @@ export {
   Tabs,
   TextContainer,
   TextField,
-  TextStyle
+  TextStyle,
+  Toast
 } from '@shopify/polaris'
 
 export { LoadingPage }

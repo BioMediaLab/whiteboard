@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Card,
   Form,
@@ -17,9 +17,7 @@ const CourseCreatePage = ({
   onSave
 }) => {
   return (
-    <Page
-      title="Create Course"
-    >
+    <Page title="Create Course">
       <Card sectioned>
         <Form>
           <FormLayout>
@@ -68,6 +66,12 @@ export const CourseCreate = () => {
       [elementId]: value
     })
   }
+
+  useEffect(() => {
+    if (createCourseState.succeeded) {
+      updateCourse(initialState)
+    }
+  })
 
   return (
     <CourseCreatePage
