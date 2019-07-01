@@ -1,44 +1,53 @@
 import React, { useState } from 'react'
 import { TopBar } from '@shopify/polaris'
-import { AppUserConsumer } from 'components/AppUser'
-import { LogoutIcon } from 'components/Icon'
+import { LogoutIcon, SettingsIcon } from 'components/Icon'
 
-export default props => {
+export default ({
+  logout,
+  username,
+  roles,
+  email,
+  firstName,
+  lastName,
+  avatar
+}) => {
   const [hasToggledMenu, toggleMenu] = useState(false)
+  if (!email) {
+    return <TopBar />
+  }
 
-  return (
-    <AppUserConsumer>
-      {props => {
-        if (!props) return <TopBar />
-        const {
-          logout,
-          profile: { username, email, avatar }
-        } = props
-
-        const userMenu = (
-          <TopBar.UserMenu
-            actions={[
-              {
-                items: [
-                  {
-                    content: 'Logout',
-                    icon: LogoutIcon,
-                    onAction: () => {
-                      logout()
-                    }
-                  }
-                ]
+  const role = roles[0]
+  const userMenu = (
+    <TopBar.UserMenu
+      actions={[
+        {
+          items: [
+            {
+              content: 'Settings',
+              icon: SettingsIcon,
+              onAction: () => {}
+            },
+            {
+              content: 'Logout',
+              icon: LogoutIcon,
+              onAction: () => {
+                logout()
               }
-            ]}
-            name={username}
-            detail={email}
-            avatar={avatar}
-            open={hasToggledMenu}
-            onToggle={() => toggleMenu(!hasToggledMenu)}
-          />
-        )
-        return <TopBar userMenu={userMenu} />
-      }}
-    </AppUserConsumer>
+            }
+          ]
+        }
+      ]}
+      name={firstName}
+      detail={role}
+      avatar={avatar}
+      open={hasToggledMenu}
+      onToggle={() => toggleMenu(!hasToggledMenu)}
+    />
   )
+
+  const searchField = (
+    <TopBar.SearchField onChange={() => {}} value={''} placeholder="Search" />
+  )
+
+  return <TopBar userMenu={userMenu} searchField={searchField} />
 }

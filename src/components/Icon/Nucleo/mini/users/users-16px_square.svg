@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>users-16px_square</title>
+  <path d="M15,0H1A1,1,0,0,0,0,1V15a1,1,0,0,0,1,1H15a1,1,0,0,0,1-1V1A1,1,0,0,0,15,0ZM14,14H13a3.16,3.16,0,0,0-3-3H6a3.16,3.16,0,0,0-3,3H2V2H14Z"/>
+  <circle cx="8" cy="7" r="3"/>
+</svg>

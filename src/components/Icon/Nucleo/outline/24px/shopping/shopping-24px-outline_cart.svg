@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline_cart</title>
+  <circle cx="4" cy="22" r="2"/>
+  <circle cx="20" cy="22" r="2"/>
+  <path d="M.293,1.707,3,4.414v9.35L.382,19H23V17H3.618l1-2H19.744l3.6-12H4.414L1.707.293ZM18.256,13H5V5H20.656Z"/>
+</svg>

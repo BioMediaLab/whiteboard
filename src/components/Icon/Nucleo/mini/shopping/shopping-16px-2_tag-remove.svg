@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>tag-remove</title>
+  <path d="M7,14H2V6.414l4-4,4.293,4.293a1,1,0,0,0,1.414-1.414l-5-5a1,1,0,0,0-1.414,0l-5,5A1,1,0,0,0,0,6v9a1,1,0,0,0,1,1H7a1,1,0,0,0,0-2Z" fill="#1d1d1b"/>
+  <rect x="8" y="10" width="8" height="2" fill="#1d1d1b"/>
+</svg>

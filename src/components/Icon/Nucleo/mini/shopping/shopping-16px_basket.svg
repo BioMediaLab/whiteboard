@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>shopping-16px_basket</title>
+  <rect x="2" y="10" width="12" height="6" rx="1" ry="1"/>
+  <path d="M13.118,5,10.895.553a1,1,0,0,0-1.789.895L10.882,5H5.118L6.895,1.447A1,1,0,1,0,5.105.553L2.882,5H0V9H16V5Z"/>
+</svg>

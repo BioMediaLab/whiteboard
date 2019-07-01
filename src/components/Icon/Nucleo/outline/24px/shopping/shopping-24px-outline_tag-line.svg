@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline_tag-line</title>
+  <rect x="13.5" y="8.379" width="2" height="6.242" transform="translate(-3.885 13.621) rotate(-45)"/>
+  <rect x="10.5" y="11.379" width="2" height="6.242" transform="translate(-6.885 12.379) rotate(-45)"/>
+  <path d="M6,23H8V18.414l5,5L23.414,13l-13-13H0V10.414l6,6ZM2,9.586V2H9.586l11,11L13,20.586l-5-5V9.816a3,3,0,1,0-2,0v3.77ZM6,7A1,1,0,1,1,7,8,1,1,0,0,1,6,7Z"/>
+</svg>

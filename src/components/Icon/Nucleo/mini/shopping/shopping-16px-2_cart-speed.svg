@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>cart-speed</title>
+  <circle cx="3.014" cy="14" r="2" fill="#1d1d1b"/>
+  <circle cx="13.014" cy="14" r="2" fill="#1d1d1b"/>
+  <path d="M13.976,10.275l2-7A1.022,1.022,0,0,0,15.014,2h-11V1a1,1,0,0,0-1-1h-3V2h2V4H13.688L12.26,9H0v2H13.014A1,1,0,0,0,13.976,10.275Z" fill="#1d1d1b"/>
+  <rect x="1" y="7" width="4" height="1" fill="#1d1d1b"/>
+  <rect x="2" y="5" width="4" height="1" fill="#1d1d1b"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline_delivery-fast</title>
+  <rect x="2" y="11" width="5" height="2"/>
+  <rect x="4" y="16" width="3" height="2"/>
+  <path d="M18.781,5H11V1H0V3H9V19h2a4,4,0,0,0,8,0h5V11.382l-4.142-2.07ZM15,21a2,2,0,1,1,2-2A2,2,0,0,1,15,21Zm7-4H18.444a3.965,3.965,0,0,0-6.888,0H11V7h6.219l.923,3.688L22,12.618Z"/>
+  <rect y="6" width="7" height="2"/>
+  <polygon points="15 8 13 8 13 12 17 12 17 10 15 10 15 8"/>
+</svg>

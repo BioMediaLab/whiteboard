@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline-2_delivery-2</title>
+  <path d="M7,18a3,3,0,1,0,3,3A3,3,0,0,0,7,18Zm0,4a1,1,0,1,1,1-1A1,1,0,0,1,7,22Z" fill="#1d1d1b"/>
+  <path d="M8,0V13H23V0ZM21,11H10V2H21Z" fill="#1d1d1b"/>
+  <rect x="13" y="4" width="5" height="2" fill="#1d1d1b"/>
+  <polygon points="4.876 0 0 0 0 2 3.124 2 5.124 17 17.245 17 19.038 23.274 20.962 22.726 19.326 17 24 17 24 15 6.876 15 4.876 0" fill="#1d1d1b"/>
+</svg>

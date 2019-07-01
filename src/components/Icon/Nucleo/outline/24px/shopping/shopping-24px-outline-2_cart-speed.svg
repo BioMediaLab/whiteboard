@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline-2_cart-speed</title>
+  <rect y="15" width="24" height="2" fill="#1d1d1b"/>
+  <path d="M9,21a3,3,0,1,0-3,3A3,3,0,0,0,9,21ZM5,21a1,1,0,1,1,1,1A1,1,0,0,1,5,21Z" fill="#1d1d1b"/>
+  <path d="M21,18a3,3,0,1,0,3,3A3,3,0,0,0,21,18Zm0,4a1,1,0,1,1,1-1A1,1,0,0,1,21,22Z" fill="#1d1d1b"/>
+  <rect x="2" y="11" width="6" height="2" fill="#1d1d1b"/>
+  <polygon points="4 5 19.719 5 17.787 12.728 19.728 13.213 22.281 3 6 3 6 0 0 0 0 2 4 2 4 5" fill="#1d1d1b"/>
+  <rect x="4" y="7" width="6" height="2" fill="#1d1d1b"/>
+</svg>

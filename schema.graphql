@@ -1,5 +1,6 @@
 type Course
   @model
+  @key(name: "ByCourseId", fields: ["courseId", "createdAt"])
   @auth(
     rules: [
       { allow: groups, groups: ["admin", "professor", "teacher_assistant"] }
@@ -7,9 +8,17 @@ type Course
     ]
   ) {
   id: ID!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  courseId: String!
   title: String!
   description: String
+  semester: Semester
+  settings: [KeyValue]
   quizzes: [Quiz] @connection(name: "CourseQuizzes")
+  enrollments: [Enrollment] @connection(name: "CourseEnrollments")
+  instructor: Instructor @connection(name: "InstructorCourses")
+  quizAttempts: [QuizAttempt] @connection(name: "CourseQuizAttempts")
 }
 
 type Quiz
@@ -21,39 +30,139 @@ type Quiz
     ]
   ) {
   id: ID!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
   title: String!
   description: String
-  course: Course! @connection(name: "CourseQuizzes")
-  questions: [AWSJSON!]!
+  course: Course @connection(name: "CourseQuizzes")
+  questions: [Question]
+  settings: [KeyValue]
 }
 
-type QuizTemplate
+type Student @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  profile: Profile!
+  enrollments: [Enrollment] @connection(name: "StudentEnrollments")
+  settings: [KeyValue]
+}
+
+type Instructor @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  profile: Profile!
+  courses: [Course] @connection(name: "InstructorCourses")
+  settings: [KeyValue]
+}
+
+type Profile
   @model
+  @key(name: "ByEmail", fields: ["email"])
   @auth(
     rules: [
-      { allow: groups, groups: ["admin", "professor", "teacher_assistant"] }
+      { allow: owner }
+      {
+        allow: groups
+        groups: ["admin", "professor", "teacher_assistant"]
+        operations: [read]
+      }
     ]
   ) {
   id: ID!
-  title: String!
-  description: String
-  questions: [AWSJSON!]!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  firstName: String!
+  middleInitial: String
+  lastName: String!
+  email: AWSEmail!
 }
 
-type Question
+type Enrollment @model(queries: null) {
+  id: ID!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  student: Student! @connection(name: "StudentEnrollments")
+  course: Course! @connection(name: "CourseEnrollments")
+}
+
+type QuizAttempt
   @model
   @auth(
     rules: [
-      { allow: groups, groups: ["admin", "professor", "teacher_assistant"] }
+      { allow: owner }
+      {
+        allow: groups
+        groups: ["admin", "professor", "teacher_assistant"]
+        operations: [read]
+      }
     ]
   ) {
+  id: String!
+  student: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  responses: [Response]
+  questions: [Question]
+  course: Course @connection(name: "CourseQuizAttempts")
+}
+
+type Question {
+  key: Int
+  question: String
+  choices: [KeyValue]
+  answers: [KeyValue]
+    @auth(
+      rules: [
+        { allow: groups, groups: ["admin", "professor", "teacher_assistant"] }
+        { allow: groups, groups: ["student"], operations: [null] }
+      ]
+    )
+}
+
+type Response {
   id: ID!
   question: String!
-  choices: [Answer!]!
+  choices: [KeyValue]
+  answers: [KeyValue]
+    @auth(
+      rules: [
+        { allow: owner }
+        { allow: groups, groups: ["admin", "professor", "teacher_assistant"] }
+      ]
+    )
 }
 
-type Answer {
-  key: String!
-  answer: String!
-  isCorrect: Boolean
+type QuestionBank
+  @model
+  @key(name: "ByCourseId", fields: ["courseId", "createdAt"])
+  @auth(
+    rules: [
+      { allow: groups, groups: ["admin", "professor", "teacher_assistant"] }
+    ]
+  ) {
+  id: ID!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  title: String!
+  courseId: String!
+  description: String
+  questions: [Question]
+}
+
+type KeyValue {
+  key: String
+  value: String
+}
+
+type Semester {
+  season: Season
+  year: Int
+}
+
+enum Season {
+  spring
+  fall
+  summer
 }

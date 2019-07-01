@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<path fill="#231F20" d="M32,1C14.9,1,1,14.9,1,32v6c0,5,4,9,9,9h5v7c0,5,4,9,9,9h16c5,0,9-4,9-9v-7h5c5,0,9-4,9-9v-6
+	C63,14.9,49.1,1,32,1z M47,54c0,3.9-3.1,7-7,7H24c-3.9,0-7-3.1-7-7v-7h6v3c0,0.6,0.4,1,1,1s1-0.4,1-1v-3h6v4c0,0.6,0.4,1,1,1
+	s1-0.4,1-1v-4h6v3c0,0.6,0.4,1,1,1s1-0.4,1-1v-3h6V54z M61,38c0,3.9-3.1,7-7,7h-5v-3c0-0.6-0.4-1-1-1s-1,0.4-1,1v3h-6v-3
+	c0-0.6-0.4-1-1-1s-1,0.4-1,1v3h-6v-4c0-0.6-0.4-1-1-1s-1,0.4-1,1v4h-6v-3c0-0.6-0.4-1-1-1s-1,0.4-1,1v3h-6v-3c0-0.6-0.4-1-1-1
+	s-1,0.4-1,1v3h-5c-3.9,0-7-3.1-7-7v-6C3,16,16,3,32,3s29,13,29,29V38z"/>
+<path fill="#231F20" d="M20,17c-2.8,0-5,2.2-5,5s2.2,5,5,5s5-2.2,5-5S22.8,17,20,17z M20,25c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3
+	S21.7,25,20,25z"/>
+<path fill="#231F20" d="M44,17c-2.8,0-5,2.2-5,5s2.2,5,5,5s5-2.2,5-5S46.8,17,44,17z M44,25c-1.7,0-3-1.3-3-3s1.3-3,3-3s3,1.3,3,3
+	S45.7,25,44,25z"/>
+</svg>

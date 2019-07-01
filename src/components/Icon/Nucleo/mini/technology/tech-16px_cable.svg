@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>tech-16px_cable</title>
+  <path d="M7,10V3A1,1,0,0,0,6,2H5V0H2V2H1A1,1,0,0,0,0,3v7a1,1,0,0,0,1,1H6A1,1,0,0,0,7,10Z"/>
+  <path d="M15,2H14V0H11V2H10A1,1,0,0,0,9,3v7a1,1,0,0,0,1,1h5a1,1,0,0,0,1-1V3A1,1,0,0,0,15,2Z"/>
+  <path d="M12,14H4V12H2v3a1,1,0,0,0,1,1H13a1,1,0,0,0,1-1V12H12Z"/>
+</svg>

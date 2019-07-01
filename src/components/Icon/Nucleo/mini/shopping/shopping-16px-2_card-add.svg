@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>card-add</title>
+  <path d="M15,0H1A1,1,0,0,0,0,1V11a1,1,0,0,0,1,1H5V10H2V6H14V8h2V1A1,1,0,0,0,15,0ZM14,4H2V2H14Z" fill="#1d1d1b"/>
+  <polygon points="10 8 10 11 7 11 7 13 10 13 10 16 12 16 12 13 15 13 15 11 12 11 12 8 10 8" fill="#1d1d1b"/>
+</svg>

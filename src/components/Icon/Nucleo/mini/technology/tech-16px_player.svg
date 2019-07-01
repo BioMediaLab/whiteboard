@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>tech-16px_player</title>
+  <rect x="3" y="14" width="10" height="2"/>
+  <path d="M15,0H1A1,1,0,0,0,0,1V11a1,1,0,0,0,1,1H15a1,1,0,0,0,1-1V1A1,1,0,0,0,15,0ZM14,10H2V2H14Z"/>
+  <polygon points="6 3 6 9 10 6 6 3"/>
+</svg>

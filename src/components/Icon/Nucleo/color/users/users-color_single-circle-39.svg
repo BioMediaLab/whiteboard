@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48"><g >
+<circle fill-rule="evenodd" clip-rule="evenodd" fill="#BFDEE0" cx="24" cy="24" r="23"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#5A7A84" d="M24,16c-3.3077106,0-6,2.6914291-6,6s2.6922894,6,6,6
+	s6-2.6914291,6-6S27.3077106,16,24,16"/>
+<path fill-rule="evenodd" clip-rule="evenodd" fill="#335262" d="M27.9992676,30h-7.9985352
+	C16.6865234,30,14,32.6780396,14,36.0032959v8.7140503C17.0238037,46.1795654,20.4160156,47,24,47s6.9761963-0.8204346,10-2.2826538
+	v-8.7140503C34,32.6877441,31.3234863,30,27.9992676,30z"/>
+</g></svg>

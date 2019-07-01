@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline_receipt-list</title>
+  <path d="M22,.132,18,2.8l-3-2-3,2L9,.8l-3,2L2,.132V24H22ZM20,22H4V3.868L6,5.2l3-2,3,2,3-2,3,2,2-1.334Z"/>
+  <rect x="6" y="9" width="7" height="2"/>
+  <rect x="15" y="9" width="3" height="2"/>
+  <rect x="6" y="13" width="7" height="2"/>
+  <rect x="15" y="13" width="3" height="2"/>
+  <rect x="6" y="17" width="7" height="2"/>
+  <rect x="15" y="17" width="3" height="2"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>shopping-16px_bardcode-qr</title>
+  <path d="M1,7H6A1,1,0,0,0,7,6V1A1,1,0,0,0,6,0H1A1,1,0,0,0,0,1V6A1,1,0,0,0,1,7ZM2,2H5V5H2Z"/>
+  <path d="M7,15V10A1,1,0,0,0,6,9H1a1,1,0,0,0-1,1v5a1,1,0,0,0,1,1H6A1,1,0,0,0,7,15ZM5,14H2V11H5Z"/>
+  <path d="M15,0H10A1,1,0,0,0,9,1V6a1,1,0,0,0,1,1h5a1,1,0,0,0,1-1V1A1,1,0,0,0,15,0ZM14,5H11V2h3Z"/>
+  <rect x="3" y="3" width="1" height="1"/>
+  <rect x="3" y="12" width="1" height="1"/>
+  <rect x="9" y="14" width="7" height="2"/>
+  <path d="M15,9H11v2h3v2h2V10A1,1,0,0,0,15,9Z"/>
+  <rect x="12" y="12" width="1" height="1"/>
+  <rect x="12" y="3" width="1" height="1"/>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<path d="M22,19c0.256,0,0.512-0.098,0.707-0.293l8-8c0.391-0.391,0.391-1.023,0-1.414l-8-8c-0.391-0.391-1.023-0.391-1.414,0l-8,8
+	c-0.391,0.391-0.391,1.023,0,1.414L15,12.414L16.414,11l-1-1L22,3.414L28.586,10L22,16.586l-1-1L19.586,17l1.707,1.707
+	C21.488,18.902,21.744,19,22,19z"/>
+<path d="M3.414,22L10,15.414l1,1L12.414,15l-1.707-1.707c-0.391-0.391-1.023-0.391-1.414,0l-8,8c-0.391,0.391-0.391,1.023,0,1.414
+	l8,8C9.488,30.902,9.744,31,10,31s0.512-0.098,0.707-0.293l8-8c0.391-0.391,0.391-1.023,0-1.414L17,19.586L15.586,21l1,1L10,28.586
+	L3.414,22z"/>
+<rect x="7.929" y="15" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -6.6274 16)" width="16.142" height="2"/>
+</svg>

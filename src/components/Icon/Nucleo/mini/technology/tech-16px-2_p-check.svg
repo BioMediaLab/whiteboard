@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>tech-16px-2_p-check</title>
+  <circle cx="7" cy="11" r="1"/>
+  <path d="M1,14a2,2,0,0,0,2,2H7.758l-2-2H3V2h8v8.757l2-2V2a2,2,0,0,0-2-2H3A2,2,0,0,0,1,2Z"/>
+  <path d="M11,13.586,9.707,12.293,8.293,13.707l2,2a1,1,0,0,0,1.414,0l4-4-1.414-1.414Z"/>
+</svg>

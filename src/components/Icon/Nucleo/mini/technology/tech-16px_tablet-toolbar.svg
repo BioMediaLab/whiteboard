@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>tech-16px_tablet-toolbar</title>
+  <rect x="3" y="3" width="10" height="7"/>
+  <path d="M14,0H2A2,2,0,0,0,0,2V14a2,2,0,0,0,2,2H14a2,2,0,0,0,2-2V2A2,2,0,0,0,14,0ZM2,14V2H14V14Z"/>
+  <circle cx="8" cy="12" r="1"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-glyph_barcode-scan</title>
+  <rect x="15" width="5" height="10"/>
+  <rect x="4" width="5" height="10"/>
+  <polygon points="0 24 2 24 2 14 4 14 4 19 9 19 9 14 11 14 11 19 13 19 13 14 15 14 15 19 20 19 20 14 22 14 22 24 24 24 24 12 0 12 0 24"/>
+  <rect width="2" height="10"/>
+  <rect x="11" width="2" height="10"/>
+  <rect x="22" width="2" height="10"/>
+</svg>

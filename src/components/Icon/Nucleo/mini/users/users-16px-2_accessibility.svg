@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <title>users-16px-2_accessibility</title>
+  <circle cx="8" cy="2" r="2"/>
+  <path d="M10,16a1,1,0,0,0,1-1V7h3a1,1,0,0,0,0-2H2A1,1,0,0,0,2,7H5v8a1,1,0,0,0,2,0V12H9v3A1,1,0,0,0,10,16Z"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <title>shopping-24px-outline_barcode-scan</title>
+  <rect width="2" height="10"/>
+  <rect x="22" width="2" height="10"/>
+  <rect x="11" width="2" height="10"/>
+  <polygon points="20 10 20 0 15 0 15 10 17 10 17 2 18 2 18 10 20 10"/>
+  <polygon points="9 10 9 0 4 0 4 10 6 10 6 2 7 2 7 10 9 10"/>
+  <path d="M18,12H0V24H2V14H4v5H9V14h2v5h2V14h2v5h5V14h2V24h2V12H18ZM7,17H6V14H7Zm11,0H17V14h1Z"/>
+</svg>
