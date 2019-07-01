@@ -1,6 +1,6 @@
 import React, { Suspense, useState, useReducer } from 'react'
-import { Card, LoadingPage, Page, Tabs } from 'components'
-import { useDataLoader } from 'hooks'
+import { Card, LoadingPage, Page, PageActions, Tabs } from 'components'
+import { useApi, useDataLoader } from 'hooks'
 import reducer from './reducer'
 
 const CoursePage = ({ course, tabName = 'details', ...props }) => {
@@ -69,6 +69,8 @@ const CoursePage = ({ course, tabName = 'details', ...props }) => {
     })
   }
 
+  const isDetailsSelected = activeTab == 0
+
   return (
     <Page title="Course" breadcrumbs={breadcrumbs}>
       <Card>
@@ -83,6 +85,7 @@ const CoursePage = ({ course, tabName = 'details', ...props }) => {
           </Suspense>
         </Tabs>
       </Card>
+      {isDetailsSelected && <PageActions primaryAction={{ content: 'Save' }} />}
     </Page>
   )
 }
@@ -92,11 +95,20 @@ export const Course = props => {
     'getCourse',
     { id: props.courseId }
   )
+  const [updateCourseState, updateCourse] = useApi('updateCourse')
   const course = data || {}
 
   if (pending && !succeeded && !errored) {
     return <LoadingPage />
   }
 
-  return <CoursePage {...props} course={course} />
+  return (
+    <CoursePage
+      {...props}
+      course={course}
+      onSave={updatedCourse => {
+        updateCourse(updatedCourse)
+      }}
+    />
+  )
 }
