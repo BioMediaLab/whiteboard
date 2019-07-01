@@ -32,6 +32,7 @@ const CourseCreatePage = ({
               label="Description"
               value={description}
               onChange={onTextFieldChange}
+              data-testid="courseCreateDescriptionSelector"
             />
             <TextField
               id="courseId"
