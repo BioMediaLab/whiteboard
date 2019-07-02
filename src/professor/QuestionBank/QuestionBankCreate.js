@@ -123,6 +123,7 @@ const QuestionBankCreatePage = ({ questionBank, ...props }) => {
           title="Questions"
           actions={{
             content: 'Add Question',
+            id: 'button-add-question',
             onAction: onAddQuestion
           }}
         >
