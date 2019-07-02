@@ -5,11 +5,11 @@ describe('Basic', () => {
     cy.visit('/');
     signIn();
   })
-  it.skip('Should open homepage', () => {
+  it('Should open homepage', () => {
     cy.visit('/');
   });
 
-  it.skip('Should open question create page', () => {
+  it('Should open question create page', () => {
     cy.visit('/question-banks');
     cy.get('#primary-action-create').click({force:true})
   });
@@ -23,7 +23,7 @@ describe('Basic', () => {
     cy.get('#primary-action-2').click();
   });
 
-  it.skip('Should display question list', () => {
+  it('Should display question list', () => {
     cy.visit('/question-banks');
   });
 });
