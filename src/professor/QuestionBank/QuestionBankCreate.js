@@ -31,6 +31,7 @@ const QuestionBankCreatePage = ({ onCreate }) => {
       title="Create Question Bank"
       primaryAction={{
         content: 'Create',
+        id: "primary-action-1",
         onAction: () => {
           onCreate(state)
         }
@@ -64,6 +65,7 @@ const QuestionBankCreatePage = ({ onCreate }) => {
       <PageActions
         primaryAction={{
           content: 'Create',
+          id:"primary-action-2",
           onAction: () => {
             onCreate(state)
           }

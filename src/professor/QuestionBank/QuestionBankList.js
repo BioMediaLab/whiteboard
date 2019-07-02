@@ -18,7 +18,7 @@ const QuestionBankListPage = ({ items, renderItem }) => {
       items={items}
       renderItem={renderItem}
       title="Question Banks"
-      primaryAction={{ content: 'Create', url: './create' }}
+      primaryAction={{ content: 'Create', url: './create' , id:'primary-action-create'}}
     >
       <Card>
         <ResourceList items={items} renderItem={renderItem} />
