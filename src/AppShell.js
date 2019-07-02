@@ -29,7 +29,7 @@ const AppShell = ({ children, currentUser, logout }) => {
   const topBar = currentUser && <AppHeader {...currentUser} logout={logout} />
 
   return (
-    <AppShellContext.Provider value={{ test: 'cliff' }}>
+    <AppShellContext.Provider value={{}}>
       <AppProvider className="App" linkComponent={Link} theme={theme}>
         <Frame topBar={topBar} navigation={navigation}>
           {children}

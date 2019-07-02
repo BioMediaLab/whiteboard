@@ -12,9 +12,9 @@ const QuestionBankPage = ({ questionBank, onUpdate, ...props }) => {
   const [state, dispatch] = useReducer(reducer, questionBank)
   const onAddQuestion = () => {
     const questions = state.questions || []
-    const largestId = questions.reduce((accum, question) => {
-      if (question.id > accum) {
-        return question.id
+    const largestKey = questions.reduce((accum, question) => {
+      if (question.key > accum) {
+        return question.key
       }
 
       return accum
@@ -22,7 +22,7 @@ const QuestionBankPage = ({ questionBank, onUpdate, ...props }) => {
     dispatch({
       type: 'ADD_QUESTION',
       payload: {
-        id: largestId + 1,
+        key: largestKey + 1,
         question: '',
         choices: [],
         answers: []
@@ -53,38 +53,38 @@ const QuestionBankPage = ({ questionBank, onUpdate, ...props }) => {
       }
     })
   }
-  const onUpdateQuestion = (questionId, question) => {
+  const onUpdateQuestion = (questionKey, question) => {
     dispatch({
       type: 'UPDATE_QUESTION',
-      questionId,
+      questionKey,
       payload: question
     })
   }
-  const onAddChoice = questionId => {
+  const onAddChoice = questionKey => {
     const question = state.questions.filter(
-      question => question.id === questionId
+      question => question.key === questionKey
     )
     const key = CHOICE_KEYS[question[0].choices.length]
     dispatch({
       type: 'ADD_CHOICE',
-      questionId,
+      questionKey,
       payload: {
         key,
         value: ''
       }
     })
   }
-  const onUpdateChoice = (questionId, choice) => {
+  const onUpdateChoice = (questionKey, choice) => {
     dispatch({
       type: 'UPDATE_CHOICE',
-      questionId,
+      questionKey,
       payload: choice
     })
   }
-  const onToggleAnswer = (questionId, choice) => {
+  const onToggleAnswer = (questionKey, choice) => {
     dispatch({
       type: 'TOGGLE_ANSWER',
-      questionId,
+      questionKey,
       payload: choice
     })
   }

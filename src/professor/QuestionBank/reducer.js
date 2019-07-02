@@ -15,22 +15,22 @@ export default (state, action) => {
       }
     }
     case 'REMOVE_QUESTION': {
-      const { questionId } = action
+      const { questionKey } = action
 
       return {
         ...state,
         questions: state.questions.filter(
-          question => question.id !== questionId
+          question => question.key !== questionKey
         )
       }
     }
     case 'UPDATE_QUESTION': {
-      const { questionId } = action
+      const { questionKey } = action
 
       return {
         ...state,
         questions: state.questions.map(question => {
-          if (question.id !== questionId) {
+          if (question.key !== questionKey) {
             return question
           }
 
@@ -42,12 +42,12 @@ export default (state, action) => {
       }
     }
     case 'UPDATE_CHOICE': {
-      const { questionId } = action
+      const { questionKey } = action
 
       return {
         ...state,
         questions: state.questions.map(question => {
-          if (question.id !== questionId) {
+          if (question.key !== questionKey) {
             return question
           }
 
@@ -65,12 +65,12 @@ export default (state, action) => {
       }
     }
     case 'ADD_CHOICE': {
-      const { questionId } = action
+      const { questionKey } = action
 
       return {
         ...state,
         questions: state.questions.map(question => {
-          if (question.id !== questionId) {
+          if (question.key !== questionKey) {
             return question
           }
 
@@ -82,12 +82,12 @@ export default (state, action) => {
       }
     }
     case 'REMOVE_CHOICE': {
-      const { questionId } = action
+      const { questionKey } = action
 
       return {
         ...state,
         questions: state.questions.map(question => {
-          if (question.id !== questionId) {
+          if (question.key !== questionKey) {
             return question
           }
 
@@ -104,12 +104,12 @@ export default (state, action) => {
       }
     }
     case 'TOGGLE_ANSWER': {
-      const { questionId } = action
+      const { questionKey } = action
 
       return {
         ...state,
         questions: state.questions.map(question => {
-          if (question.id !== questionId) {
+          if (question.key !== questionKey) {
             return question
           }
 
@@ -126,6 +126,14 @@ export default (state, action) => {
             answers
           }
         })
+      }
+    }
+    case 'RESET': {
+      return {
+        title: '',
+        description: '',
+        courseId: '',
+        questions: []
       }
     }
     default: {

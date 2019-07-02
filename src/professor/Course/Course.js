@@ -1,7 +1,6 @@
-import React, { Suspense, useState, useReducer } from 'react'
+import React, { Suspense, useState } from 'react'
 import { Card, LoadingPage, Page, Tabs } from 'components'
 import { useDataLoader } from 'hooks'
-import reducer from './reducer'
 
 const CoursePage = ({ course, tabName = 'details', ...props }) => {
   const tabs = [
@@ -40,46 +39,14 @@ const CoursePage = ({ course, tabName = 'details', ...props }) => {
     students: React.lazy(() => import('./CourseStudents')),
     'quiz-attempts': React.lazy(() => import('./CourseQuizAttempts'))
   }
-
   const CurrentTabContent = tabContent[tabName]
-  const [state, dispatch] = useReducer(reducer, course)
-
-  const onUpdateTitle = title => {
-    dispatch({
-      type: 'UPDATE',
-      payload: {
-        title
-      }
-    })
-  }
-  const onUpdateDescription = description => {
-    dispatch({
-      type: 'UPDATE',
-      payload: {
-        description
-      }
-    })
-  }
-  const onUpdateCourseId = courseId => {
-    dispatch({
-      type: 'UPDATE',
-      payload: {
-        courseId
-      }
-    })
-  }
 
   return (
     <Page title="Course" breadcrumbs={breadcrumbs}>
       <Card>
         <Tabs selected={activeTab} onSelect={changeTab} tabs={tabs}>
           <Suspense fallback={<div>loading the tab...</div>}>
-            <CurrentTabContent
-              course={state}
-              onUpdateCourseId={onUpdateCourseId}
-              onUpdateDescription={onUpdateDescription}
-              onUpdateTitle={onUpdateTitle}
-            />
+            <CurrentTabContent course={course} />
           </Suspense>
         </Tabs>
       </Card>
@@ -93,6 +60,8 @@ export const Course = props => {
     { id: props.courseId }
   )
   const course = data || {}
+
+  console.log(data)
 
   if (pending && !succeeded && !errored) {
     return <LoadingPage />

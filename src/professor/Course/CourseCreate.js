@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Card,
   Form,
@@ -17,10 +17,7 @@ const CourseCreatePage = ({
   onSave
 }) => {
   return (
-    <Page
-      title="Create Course"
-      primaryAction={{ content: 'Create', onAction: onSave }}
-    >
+    <Page title="Create Course">
       <Card sectioned>
         <Form>
           <FormLayout>
@@ -35,6 +32,7 @@ const CourseCreatePage = ({
               label="Description"
               value={description}
               onChange={onTextFieldChange}
+              data-testid="courseCreateDescriptionSelector"
             />
             <TextField
               id="courseId"
@@ -57,10 +55,10 @@ export const CourseCreate = () => {
     courseId: ''
   }
   const [course, updateCourse] = useState(initialState)
-  const api = useApi()
+  const [createCourseState, createCourse] = useApi('createCourse')
 
   const onSave = async () => {
-    api.execute('createCourse', course)
+    createCourse(course)
   }
 
   const onTextFieldChange = (value, elementId) => {
@@ -69,6 +67,12 @@ export const CourseCreate = () => {
       [elementId]: value
     })
   }
+
+  useEffect(() => {
+    if (createCourseState.succeeded) {
+      updateCourse(initialState)
+    }
+  })
 
   return (
     <CourseCreatePage
