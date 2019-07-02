@@ -22,8 +22,8 @@ const ProfessorsRouter = () => {
       <Course path="/courses/:courseId" />
       <Course path="/courses/:courseId/:tabName" />
 
-      <QuizCreate path="/quizzes/create" />
-      <Quiz path="/quizzes/:quizId" />
+      <QuizCreate path="/courses/:courseId/quizzes/create" />
+      <Quiz path="/courses/:courseId/quizzes/:quizId" />
 
       <QuestionBankList path="/question-banks" />
       <QuestionBankCreate path="/question-banks/create" />

@@ -37,7 +37,7 @@ export function useApi(operationName, props) {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   function execute(props) {
-    executeOperation(operationName, props)
+    return executeOperation(operationName, props)
   }
 
   function executeOperation(operationName, props) {

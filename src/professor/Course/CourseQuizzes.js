@@ -9,10 +9,9 @@ import {
   Title
 } from 'components'
 
-const CourseQuiz = item => {
-  const { id, title, description } = item
+const CourseQuiz = ({ id, title, description, quizCourseId }) => {
   return (
-    <ResourceList.Item id={id} url={`/quizzes/${id}`}>
+    <ResourceList.Item id={id} url={`/courses/${quizCourseId}/quizzes/${id}`}>
       <TextContainer spacing="tight">
         <Title>{title}</Title>
         <p>{description}</p>
@@ -26,13 +25,21 @@ const CourseQuiz = item => {
 }
 
 const CourseQuizzes = ({ course }) => {
-  const items = course.quizzes || []
+  const items = course.quizzes.map(quiz => {
+    return {
+      ...quiz,
+      quizCourseId: course.id
+    }
+  })
 
   if (!items.length) {
     return (
       <EmptyState
         heading="Add Quizzes"
-        action={{ content: 'Add Quiz', url: '/quizzes/create' }}
+        action={{
+          content: 'Add Quiz',
+          url: `/courses/${course.id}/quizzes/create`
+        }}
       >
         <p>No quizzes added for this course.</p>
       </EmptyState>

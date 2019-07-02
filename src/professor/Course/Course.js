@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from 'react'
 import { Card, LoadingPage, Page, Tabs } from 'components'
-import { useApi, useDataLoader } from 'hooks'
+import { useDataLoader } from 'hooks'
 
 const CoursePage = ({ course, tabName = 'details', ...props }) => {
   const tabs = [
@@ -60,6 +60,8 @@ export const Course = props => {
     { id: props.courseId }
   )
   const course = data || {}
+
+  console.log(data)
 
   if (pending && !succeeded && !errored) {
     return <LoadingPage />

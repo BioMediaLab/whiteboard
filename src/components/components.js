@@ -1,4 +1,7 @@
 import LoadingPage from './LoadingPage'
+import Notifications from './Notifications'
+
+export { LoadingPage, Notifications }
 export {
   ActionList,
   Badge,
@@ -28,7 +31,6 @@ export {
   Tabs,
   TextContainer,
   TextField,
-  TextStyle
+  TextStyle,
+  Toast
 } from '@shopify/polaris'
-
-export { LoadingPage }

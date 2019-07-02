@@ -1,35 +1,36 @@
 export default (state, action) => {
   const { type, payload } = action
   switch (type) {
-    case 'UPDATE_QUIZ': {
+    case 'UPDATE': {
       return {
         ...state,
         ...payload
       }
     }
-    case 'ADD_QUIZ_QUESTION': {
+    case 'ADD_QUESTION': {
+      const questions = state.questions || []
       return {
         ...state,
-        questions: [...state.questions, { ...payload }]
+        questions: [...questions, payload]
       }
     }
-    case 'REMOVE_QUIZ_QUESTION': {
-      const { questionId } = action
+    case 'REMOVE_QUESTION': {
+      const { questionKey } = action
 
       return {
         ...state,
         questions: state.questions.filter(
-          question => question.id !== questionId
+          question => question.key !== questionKey
         )
       }
     }
-    case 'UPDATE_QUIZ_QUESTION_QUESTION': {
-      const { questionId } = action
+    case 'UPDATE_QUESTION': {
+      const { questionKey } = action
 
       return {
         ...state,
         questions: state.questions.map(question => {
-          if (question.id !== questionId) {
+          if (question.key !== questionKey) {
             return question
           }
 
@@ -40,13 +41,13 @@ export default (state, action) => {
         })
       }
     }
-    case 'UPDATE_QUIZ_QUESTION_CHOICE': {
-      const { questionId } = action
+    case 'UPDATE_CHOICE': {
+      const { questionKey } = action
 
       return {
         ...state,
         questions: state.questions.map(question => {
-          if (question.id !== questionId) {
+          if (question.key !== questionKey) {
             return question
           }
 
@@ -63,13 +64,13 @@ export default (state, action) => {
         })
       }
     }
-    case 'ADD_QUIZ_QUESTION_CHOICE': {
-      const { questionId } = action
+    case 'ADD_CHOICE': {
+      const { questionKey } = action
 
       return {
         ...state,
         questions: state.questions.map(question => {
-          if (question.id !== questionId) {
+          if (question.key !== questionKey) {
             return question
           }
 
@@ -80,13 +81,13 @@ export default (state, action) => {
         })
       }
     }
-    case 'REMOVE_QUIZ_QUESTION_CHOICE': {
-      const { questionId } = action
+    case 'REMOVE_CHOICE': {
+      const { questionKey } = action
 
       return {
         ...state,
         questions: state.questions.map(question => {
-          if (question.id !== questionId) {
+          if (question.key !== questionKey) {
             return question
           }
 
@@ -102,13 +103,13 @@ export default (state, action) => {
         })
       }
     }
-    case 'TOGGLE_QUIZ_QUESTION_ANSWER': {
-      const { questionId } = action
+    case 'TOGGLE_ANSWER': {
+      const { questionKey } = action
 
       return {
         ...state,
         questions: state.questions.map(question => {
-          if (question.id !== questionId) {
+          if (question.key !== questionKey) {
             return question
           }
 
@@ -116,7 +117,7 @@ export default (state, action) => {
             answer => answer.key !== payload.key
           )
 
-          if (answers.length === question.answers.legnth) {
+          if (answers.length === question.answers.length) {
             answers = [...answers, { ...payload }]
           }
 
@@ -125,6 +126,14 @@ export default (state, action) => {
             answers
           }
         })
+      }
+    }
+    case 'RESET': {
+      return {
+        title: '',
+        description: '',
+        courseId: '',
+        questions: []
       }
     }
     default: {

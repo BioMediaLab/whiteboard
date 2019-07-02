@@ -14,7 +14,7 @@ const Question = ({
         <TextField
           value={question.question}
           onChange={value => {
-            onUpdateQuestion(question.id, value)
+            onUpdateQuestion(question.key, value)
           }}
         />
       </div>
@@ -46,7 +46,7 @@ const QuestionChoices = ({ question, onUpdateChoice, onToggleAnswer }) => {
         action={{
           content: isAnswer ? 'Correct' : 'Incorrect',
           onAction: () => {
-            onToggleAnswer(question.id, choice)
+            onToggleAnswer(question.key, choice)
           }
         }}
       >
@@ -58,7 +58,7 @@ const QuestionChoices = ({ question, onUpdateChoice, onToggleAnswer }) => {
               value={choice.value}
               labelHidden
               onChange={value => {
-                onUpdateChoice(question.id, {
+                onUpdateChoice(question.key, {
                   ...choice,
                   value
                 })
