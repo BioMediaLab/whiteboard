@@ -1,0 +1,9 @@
+{
+    "permissions": {
+        "auth": {
+            "cognito5608a292": [
+                "read"
+            ]
+        }
+    }
+}

@@ -28,38 +28,30 @@ export const onCreateCourse = `subscription OnCreateCourse {
       nextToken
     }
     enrollments {
-      items {
+      id
+      profile {
         id
-        createdAt
-        updatedAt
+        firstName
+        middleName
+        lastName
+        username
+        email
       }
-      nextToken
     }
     instructor {
       id
-      createdAt
-      updatedAt
       profile {
         id
-        createdAt
-        updatedAt
         firstName
-        middleInitial
+        middleName
         lastName
+        username
         email
-      }
-      courses {
-        nextToken
-      }
-      settings {
-        key
-        value
       }
     }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -95,38 +87,30 @@ export const onUpdateCourse = `subscription OnUpdateCourse {
       nextToken
     }
     enrollments {
-      items {
+      id
+      profile {
         id
-        createdAt
-        updatedAt
+        firstName
+        middleName
+        lastName
+        username
+        email
       }
-      nextToken
     }
     instructor {
       id
-      createdAt
-      updatedAt
       profile {
         id
-        createdAt
-        updatedAt
         firstName
-        middleInitial
+        middleName
         lastName
+        username
         email
-      }
-      courses {
-        nextToken
-      }
-      settings {
-        key
-        value
       }
     }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -162,38 +146,30 @@ export const onDeleteCourse = `subscription OnDeleteCourse {
       nextToken
     }
     enrollments {
-      items {
+      id
+      profile {
         id
-        createdAt
-        updatedAt
+        firstName
+        middleName
+        lastName
+        username
+        email
       }
-      nextToken
     }
     instructor {
       id
-      createdAt
-      updatedAt
       profile {
         id
-        createdAt
-        updatedAt
         firstName
-        middleInitial
+        middleName
         lastName
+        username
         email
-      }
-      courses {
-        nextToken
-      }
-      settings {
-        key
-        value
       }
     }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -228,12 +204,10 @@ export const onCreateQuiz = `subscription OnCreateQuiz {
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -284,12 +258,10 @@ export const onUpdateQuiz = `subscription OnUpdateQuiz {
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -340,12 +312,10 @@ export const onDeleteQuiz = `subscription OnDeleteQuiz {
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -370,406 +340,20 @@ export const onDeleteQuiz = `subscription OnDeleteQuiz {
   }
 }
 `;
-export const onCreateStudent = `subscription OnCreateStudent {
-  onCreateStudent {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    enrollments {
-      items {
-        id
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const onUpdateStudent = `subscription OnUpdateStudent {
-  onUpdateStudent {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    enrollments {
-      items {
-        id
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const onDeleteStudent = `subscription OnDeleteStudent {
-  onDeleteStudent {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    enrollments {
-      items {
-        id
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const onCreateInstructor = `subscription OnCreateInstructor {
-  onCreateInstructor {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    courses {
-      items {
-        id
-        createdAt
-        updatedAt
-        courseId
-        title
-        description
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const onUpdateInstructor = `subscription OnUpdateInstructor {
-  onUpdateInstructor {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    courses {
-      items {
-        id
-        createdAt
-        updatedAt
-        courseId
-        title
-        description
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const onDeleteInstructor = `subscription OnDeleteInstructor {
-  onDeleteInstructor {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    courses {
-      items {
-        id
-        createdAt
-        updatedAt
-        courseId
-        title
-        description
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const onCreateProfile = `subscription OnCreateProfile {
-  onCreateProfile {
-    id
-    createdAt
-    updatedAt
-    firstName
-    middleInitial
-    lastName
-    email
-  }
-}
-`;
-export const onUpdateProfile = `subscription OnUpdateProfile {
-  onUpdateProfile {
-    id
-    createdAt
-    updatedAt
-    firstName
-    middleInitial
-    lastName
-    email
-  }
-}
-`;
-export const onDeleteProfile = `subscription OnDeleteProfile {
-  onDeleteProfile {
-    id
-    createdAt
-    updatedAt
-    firstName
-    middleInitial
-    lastName
-    email
-  }
-}
-`;
-export const onCreateEnrollment = `subscription OnCreateEnrollment {
-  onCreateEnrollment {
-    id
-    createdAt
-    updatedAt
-    student {
-      id
-      createdAt
-      updatedAt
-      profile {
-        id
-        createdAt
-        updatedAt
-        firstName
-        middleInitial
-        lastName
-        email
-      }
-      enrollments {
-        nextToken
-      }
-      settings {
-        key
-        value
-      }
-    }
-    course {
-      id
-      createdAt
-      updatedAt
-      courseId
-      title
-      description
-      semester {
-        season
-        year
-      }
-      settings {
-        key
-        value
-      }
-      quizzes {
-        nextToken
-      }
-      enrollments {
-        nextToken
-      }
-      instructor {
-        id
-        createdAt
-        updatedAt
-      }
-      quizAttempts {
-        nextToken
-      }
-    }
-  }
-}
-`;
-export const onUpdateEnrollment = `subscription OnUpdateEnrollment {
-  onUpdateEnrollment {
-    id
-    createdAt
-    updatedAt
-    student {
-      id
-      createdAt
-      updatedAt
-      profile {
-        id
-        createdAt
-        updatedAt
-        firstName
-        middleInitial
-        lastName
-        email
-      }
-      enrollments {
-        nextToken
-      }
-      settings {
-        key
-        value
-      }
-    }
-    course {
-      id
-      createdAt
-      updatedAt
-      courseId
-      title
-      description
-      semester {
-        season
-        year
-      }
-      settings {
-        key
-        value
-      }
-      quizzes {
-        nextToken
-      }
-      enrollments {
-        nextToken
-      }
-      instructor {
-        id
-        createdAt
-        updatedAt
-      }
-      quizAttempts {
-        nextToken
-      }
-    }
-  }
-}
-`;
-export const onDeleteEnrollment = `subscription OnDeleteEnrollment {
-  onDeleteEnrollment {
-    id
-    createdAt
-    updatedAt
-    student {
-      id
-      createdAt
-      updatedAt
-      profile {
-        id
-        createdAt
-        updatedAt
-        firstName
-        middleInitial
-        lastName
-        email
-      }
-      enrollments {
-        nextToken
-      }
-      settings {
-        key
-        value
-      }
-    }
-    course {
-      id
-      createdAt
-      updatedAt
-      courseId
-      title
-      description
-      semester {
-        season
-        year
-      }
-      settings {
-        key
-        value
-      }
-      quizzes {
-        nextToken
-      }
-      enrollments {
-        nextToken
-      }
-      instructor {
-        id
-        createdAt
-        updatedAt
-      }
-      quizAttempts {
-        nextToken
-      }
-    }
-  }
-}
-`;
 export const onCreateQuizAttempt = `subscription OnCreateQuizAttempt {
   onCreateQuizAttempt {
     id
-    student
+    student {
+      id
+      profile {
+        id
+        firstName
+        middleName
+        lastName
+        username
+        email
+      }
+    }
     createdAt
     updatedAt
     responses {
@@ -815,12 +399,10 @@ export const onCreateQuizAttempt = `subscription OnCreateQuizAttempt {
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -832,7 +414,17 @@ export const onCreateQuizAttempt = `subscription OnCreateQuizAttempt {
 export const onUpdateQuizAttempt = `subscription OnUpdateQuizAttempt {
   onUpdateQuizAttempt {
     id
-    student
+    student {
+      id
+      profile {
+        id
+        firstName
+        middleName
+        lastName
+        username
+        email
+      }
+    }
     createdAt
     updatedAt
     responses {
@@ -878,12 +470,10 @@ export const onUpdateQuizAttempt = `subscription OnUpdateQuizAttempt {
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -895,7 +485,17 @@ export const onUpdateQuizAttempt = `subscription OnUpdateQuizAttempt {
 export const onDeleteQuizAttempt = `subscription OnDeleteQuizAttempt {
   onDeleteQuizAttempt {
     id
-    student
+    student {
+      id
+      profile {
+        id
+        firstName
+        middleName
+        lastName
+        username
+        email
+      }
+    }
     createdAt
     updatedAt
     responses {
@@ -941,12 +541,10 @@ export const onDeleteQuizAttempt = `subscription OnDeleteQuizAttempt {
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken

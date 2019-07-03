@@ -28,38 +28,30 @@ export const createCourse = `mutation CreateCourse($input: CreateCourseInput!) {
       nextToken
     }
     enrollments {
-      items {
+      id
+      profile {
         id
-        createdAt
-        updatedAt
+        firstName
+        middleName
+        lastName
+        username
+        email
       }
-      nextToken
     }
     instructor {
       id
-      createdAt
-      updatedAt
       profile {
         id
-        createdAt
-        updatedAt
         firstName
-        middleInitial
+        middleName
         lastName
+        username
         email
-      }
-      courses {
-        nextToken
-      }
-      settings {
-        key
-        value
       }
     }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -95,38 +87,30 @@ export const updateCourse = `mutation UpdateCourse($input: UpdateCourseInput!) {
       nextToken
     }
     enrollments {
-      items {
+      id
+      profile {
         id
-        createdAt
-        updatedAt
+        firstName
+        middleName
+        lastName
+        username
+        email
       }
-      nextToken
     }
     instructor {
       id
-      createdAt
-      updatedAt
       profile {
         id
-        createdAt
-        updatedAt
         firstName
-        middleInitial
+        middleName
         lastName
+        username
         email
-      }
-      courses {
-        nextToken
-      }
-      settings {
-        key
-        value
       }
     }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -162,38 +146,30 @@ export const deleteCourse = `mutation DeleteCourse($input: DeleteCourseInput!) {
       nextToken
     }
     enrollments {
-      items {
+      id
+      profile {
         id
-        createdAt
-        updatedAt
+        firstName
+        middleName
+        lastName
+        username
+        email
       }
-      nextToken
     }
     instructor {
       id
-      createdAt
-      updatedAt
       profile {
         id
-        createdAt
-        updatedAt
         firstName
-        middleInitial
+        middleName
         lastName
+        username
         email
-      }
-      courses {
-        nextToken
-      }
-      settings {
-        key
-        value
       }
     }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -228,12 +204,10 @@ export const createQuiz = `mutation CreateQuiz($input: CreateQuizInput!) {
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -284,12 +258,10 @@ export const updateQuiz = `mutation UpdateQuiz($input: UpdateQuizInput!) {
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -340,12 +312,10 @@ export const deleteQuiz = `mutation DeleteQuiz($input: DeleteQuizInput!) {
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -370,406 +340,20 @@ export const deleteQuiz = `mutation DeleteQuiz($input: DeleteQuizInput!) {
   }
 }
 `;
-export const createStudent = `mutation CreateStudent($input: CreateStudentInput!) {
-  createStudent(input: $input) {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    enrollments {
-      items {
-        id
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const updateStudent = `mutation UpdateStudent($input: UpdateStudentInput!) {
-  updateStudent(input: $input) {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    enrollments {
-      items {
-        id
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const deleteStudent = `mutation DeleteStudent($input: DeleteStudentInput!) {
-  deleteStudent(input: $input) {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    enrollments {
-      items {
-        id
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const createInstructor = `mutation CreateInstructor($input: CreateInstructorInput!) {
-  createInstructor(input: $input) {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    courses {
-      items {
-        id
-        createdAt
-        updatedAt
-        courseId
-        title
-        description
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const updateInstructor = `mutation UpdateInstructor($input: UpdateInstructorInput!) {
-  updateInstructor(input: $input) {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    courses {
-      items {
-        id
-        createdAt
-        updatedAt
-        courseId
-        title
-        description
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const deleteInstructor = `mutation DeleteInstructor($input: DeleteInstructorInput!) {
-  deleteInstructor(input: $input) {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    courses {
-      items {
-        id
-        createdAt
-        updatedAt
-        courseId
-        title
-        description
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const createProfile = `mutation CreateProfile($input: CreateProfileInput!) {
-  createProfile(input: $input) {
-    id
-    createdAt
-    updatedAt
-    firstName
-    middleInitial
-    lastName
-    email
-  }
-}
-`;
-export const updateProfile = `mutation UpdateProfile($input: UpdateProfileInput!) {
-  updateProfile(input: $input) {
-    id
-    createdAt
-    updatedAt
-    firstName
-    middleInitial
-    lastName
-    email
-  }
-}
-`;
-export const deleteProfile = `mutation DeleteProfile($input: DeleteProfileInput!) {
-  deleteProfile(input: $input) {
-    id
-    createdAt
-    updatedAt
-    firstName
-    middleInitial
-    lastName
-    email
-  }
-}
-`;
-export const createEnrollment = `mutation CreateEnrollment($input: CreateEnrollmentInput!) {
-  createEnrollment(input: $input) {
-    id
-    createdAt
-    updatedAt
-    student {
-      id
-      createdAt
-      updatedAt
-      profile {
-        id
-        createdAt
-        updatedAt
-        firstName
-        middleInitial
-        lastName
-        email
-      }
-      enrollments {
-        nextToken
-      }
-      settings {
-        key
-        value
-      }
-    }
-    course {
-      id
-      createdAt
-      updatedAt
-      courseId
-      title
-      description
-      semester {
-        season
-        year
-      }
-      settings {
-        key
-        value
-      }
-      quizzes {
-        nextToken
-      }
-      enrollments {
-        nextToken
-      }
-      instructor {
-        id
-        createdAt
-        updatedAt
-      }
-      quizAttempts {
-        nextToken
-      }
-    }
-  }
-}
-`;
-export const updateEnrollment = `mutation UpdateEnrollment($input: UpdateEnrollmentInput!) {
-  updateEnrollment(input: $input) {
-    id
-    createdAt
-    updatedAt
-    student {
-      id
-      createdAt
-      updatedAt
-      profile {
-        id
-        createdAt
-        updatedAt
-        firstName
-        middleInitial
-        lastName
-        email
-      }
-      enrollments {
-        nextToken
-      }
-      settings {
-        key
-        value
-      }
-    }
-    course {
-      id
-      createdAt
-      updatedAt
-      courseId
-      title
-      description
-      semester {
-        season
-        year
-      }
-      settings {
-        key
-        value
-      }
-      quizzes {
-        nextToken
-      }
-      enrollments {
-        nextToken
-      }
-      instructor {
-        id
-        createdAt
-        updatedAt
-      }
-      quizAttempts {
-        nextToken
-      }
-    }
-  }
-}
-`;
-export const deleteEnrollment = `mutation DeleteEnrollment($input: DeleteEnrollmentInput!) {
-  deleteEnrollment(input: $input) {
-    id
-    createdAt
-    updatedAt
-    student {
-      id
-      createdAt
-      updatedAt
-      profile {
-        id
-        createdAt
-        updatedAt
-        firstName
-        middleInitial
-        lastName
-        email
-      }
-      enrollments {
-        nextToken
-      }
-      settings {
-        key
-        value
-      }
-    }
-    course {
-      id
-      createdAt
-      updatedAt
-      courseId
-      title
-      description
-      semester {
-        season
-        year
-      }
-      settings {
-        key
-        value
-      }
-      quizzes {
-        nextToken
-      }
-      enrollments {
-        nextToken
-      }
-      instructor {
-        id
-        createdAt
-        updatedAt
-      }
-      quizAttempts {
-        nextToken
-      }
-    }
-  }
-}
-`;
 export const createQuizAttempt = `mutation CreateQuizAttempt($input: CreateQuizAttemptInput!) {
   createQuizAttempt(input: $input) {
     id
-    student
+    student {
+      id
+      profile {
+        id
+        firstName
+        middleName
+        lastName
+        username
+        email
+      }
+    }
     createdAt
     updatedAt
     responses {
@@ -815,12 +399,10 @@ export const createQuizAttempt = `mutation CreateQuizAttempt($input: CreateQuizA
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -832,7 +414,17 @@ export const createQuizAttempt = `mutation CreateQuizAttempt($input: CreateQuizA
 export const updateQuizAttempt = `mutation UpdateQuizAttempt($input: UpdateQuizAttemptInput!) {
   updateQuizAttempt(input: $input) {
     id
-    student
+    student {
+      id
+      profile {
+        id
+        firstName
+        middleName
+        lastName
+        username
+        email
+      }
+    }
     createdAt
     updatedAt
     responses {
@@ -878,12 +470,10 @@ export const updateQuizAttempt = `mutation UpdateQuizAttempt($input: UpdateQuizA
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -895,7 +485,17 @@ export const updateQuizAttempt = `mutation UpdateQuizAttempt($input: UpdateQuizA
 export const deleteQuizAttempt = `mutation DeleteQuizAttempt($input: DeleteQuizAttemptInput!) {
   deleteQuizAttempt(input: $input) {
     id
-    student
+    student {
+      id
+      profile {
+        id
+        firstName
+        middleName
+        lastName
+        username
+        email
+      }
+    }
     createdAt
     updatedAt
     responses {
@@ -941,12 +541,10 @@ export const deleteQuizAttempt = `mutation DeleteQuizAttempt($input: DeleteQuizA
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken

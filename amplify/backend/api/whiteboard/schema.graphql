@@ -1,3 +1,7 @@
+type Query {
+  listStudents: [Student] @function(name: "StudentsResolver-${env}")
+  listInstructors: [Instructor] @function(name: "InstructorsResolver-${env}")
+}
 type Course
   @model
   @key(name: "ByCourseId", fields: ["courseId", "createdAt"])
@@ -16,8 +20,8 @@ type Course
   semester: Semester
   settings: [KeyValue]
   quizzes: [Quiz] @connection(name: "CourseQuizzes")
-  enrollments: [Enrollment] @connection(name: "CourseEnrollments")
-  instructor: Instructor @connection(name: "InstructorCourses")
+  enrollments: [Student]
+  instructor: Instructor
   quizAttempts: [QuizAttempt] @connection(name: "CourseQuizAttempts")
 }
 
@@ -39,52 +43,23 @@ type Quiz
   settings: [KeyValue]
 }
 
-type Student @model @auth(rules: [{ allow: owner }]) {
+type Student {
   id: ID!
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
   profile: Profile!
-  enrollments: [Enrollment] @connection(name: "StudentEnrollments")
-  settings: [KeyValue]
 }
 
-type Instructor @model @auth(rules: [{ allow: owner }]) {
+type Instructor {
   id: ID!
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
   profile: Profile!
-  courses: [Course] @connection(name: "InstructorCourses")
-  settings: [KeyValue]
 }
 
-type Profile
-  @model
-  @key(name: "ByEmail", fields: ["email"])
-  @auth(
-    rules: [
-      { allow: owner }
-      {
-        allow: groups
-        groups: ["admin", "professor", "teacher_assistant"]
-        operations: [read]
-      }
-    ]
-  ) {
+type Profile {
   id: ID!
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
   firstName: String!
-  middleInitial: String
+  middleName: String
   lastName: String!
+  username: String!
   email: AWSEmail!
-}
-
-type Enrollment @model(queries: null) {
-  id: ID!
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
-  student: Student! @connection(name: "StudentEnrollments")
-  course: Course! @connection(name: "CourseEnrollments")
 }
 
 type QuizAttempt
@@ -100,7 +75,7 @@ type QuizAttempt
     ]
   ) {
   id: String!
-  student: String!
+  student: Student!
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
   responses: [Response]

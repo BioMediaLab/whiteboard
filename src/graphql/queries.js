@@ -1,6 +1,34 @@
 // eslint-disable
 // this is an auto generated file. This will be overwritten
 
+export const listStudents = `query ListStudents {
+  listStudents {
+    id
+    profile {
+      id
+      firstName
+      middleName
+      lastName
+      username
+      email
+    }
+  }
+}
+`;
+export const listInstructors = `query ListInstructors {
+  listInstructors {
+    id
+    profile {
+      id
+      firstName
+      middleName
+      lastName
+      username
+      email
+    }
+  }
+}
+`;
 export const getCourse = `query GetCourse($id: ID!) {
   getCourse(id: $id) {
     id
@@ -28,38 +56,30 @@ export const getCourse = `query GetCourse($id: ID!) {
       nextToken
     }
     enrollments {
-      items {
+      id
+      profile {
         id
-        createdAt
-        updatedAt
+        firstName
+        middleName
+        lastName
+        username
+        email
       }
-      nextToken
     }
     instructor {
       id
-      createdAt
-      updatedAt
       profile {
         id
-        createdAt
-        updatedAt
         firstName
-        middleInitial
+        middleName
         lastName
+        username
         email
-      }
-      courses {
-        nextToken
-      }
-      settings {
-        key
-        value
       }
     }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -93,12 +113,10 @@ export const listCourses = `query ListCourses(
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -134,12 +152,10 @@ export const getQuiz = `query GetQuiz($id: ID!) {
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -197,164 +213,20 @@ export const listQuizzes = `query ListQuizzes(
   }
 }
 `;
-export const getStudent = `query GetStudent($id: ID!) {
-  getStudent(id: $id) {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    enrollments {
-      items {
-        id
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const listStudents = `query ListStudents(
-  $filter: ModelStudentFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listStudents(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      createdAt
-      updatedAt
-      profile {
-        id
-        createdAt
-        updatedAt
-        firstName
-        middleInitial
-        lastName
-        email
-      }
-      enrollments {
-        nextToken
-      }
-      settings {
-        key
-        value
-      }
-    }
-    nextToken
-  }
-}
-`;
-export const getInstructor = `query GetInstructor($id: ID!) {
-  getInstructor(id: $id) {
-    id
-    createdAt
-    updatedAt
-    profile {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    courses {
-      items {
-        id
-        createdAt
-        updatedAt
-        courseId
-        title
-        description
-      }
-      nextToken
-    }
-    settings {
-      key
-      value
-    }
-  }
-}
-`;
-export const listInstructors = `query ListInstructors(
-  $filter: ModelInstructorFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listInstructors(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      createdAt
-      updatedAt
-      profile {
-        id
-        createdAt
-        updatedAt
-        firstName
-        middleInitial
-        lastName
-        email
-      }
-      courses {
-        nextToken
-      }
-      settings {
-        key
-        value
-      }
-    }
-    nextToken
-  }
-}
-`;
-export const getProfile = `query GetProfile($id: ID!) {
-  getProfile(id: $id) {
-    id
-    createdAt
-    updatedAt
-    firstName
-    middleInitial
-    lastName
-    email
-  }
-}
-`;
-export const listProfiles = `query ListProfiles(
-  $filter: ModelProfileFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listProfiles(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      createdAt
-      updatedAt
-      firstName
-      middleInitial
-      lastName
-      email
-    }
-    nextToken
-  }
-}
-`;
 export const getQuizAttempt = `query GetQuizAttempt($id: ID!) {
   getQuizAttempt(id: $id) {
     id
-    student
+    student {
+      id
+      profile {
+        id
+        firstName
+        middleName
+        lastName
+        username
+        email
+      }
+    }
     createdAt
     updatedAt
     responses {
@@ -400,12 +272,10 @@ export const getQuizAttempt = `query GetQuizAttempt($id: ID!) {
         nextToken
       }
       enrollments {
-        nextToken
+        id
       }
       instructor {
         id
-        createdAt
-        updatedAt
       }
       quizAttempts {
         nextToken
@@ -422,7 +292,9 @@ export const listQuizAttempts = `query ListQuizAttempts(
   listQuizAttempts(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      student
+      student {
+        id
+      }
       createdAt
       updatedAt
       responses {

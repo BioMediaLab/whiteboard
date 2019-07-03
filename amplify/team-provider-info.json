@@ -1,70 +1,87 @@
 {
-	"develop": {
-		"awscloudformation": {
-			"AuthRoleName": "whiteboard-develop-20190520163411-authRole",
-			"UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-develop-20190520163411-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-develop-20190520163411-authRole",
-			"Region": "us-east-1",
-			"DeploymentBucketName": "whiteboard-develop-20190520163411-deployment",
-			"UnauthRoleName": "whiteboard-develop-20190520163411-unauthRole",
-			"StackName": "whiteboard-develop-20190520163411",
-			"StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-develop-20190520163411/a031d540-7b3e-11e9-8c08-0a79b0f3a14a"
-		},
-		"categories": {
-			"auth": {
-				"cognito5608a292": {}
-			}
-		}
-	},
-	"megha": {
-		"awscloudformation": {
-			"AuthRoleName": "whiteboard-megha-20190521101509-authRole",
-			"UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-megha-20190521101509-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-megha-20190521101509-authRole",
-			"Region": "us-east-1",
-			"DeploymentBucketName": "whiteboard-megha-20190521101509-deployment",
-			"UnauthRoleName": "whiteboard-megha-20190521101509-unauthRole",
-			"StackName": "whiteboard-megha-20190521101509",
-			"StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-megha-20190521101509/fcf338c0-7beb-11e9-b128-127a71eef55e"
-		},
-		"categories": {
-			"auth": {
-				"cognito5608a292": {}
-			}
-		}
-	},
-	"test": {
-		"awscloudformation": {
-			"AuthRoleName": "whiteboard-test-20190601101320-authRole",
-			"UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-test-20190601101320-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-test-20190601101320-authRole",
-			"Region": "us-east-1",
-			"DeploymentBucketName": "whiteboard-test-20190601101320-deployment",
-			"UnauthRoleName": "whiteboard-test-20190601101320-unauthRole",
-			"StackName": "whiteboard-test-20190601101320",
-			"StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-test-20190601101320/69bfc160-8477-11e9-8d6c-1262c1c6cf8e"
-		},
-		"categories": {
-			"auth": {
-				"cognito5608a292": {}
-			}
-		}
-	},
-	"andyk": {
-		"awscloudformation": {
-			"AuthRoleName": "whiteboard-andyk-20190612151341-authRole",
-			"UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-andyk-20190612151341-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-andyk-20190612151341-authRole",
-			"Region": "us-east-1",
-			"DeploymentBucketName": "whiteboard-andyk-20190612151341-deployment",
-			"UnauthRoleName": "whiteboard-andyk-20190612151341-unauthRole",
-			"StackName": "whiteboard-andyk-20190612151341",
-			"StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-andyk-20190612151341/31149390-8d46-11e9-9859-12ece74fd46e"
-		},
-		"categories": {
-			"auth": {
-				"cognito5608a292": {}
-			}
-		}
-	}
+    "develop": {
+        "awscloudformation": {
+            "AuthRoleName": "whiteboard-develop-20190520163411-authRole",
+            "UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-develop-20190520163411-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-develop-20190520163411-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "whiteboard-develop-20190520163411-deployment",
+            "UnauthRoleName": "whiteboard-develop-20190520163411-unauthRole",
+            "StackName": "whiteboard-develop-20190520163411",
+            "StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-develop-20190520163411/a031d540-7b3e-11e9-8c08-0a79b0f3a14a"
+        },
+        "categories": {
+            "auth": {
+                "cognito5608a292": {}
+            }
+        }
+    },
+    "megha": {
+        "awscloudformation": {
+            "AuthRoleName": "whiteboard-megha-20190521101509-authRole",
+            "UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-megha-20190521101509-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-megha-20190521101509-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "whiteboard-megha-20190521101509-deployment",
+            "UnauthRoleName": "whiteboard-megha-20190521101509-unauthRole",
+            "StackName": "whiteboard-megha-20190521101509",
+            "StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-megha-20190521101509/fcf338c0-7beb-11e9-b128-127a71eef55e"
+        },
+        "categories": {
+            "auth": {
+                "cognito5608a292": {}
+            }
+        }
+    },
+    "test": {
+        "awscloudformation": {
+            "AuthRoleName": "whiteboard-test-20190601101320-authRole",
+            "UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-test-20190601101320-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-test-20190601101320-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "whiteboard-test-20190601101320-deployment",
+            "UnauthRoleName": "whiteboard-test-20190601101320-unauthRole",
+            "StackName": "whiteboard-test-20190601101320",
+            "StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-test-20190601101320/69bfc160-8477-11e9-8d6c-1262c1c6cf8e"
+        },
+        "categories": {
+            "auth": {
+                "cognito5608a292": {}
+            }
+        }
+    },
+    "andyk": {
+        "awscloudformation": {
+            "AuthRoleName": "whiteboard-andyk-20190612151341-authRole",
+            "UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-andyk-20190612151341-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-andyk-20190612151341-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "whiteboard-andyk-20190612151341-deployment",
+            "UnauthRoleName": "whiteboard-andyk-20190612151341-unauthRole",
+            "StackName": "whiteboard-andyk-20190612151341",
+            "StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-andyk-20190612151341/31149390-8d46-11e9-9859-12ece74fd46e"
+        },
+        "categories": {
+            "auth": {
+                "cognito5608a292": {}
+            }
+        }
+    },
+    "cpyles": {
+        "awscloudformation": {
+            "AuthRoleName": "whiteboard-cpyles-20190703125132-authRole",
+            "UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-cpyles-20190703125132-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-cpyles-20190703125132-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "whiteboard-cpyles-20190703125132-deployment",
+            "UnauthRoleName": "whiteboard-cpyles-20190703125132-unauthRole",
+            "StackName": "whiteboard-cpyles-20190703125132",
+            "StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-cpyles-20190703125132/cfb2c590-9db2-11e9-b753-0a9f1235b826"
+        },
+        "categories": {
+            "auth": {
+                "cognito5608a292": {}
+            }
+        }
+    }
 }

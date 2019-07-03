@@ -19,5 +19,35 @@
 				"securityType": "AMAZON_COGNITO_USER_POOLS"
 			}
 		}
+	},
+	"function": {
+		"StudentsResolver": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "cognito5608a292",
+					"attributes": [
+						"UserPoolId"
+					]
+				}
+			]
+		},
+		"InstructorsResolver": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "cognito5608a292",
+					"attributes": [
+						"UserPoolId"
+					]
+				}
+			]
+		}
 	}
 }

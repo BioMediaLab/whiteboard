@@ -69,8 +69,8 @@
 				"Runtime": "nodejs8.10",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "whiteboard-develop-20190520163411-deployment",
-					"S3Key": "amplify-builds/StudentsResolver-4b48325443665a514535-build.zip"
+					"S3Bucket": "whiteboard-cpyles-20190703125132-deployment",
+					"S3Key": "amplify-builds/StudentsResolver-39416556513837596167-build.zip"
 				}
 			}
 		},
@@ -80,12 +80,12 @@
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"whiteboardLambdaRole3f8c78a7",
+						"whiteboardLambdaRole7c33f68f",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"whiteboardLambdaRole3f8c78a7",
+									"whiteboardLambdaRole7c33f68f",
 									"-",
 									{
 										"Ref": "env"
