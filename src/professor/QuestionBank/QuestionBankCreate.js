@@ -106,6 +106,7 @@ const QuestionBankCreatePage = ({ questionBank, ...props }) => {
       title="Question Bank"
       primaryAction={{
         content: 'Save',
+        id: "primary-action-1",
         onAction: onSave
       }}
     >
@@ -122,6 +123,7 @@ const QuestionBankCreatePage = ({ questionBank, ...props }) => {
           title="Questions"
           actions={{
             content: 'Add Question',
+            id: 'button-add-question',
             onAction: onAddQuestion
           }}
         >
@@ -137,6 +139,7 @@ const QuestionBankCreatePage = ({ questionBank, ...props }) => {
       <PageActions
         primaryAction={{
           content: 'Save',
+          id: "primary-action-2",
           onAction: onSave
         }}
       />

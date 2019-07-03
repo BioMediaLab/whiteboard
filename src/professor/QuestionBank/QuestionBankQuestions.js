@@ -23,6 +23,7 @@ export default ({
         actions={[
           {
             content: 'Add Choices',
+            id:'button-add-choice',
             onAction: () => {
               onAddChoice(question.key)
             }

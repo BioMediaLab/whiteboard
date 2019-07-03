@@ -45,6 +45,7 @@ const QuestionChoices = ({ question, onUpdateChoice, onToggleAnswer }) => {
         enabled={styleAsEnabled}
         action={{
           content: isAnswer ? 'Correct' : 'Incorrect',
+          id:`choice-${choice.key}`,
           onAction: () => {
             onToggleAnswer(question.key, choice)
           }
