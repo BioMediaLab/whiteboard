@@ -16,23 +16,6 @@
             }
         }
     },
-    "cliff": {
-        "awscloudformation": {
-            "AuthRoleName": "whiteboard-cliff-20190520172001-authRole",
-            "UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-cliff-20190520172001-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-cliff-20190520172001-authRole",
-            "Region": "us-east-1",
-            "DeploymentBucketName": "whiteboard-cliff-20190520172001-deployment",
-            "UnauthRoleName": "whiteboard-cliff-20190520172001-unauthRole",
-            "StackName": "whiteboard-cliff-20190520172001",
-            "StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-cliff-20190520172001/07fd2020-7b45-11e9-88d7-0a743b4c9590"
-        },
-        "categories": {
-            "auth": {
-                "cognito5608a292": {}
-            }
-        }
-    },
     "megha": {
         "awscloudformation": {
             "AuthRoleName": "whiteboard-megha-20190521101509-authRole",
@@ -77,6 +60,23 @@
             "UnauthRoleName": "whiteboard-andyk-20190612151341-unauthRole",
             "StackName": "whiteboard-andyk-20190612151341",
             "StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-andyk-20190612151341/31149390-8d46-11e9-9859-12ece74fd46e"
+        },
+        "categories": {
+            "auth": {
+                "cognito5608a292": {}
+            }
+        }
+    },
+    "cliff": {
+        "awscloudformation": {
+            "AuthRoleName": "whiteboard-cliff-20190703102239-authRole",
+            "UnauthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-cliff-20190703102239-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::544677986626:role/whiteboard-cliff-20190703102239-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "whiteboard-cliff-20190703102239-deployment",
+            "UnauthRoleName": "whiteboard-cliff-20190703102239-unauthRole",
+            "StackName": "whiteboard-cliff-20190703102239",
+            "StackId": "arn:aws:cloudformation:us-east-1:544677986626:stack/whiteboard-cliff-20190703102239/03260e10-9d9e-11e9-b162-0eeb16b24f80"
         },
         "categories": {
             "auth": {
