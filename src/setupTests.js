@@ -1,21 +1,28 @@
+import React from 'react'
 import 'jest-extended'
 import fetch from 'node-fetch'
-import { render as rtlRender, fireEvent } from 'react-testing-library'
+import { render as rtlRender, fireEvent } from '@testing-library/react'
 import 'jest-dom/extend-expect'
-import 'react-testing-library/cleanup-after-each'
+import '@testing-library/react/cleanup-after-each'
+import { AppProvider } from '@shopify/polaris'
+
+window.matchMedia = jest.fn().mockImplementation(query => {
+  return {
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+    handleEvent: jest.fn()
+  }
+})
 
 function render(component) {
-  const { container, getByText } = rtlRender(component)
+  const { container, getByText } = rtlRender(
+    <AppProvider>{component}</AppProvider>
+  )
 
-  container.click = () => {
-    fireEvent.click(container.firstChild)
-  }
-
-  container.clickText = text => {
-    fireEvent.click(getByText(text))
-  }
-
-  return container
+  return container.firstChild
 }
 
 global.fetch = fetch

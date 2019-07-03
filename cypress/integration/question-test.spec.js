@@ -1,5 +1,5 @@
 /* global cy */
-import {signIn} from '../utils';
+import { signIn } from '../utils';
 describe('Basic', () => {
   beforeEach(() => {
     cy.visit('/');
@@ -10,30 +10,36 @@ describe('Basic', () => {
   });
 
   it('Should open question create page', () => {
-    cy.visit('/questions');
-    cy.get('.Polaris-Page-Header .Polaris-Button.Polaris-Button--primary:visible').click()
+    cy.visit('/question-banks');
+    cy.get('#primary-action-create').click({ force: true })
   });
 
   it('Should create question', () => {
-    cy.visit('/questions');
-    cy.get('.Polaris-Page-Header .Polaris-Button.Polaris-Button--primary:visible').click()
-    cy.get('#question').type('This is an e2e test question1?');
-    cy.get('[data-cy=choice] .Polaris-Button').click();
-    cy.get('[data-cy=choice] .Polaris-Button').click();
-    cy.get('[data-cy=choice] .Polaris-Button').click();
-    cy.get('[data-cy=choice] .Polaris-Button').click();
-    cy.get('[aria-label="Choice A"]').type('choice 1');
-    cy.get('[aria-label="Choice B"]').type('choice 2');
-    cy.get('[aria-label="Choice C"]').type('choice 3');
-    cy.get('[aria-label="Choice D"]').type('choice 4');
-    cy.get('.Polaris-Button.Polaris-Button--primary').click();
+    cy.visit('/question-banks');
+    cy.get('#primary-action-create').click({ force: true })
+    createQuestionData();
+    cy.get('#primary-action-2').click();
   });
 
   it('Should display question list', () => {
-    cy.visit('/questions');
-    cy.wait(2000);
-    cy.get('.Polaris-Pagination__Button.Polaris-Pagination__NextButton:enabled').click();
-    cy.wait(2000);
-    cy.get('.Polaris-Pagination__Button.Polaris-Pagination__PreviousButton:enabled').click();
+    cy.visit('/question-banks');
   });
 });
+
+function createQuestionData(){
+  let i = 0;
+  cy.get('#title').type('This is an e2e  test question1?');
+  cy.get('#Description').type('This question was created to test e2e.');
+  cy.get('#courseId').type('102');
+  cy.get('#button-add-question').click();
+  cy.get('#TextField1').type('What is your hobby?');
+  while (i < 4) {
+    cy.get('#button-add-choice').click();
+    i++
+  };
+  cy.get('#TextField2:visible').type('Painting');
+  cy.get('#TextField3').type('Singing ');
+  cy.get('#TextField4').type('Reading');
+  cy.get('#TextField5').type('Sleeping');
+  cy.get('#choice-a:visible ').click();
+}
