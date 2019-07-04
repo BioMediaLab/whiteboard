@@ -12,6 +12,13 @@ type Course
   quizzes: [Quiz] @connection(name: "CourseQuizzes")
 }
 
+type CourseMessage @model {
+  id: ID!
+  course: Course! @connection(name: "CourseMessages")
+  user: User!
+  content: String!
+}
+
 type Quiz
   @model(queries: { get: "getQuiz", list: "listQuizzes" })
   @auth(

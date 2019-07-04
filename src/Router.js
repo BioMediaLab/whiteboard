@@ -7,14 +7,19 @@ import {
 } from 'containers/Questions'
 import { QuizCreate, QuizList, QuizUpdate } from 'containers/Quizzes'
 import { QuizTemplateList, QuizTemplateCreate } from 'containers/QuizTemplates'
-import { CourseCreate, CourseList, CourseUpdate } from 'containers/Courses'
+import {
+  CourseCreate,
+  CourseList,
+  CourseMessage,
+  CourseUpdate
+} from 'containers/Courses'
 
 export default () => (
   <Router>
     <CourseList path="/" />
     <CourseList path="/courses" />
     <CourseCreate path="/courses/create" />
-    <CourseUpdate path="/courses/:courseId" />
+    <CourseMessage path="/courses/:courseId" />
     <QuestionList path="/questions" />
     <QuestionCreate path="/questions/create" />
     <QuestionUpdate path="/questions/:questionId" />
