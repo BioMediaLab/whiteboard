@@ -71,17 +71,25 @@ export const CourseCreate = () => {
   const { data } = useDataLoader('listInstructors')
   const instructors = data || []
   const instructorOptions = instructors.map(instructor => {
-    const { id, firstName = '', middleName = '', lastName = '' } = instructor
-    const fullName = `${firstName} ${middleName.charAt(0)} ${lastName}`.trim()
-    const label = fullName.length ? fullName : id
+    const { given_name = '', middle_name = '', family_name = '' } = instructor
+    const fullName = `${given_name} ${middle_name.charAt(
+      0
+    )} ${family_name}`.trim()
     return {
-      label,
-      value: id
+      label: fullName,
+      value: instructor.email
     }
   })
 
   const onSave = async () => {
-    createCourse(course)
+    const { id, ...instructor } = instructors.find(_instructor => {
+      return _instructor.email === course.instructor
+    })
+
+    createCourse({
+      ...course,
+      instructor
+    })
   }
 
   const onFieldChange = (value, elementId) => {
