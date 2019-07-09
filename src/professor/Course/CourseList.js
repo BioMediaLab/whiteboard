@@ -47,7 +47,6 @@ const CourseListItem = ({
         </Title>
         <p>{description}</p>
         <Stack>
-          <TextStyle variation="subdued">Semester: Spring 2019</TextStyle>
           <TextStyle variation="subdued">
             Instructor: {instructorName}
           </TextStyle>
@@ -65,7 +64,6 @@ export const CourseList = props => {
 
   const items = data || []
 
-  console.log(data)
   if (pending && !succeeded && !errored) {
     return <LoadingPage />
   }
