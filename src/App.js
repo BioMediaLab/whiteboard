@@ -27,4 +27,22 @@ const App = () => {
   )
 }
 
-export default withAuthenticator(App)
+export default withAuthenticator(App, {
+  signUpConfig: {
+    signUpFields: [
+      {
+        label: 'First Name',
+        key: 'given_name',
+        required: true,
+        type: 'string'
+      },
+      {
+        label: 'Middle Name',
+        key: 'middle_name',
+        required: false,
+        type: 'string'
+      },
+      { label: 'Last Name', key: 'family_name', required: true, type: 'string' }
+    ]
+  }
+})
