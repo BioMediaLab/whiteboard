@@ -44,14 +44,11 @@ async function listStudents() {
         ...userAccum,
         {
           id: profile.email,
-          profile: {
-            id: profile.email,
-            username,
-            email: profile.email,
-            firstName: profile.given_name || '',
-            lastName: profile.family_name || '',
-            middleName: profile.middle_name || ''
-          }
+          username,
+          email: profile.email,
+          given_name: profile.given_name || '',
+          family_name: profile.family_name || '',
+          middle_name: profile.middle_name || ''
         }
       ]
     }, [])

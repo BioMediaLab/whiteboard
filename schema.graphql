@@ -1,3 +1,7 @@
+type Query {
+  listStudents: [Student] @function(name: "StudentsResolver-${env}")
+  listInstructors: [Instructor] @function(name: "InstructorsResolver-${env}")
+}
 type Course
   @model
   @key(name: "ByCourseId", fields: ["courseId", "createdAt"])
@@ -16,8 +20,8 @@ type Course
   semester: Semester
   settings: [KeyValue]
   quizzes: [Quiz] @connection(name: "CourseQuizzes")
-  enrollments: [Enrollment] @connection(name: "CourseEnrollments")
-  instructor: Instructor @connection(name: "InstructorCourses")
+  enrollments: [String]
+  instructor: String
   quizAttempts: [QuizAttempt] @connection(name: "CourseQuizAttempts")
 }
 
@@ -39,52 +43,22 @@ type Quiz
   settings: [KeyValue]
 }
 
-type Student @model @auth(rules: [{ allow: owner }]) {
-  id: ID!
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
-  profile: Profile!
-  enrollments: [Enrollment] @connection(name: "StudentEnrollments")
-  settings: [KeyValue]
+type Student {
+  id: ID
+  family_name: String
+  middle_name: String
+  given_name: String
+  username: String
+  email: AWSEmail
 }
 
-type Instructor @model @auth(rules: [{ allow: owner }]) {
-  id: ID!
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
-  profile: Profile!
-  courses: [Course] @connection(name: "InstructorCourses")
-  settings: [KeyValue]
-}
-
-type Profile
-  @model
-  @key(name: "ByEmail", fields: ["email"])
-  @auth(
-    rules: [
-      { allow: owner }
-      {
-        allow: groups
-        groups: ["admin", "professor", "teacher_assistant"]
-        operations: [read]
-      }
-    ]
-  ) {
-  id: ID!
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
-  firstName: String!
-  middleInitial: String
-  lastName: String!
-  email: AWSEmail!
-}
-
-type Enrollment @model(queries: null) {
-  id: ID!
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
-  student: Student! @connection(name: "StudentEnrollments")
-  course: Course! @connection(name: "CourseEnrollments")
+type Instructor {
+  id: ID
+  family_name: String
+  middle_name: String
+  given_name: String
+  username: String
+  email: AWSEmail
 }
 
 type QuizAttempt

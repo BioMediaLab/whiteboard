@@ -70,7 +70,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "whiteboard-cpyles-20190703125132-deployment",
-					"S3Key": "amplify-builds/StudentsResolver-39416556513837596167-build.zip"
+					"S3Key": "amplify-builds/StudentsResolver-513539354a796b666173-build.zip"
 				}
 			}
 		},

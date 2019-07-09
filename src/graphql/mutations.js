@@ -27,12 +27,25 @@ export const createCourse = `mutation CreateCourse($input: CreateCourseInput!) {
       }
       nextToken
     }
-    enrollments
-    instructor
+    enrollments {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
+    instructor {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -67,12 +80,25 @@ export const updateCourse = `mutation UpdateCourse($input: UpdateCourseInput!) {
       }
       nextToken
     }
-    enrollments
-    instructor
+    enrollments {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
+    instructor {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -107,12 +133,25 @@ export const deleteCourse = `mutation DeleteCourse($input: DeleteCourseInput!) {
       }
       nextToken
     }
-    enrollments
-    instructor
+    enrollments {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
+    instructor {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -146,8 +185,22 @@ export const createQuiz = `mutation CreateQuiz($input: CreateQuizInput!) {
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -196,8 +249,22 @@ export const updateQuiz = `mutation UpdateQuiz($input: UpdateQuizInput!) {
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -246,8 +313,22 @@ export const deleteQuiz = `mutation DeleteQuiz($input: DeleteQuizInput!) {
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -274,7 +355,14 @@ export const deleteQuiz = `mutation DeleteQuiz($input: DeleteQuizInput!) {
 export const createQuizAttempt = `mutation CreateQuizAttempt($input: CreateQuizAttemptInput!) {
   createQuizAttempt(input: $input) {
     id
-    student
+    student {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     createdAt
     updatedAt
     responses {
@@ -319,8 +407,22 @@ export const createQuizAttempt = `mutation CreateQuizAttempt($input: CreateQuizA
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -331,7 +433,14 @@ export const createQuizAttempt = `mutation CreateQuizAttempt($input: CreateQuizA
 export const updateQuizAttempt = `mutation UpdateQuizAttempt($input: UpdateQuizAttemptInput!) {
   updateQuizAttempt(input: $input) {
     id
-    student
+    student {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     createdAt
     updatedAt
     responses {
@@ -376,8 +485,22 @@ export const updateQuizAttempt = `mutation UpdateQuizAttempt($input: UpdateQuizA
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -388,7 +511,14 @@ export const updateQuizAttempt = `mutation UpdateQuizAttempt($input: UpdateQuizA
 export const deleteQuizAttempt = `mutation DeleteQuizAttempt($input: DeleteQuizAttemptInput!) {
   deleteQuizAttempt(input: $input) {
     id
-    student
+    student {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     createdAt
     updatedAt
     responses {
@@ -433,8 +563,22 @@ export const deleteQuizAttempt = `mutation DeleteQuizAttempt($input: DeleteQuizA
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }

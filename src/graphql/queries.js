@@ -49,12 +49,25 @@ export const getCourse = `query GetCourse($id: ID!) {
       }
       nextToken
     }
-    enrollments
-    instructor
+    enrollments {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
+    instructor {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -87,8 +100,22 @@ export const listCourses = `query ListCourses(
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -122,8 +149,22 @@ export const getQuiz = `query GetQuiz($id: ID!) {
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -166,8 +207,6 @@ export const listQuizzes = `query ListQuizzes(
         courseId
         title
         description
-        enrollments
-        instructor
       }
       questions {
         key
@@ -185,7 +224,14 @@ export const listQuizzes = `query ListQuizzes(
 export const getQuizAttempt = `query GetQuizAttempt($id: ID!) {
   getQuizAttempt(id: $id) {
     id
-    student
+    student {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     createdAt
     updatedAt
     responses {
@@ -230,8 +276,22 @@ export const getQuizAttempt = `query GetQuizAttempt($id: ID!) {
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -247,7 +307,14 @@ export const listQuizAttempts = `query ListQuizAttempts(
   listQuizAttempts(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      student
+      student {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       createdAt
       updatedAt
       responses {
@@ -265,8 +332,6 @@ export const listQuizAttempts = `query ListQuizAttempts(
         courseId
         title
         description
-        enrollments
-        instructor
       }
     }
     nextToken

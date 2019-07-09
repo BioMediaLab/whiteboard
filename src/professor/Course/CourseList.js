@@ -27,21 +27,36 @@ const CourseListPage = ({ items, renderItem }) => {
   )
 }
 
-const CourseListItem = ({ id, courseId, title, description, semester }) => (
-  <ResourceList.Item id={id} url={`./${id}`}>
-    <TextContainer spacing="tight">
-      <Title>
-        {title} ({courseId})
-      </Title>
-      <p>{description}</p>
-      <Stack>
-        <TextStyle variation="subdued">Semester: Spring 2019</TextStyle>
-        <TextStyle variation="subdued">Professor: Jane Doe</TextStyle>
-        <TextStyle variation="subdued">Students: 21</TextStyle>
-      </Stack>
-    </TextContainer>
-  </ResourceList.Item>
-)
+const CourseListItem = ({
+  id,
+  courseId,
+  title,
+  description,
+  semester,
+  instructor,
+  students
+}) => {
+  const { given_name, family_name, middle_name } = instructor
+  const instructorName = `${given_name} ${middle_name.charAt(0)} ${family_name}`
+  const studentCount = students ? students.length : 0
+  return (
+    <ResourceList.Item id={id} url={`./${id}`}>
+      <TextContainer spacing="tight">
+        <Title>
+          {title} ({courseId})
+        </Title>
+        <p>{description}</p>
+        <Stack>
+          <TextStyle variation="subdued">Semester: Spring 2019</TextStyle>
+          <TextStyle variation="subdued">
+            Instructor: {instructorName}
+          </TextStyle>
+          <TextStyle variation="subdued">Students: {studentCount}</TextStyle>
+        </Stack>
+      </TextContainer>
+    </ResourceList.Item>
+  )
+}
 
 export const CourseList = props => {
   const { pending, succeeded, errored, data = [] } = useDataLoader(
@@ -50,6 +65,7 @@ export const CourseList = props => {
 
   const items = data || []
 
+  console.log(data)
   if (pending && !succeeded && !errored) {
     return <LoadingPage />
   }

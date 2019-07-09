@@ -20,8 +20,8 @@ type Course
   semester: Semester
   settings: [KeyValue]
   quizzes: [Quiz] @connection(name: "CourseQuizzes")
-  enrollments: [String]
-  instructor: String
+  enrollments: [Student]
+  instructor: Instructor
   quizAttempts: [QuizAttempt] @connection(name: "CourseQuizAttempts")
 }
 
@@ -74,7 +74,7 @@ type QuizAttempt
     ]
   ) {
   id: String!
-  student: String!
+  student: Student!
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
   responses: [Response]

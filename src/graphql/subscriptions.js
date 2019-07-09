@@ -27,12 +27,25 @@ export const onCreateCourse = `subscription OnCreateCourse {
       }
       nextToken
     }
-    enrollments
-    instructor
+    enrollments {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
+    instructor {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -67,12 +80,25 @@ export const onUpdateCourse = `subscription OnUpdateCourse {
       }
       nextToken
     }
-    enrollments
-    instructor
+    enrollments {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
+    instructor {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -107,12 +133,25 @@ export const onDeleteCourse = `subscription OnDeleteCourse {
       }
       nextToken
     }
-    enrollments
-    instructor
+    enrollments {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
+    instructor {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     quizAttempts {
       items {
         id
-        student
         createdAt
         updatedAt
       }
@@ -146,8 +185,22 @@ export const onCreateQuiz = `subscription OnCreateQuiz {
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -196,8 +249,22 @@ export const onUpdateQuiz = `subscription OnUpdateQuiz {
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -246,8 +313,22 @@ export const onDeleteQuiz = `subscription OnDeleteQuiz {
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -274,7 +355,14 @@ export const onDeleteQuiz = `subscription OnDeleteQuiz {
 export const onCreateQuizAttempt = `subscription OnCreateQuizAttempt {
   onCreateQuizAttempt {
     id
-    student
+    student {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     createdAt
     updatedAt
     responses {
@@ -319,8 +407,22 @@ export const onCreateQuizAttempt = `subscription OnCreateQuizAttempt {
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -331,7 +433,14 @@ export const onCreateQuizAttempt = `subscription OnCreateQuizAttempt {
 export const onUpdateQuizAttempt = `subscription OnUpdateQuizAttempt {
   onUpdateQuizAttempt {
     id
-    student
+    student {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     createdAt
     updatedAt
     responses {
@@ -376,8 +485,22 @@ export const onUpdateQuizAttempt = `subscription OnUpdateQuizAttempt {
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
@@ -388,7 +511,14 @@ export const onUpdateQuizAttempt = `subscription OnUpdateQuizAttempt {
 export const onDeleteQuizAttempt = `subscription OnDeleteQuizAttempt {
   onDeleteQuizAttempt {
     id
-    student
+    student {
+      id
+      family_name
+      middle_name
+      given_name
+      username
+      email
+    }
     createdAt
     updatedAt
     responses {
@@ -433,8 +563,22 @@ export const onDeleteQuizAttempt = `subscription OnDeleteQuizAttempt {
       quizzes {
         nextToken
       }
-      enrollments
-      instructor
+      enrollments {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
+      instructor {
+        id
+        family_name
+        middle_name
+        given_name
+        username
+        email
+      }
       quizAttempts {
         nextToken
       }
