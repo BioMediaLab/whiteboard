@@ -40,7 +40,7 @@ const CoursePage = ({ course, tabName = 'details', ...props }) => {
     'quiz-attempts': React.lazy(() => import('./CourseQuizAttempts'))
   }
   const CurrentTabContent = tabContent[tabName]
-
+  console.log(course)
   return (
     <Page title="Course" breadcrumbs={breadcrumbs}>
       <Card>

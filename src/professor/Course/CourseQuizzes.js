@@ -3,28 +3,23 @@ import {
   Card,
   EmptyState,
   ResourceList,
-  Stack,
   TextContainer,
-  TextStyle,
   Title
 } from 'components'
 
-const CourseQuiz = ({ id, title, description, quizCourseId }) => {
+const CourseQuiz = ({ id, title, description, quizCourseId, ...props }) => {
   return (
     <ResourceList.Item id={id} url={`/courses/${quizCourseId}/quizzes/${id}`}>
       <TextContainer spacing="tight">
         <Title>{title}</Title>
         <p>{description}</p>
-        <Stack>
-          <TextStyle variation="subdued">Questions: 30</TextStyle>
-          <TextStyle variation="subdued">Student Attempts: 4/21</TextStyle>
-        </Stack>
       </TextContainer>
     </ResourceList.Item>
   )
 }
 
 const CourseQuizzes = ({ course }) => {
+  console.log(course)
   const items = course.quizzes.map(quiz => {
     return {
       ...quiz,
