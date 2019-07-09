@@ -1,14 +1,29 @@
 import React, { useReducer } from 'react'
-import { Button, Card, Form, FormLayout, Layout, TextField } from 'components'
+import {
+  Button,
+  Card,
+  Form,
+  FormLayout,
+  Layout,
+  Stack,
+  TextField
+} from 'components'
 import reducer from './reducer'
 import { useApi } from 'hooks'
 
 const CourseDetails = ({ course }) => {
   const [state, dispatch] = useReducer(reducer, course)
   const [updatedCourse, updateCourse] = useApi('updateCourse')
+  const [deletedCourse, deleteCourse] = useApi('deleteCourse')
+
   const onSave = () => {
     const { id, title, description, courseId } = state
     updateCourse({ id, title, description, courseId })
+  }
+
+  const onDelete = () => {
+    const { id } = state
+    deleteCourse({ id })
   }
 
   return (
@@ -60,9 +75,18 @@ const CourseDetails = ({ course }) => {
                   })
                 }}
               />
-              <Button primary submit>
-                Save
-              </Button>
+              <Stack alignment="center">
+                <Stack.Item fill>
+                  <Button plain onClick={onDelete}>
+                    Delete
+                  </Button>
+                </Stack.Item>
+                <Stack.Item>
+                  <Button primary submit>
+                    Save
+                  </Button>
+                </Stack.Item>
+              </Stack>
             </FormLayout>
           </Form>
         </Card.Section>
