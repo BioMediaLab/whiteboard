@@ -27,31 +27,12 @@ export const onCreateCourse = `subscription OnCreateCourse {
       }
       nextToken
     }
-    enrollments {
-      id
-      profile {
-        id
-        firstName
-        middleName
-        lastName
-        username
-        email
-      }
-    }
-    instructor {
-      id
-      profile {
-        id
-        firstName
-        middleName
-        lastName
-        username
-        email
-      }
-    }
+    enrollments
+    instructor
     quizAttempts {
       items {
         id
+        student
         createdAt
         updatedAt
       }
@@ -86,31 +67,12 @@ export const onUpdateCourse = `subscription OnUpdateCourse {
       }
       nextToken
     }
-    enrollments {
-      id
-      profile {
-        id
-        firstName
-        middleName
-        lastName
-        username
-        email
-      }
-    }
-    instructor {
-      id
-      profile {
-        id
-        firstName
-        middleName
-        lastName
-        username
-        email
-      }
-    }
+    enrollments
+    instructor
     quizAttempts {
       items {
         id
+        student
         createdAt
         updatedAt
       }
@@ -145,31 +107,12 @@ export const onDeleteCourse = `subscription OnDeleteCourse {
       }
       nextToken
     }
-    enrollments {
-      id
-      profile {
-        id
-        firstName
-        middleName
-        lastName
-        username
-        email
-      }
-    }
-    instructor {
-      id
-      profile {
-        id
-        firstName
-        middleName
-        lastName
-        username
-        email
-      }
-    }
+    enrollments
+    instructor
     quizAttempts {
       items {
         id
+        student
         createdAt
         updatedAt
       }
@@ -203,12 +146,8 @@ export const onCreateQuiz = `subscription OnCreateQuiz {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-      }
-      instructor {
-        id
-      }
+      enrollments
+      instructor
       quizAttempts {
         nextToken
       }
@@ -257,12 +196,8 @@ export const onUpdateQuiz = `subscription OnUpdateQuiz {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-      }
-      instructor {
-        id
-      }
+      enrollments
+      instructor
       quizAttempts {
         nextToken
       }
@@ -311,12 +246,8 @@ export const onDeleteQuiz = `subscription OnDeleteQuiz {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-      }
-      instructor {
-        id
-      }
+      enrollments
+      instructor
       quizAttempts {
         nextToken
       }
@@ -343,17 +274,7 @@ export const onDeleteQuiz = `subscription OnDeleteQuiz {
 export const onCreateQuizAttempt = `subscription OnCreateQuizAttempt {
   onCreateQuizAttempt {
     id
-    student {
-      id
-      profile {
-        id
-        firstName
-        middleName
-        lastName
-        username
-        email
-      }
-    }
+    student
     createdAt
     updatedAt
     responses {
@@ -398,12 +319,8 @@ export const onCreateQuizAttempt = `subscription OnCreateQuizAttempt {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-      }
-      instructor {
-        id
-      }
+      enrollments
+      instructor
       quizAttempts {
         nextToken
       }
@@ -414,17 +331,7 @@ export const onCreateQuizAttempt = `subscription OnCreateQuizAttempt {
 export const onUpdateQuizAttempt = `subscription OnUpdateQuizAttempt {
   onUpdateQuizAttempt {
     id
-    student {
-      id
-      profile {
-        id
-        firstName
-        middleName
-        lastName
-        username
-        email
-      }
-    }
+    student
     createdAt
     updatedAt
     responses {
@@ -469,12 +376,8 @@ export const onUpdateQuizAttempt = `subscription OnUpdateQuizAttempt {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-      }
-      instructor {
-        id
-      }
+      enrollments
+      instructor
       quizAttempts {
         nextToken
       }
@@ -485,17 +388,7 @@ export const onUpdateQuizAttempt = `subscription OnUpdateQuizAttempt {
 export const onDeleteQuizAttempt = `subscription OnDeleteQuizAttempt {
   onDeleteQuizAttempt {
     id
-    student {
-      id
-      profile {
-        id
-        firstName
-        middleName
-        lastName
-        username
-        email
-      }
-    }
+    student
     createdAt
     updatedAt
     responses {
@@ -540,12 +433,8 @@ export const onDeleteQuizAttempt = `subscription OnDeleteQuizAttempt {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-      }
-      instructor {
-        id
-      }
+      enrollments
+      instructor
       quizAttempts {
         nextToken
       }

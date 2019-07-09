@@ -4,28 +4,22 @@
 export const listStudents = `query ListStudents {
   listStudents {
     id
-    profile {
-      id
-      firstName
-      middleName
-      lastName
-      username
-      email
-    }
+    family_name
+    middle_name
+    given_name
+    username
+    email
   }
 }
 `;
 export const listInstructors = `query ListInstructors {
   listInstructors {
     id
-    profile {
-      id
-      firstName
-      middleName
-      lastName
-      username
-      email
-    }
+    family_name
+    middle_name
+    given_name
+    username
+    email
   }
 }
 `;
@@ -55,31 +49,12 @@ export const getCourse = `query GetCourse($id: ID!) {
       }
       nextToken
     }
-    enrollments {
-      id
-      profile {
-        id
-        firstName
-        middleName
-        lastName
-        username
-        email
-      }
-    }
-    instructor {
-      id
-      profile {
-        id
-        firstName
-        middleName
-        lastName
-        username
-        email
-      }
-    }
+    enrollments
+    instructor
     quizAttempts {
       items {
         id
+        student
         createdAt
         updatedAt
       }
@@ -112,12 +87,8 @@ export const listCourses = `query ListCourses(
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-      }
-      instructor {
-        id
-      }
+      enrollments
+      instructor
       quizAttempts {
         nextToken
       }
@@ -151,12 +122,8 @@ export const getQuiz = `query GetQuiz($id: ID!) {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-      }
-      instructor {
-        id
-      }
+      enrollments
+      instructor
       quizAttempts {
         nextToken
       }
@@ -199,6 +166,8 @@ export const listQuizzes = `query ListQuizzes(
         courseId
         title
         description
+        enrollments
+        instructor
       }
       questions {
         key
@@ -216,17 +185,7 @@ export const listQuizzes = `query ListQuizzes(
 export const getQuizAttempt = `query GetQuizAttempt($id: ID!) {
   getQuizAttempt(id: $id) {
     id
-    student {
-      id
-      profile {
-        id
-        firstName
-        middleName
-        lastName
-        username
-        email
-      }
-    }
+    student
     createdAt
     updatedAt
     responses {
@@ -271,12 +230,8 @@ export const getQuizAttempt = `query GetQuizAttempt($id: ID!) {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-      }
-      instructor {
-        id
-      }
+      enrollments
+      instructor
       quizAttempts {
         nextToken
       }
@@ -292,9 +247,7 @@ export const listQuizAttempts = `query ListQuizAttempts(
   listQuizAttempts(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      student {
-        id
-      }
+      student
       createdAt
       updatedAt
       responses {
@@ -312,6 +265,8 @@ export const listQuizAttempts = `query ListQuizAttempts(
         courseId
         title
         description
+        enrollments
+        instructor
       }
     }
     nextToken

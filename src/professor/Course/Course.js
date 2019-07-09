@@ -61,8 +61,6 @@ export const Course = props => {
   )
   const course = data || {}
 
-  console.log(data)
-
   if (pending && !succeeded && !errored) {
     return <LoadingPage />
   }

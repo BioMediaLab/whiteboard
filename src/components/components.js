@@ -22,6 +22,7 @@ export {
   Popover,
   RadioButton,
   ResourceList,
+  Select,
   SettingToggle,
   Sheet,
   SkeletonBodyText,
