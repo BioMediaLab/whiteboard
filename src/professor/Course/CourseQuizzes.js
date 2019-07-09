@@ -19,7 +19,6 @@ const CourseQuiz = ({ id, title, description, quizCourseId, ...props }) => {
 }
 
 const CourseQuizzes = ({ course }) => {
-  console.log(course)
   const items = course.quizzes.map(quiz => {
     return {
       ...quiz,
