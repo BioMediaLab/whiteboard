@@ -2,6 +2,7 @@
 
 - Amplify documentation - https://aws-amplify.github.io/
 - Introduction to Amplify - https://medium.com/open-graphql/create-a-multiuser-graphql-crud-l-app-in-10-minutes-with-the-new-aws-amplify-cli-and-in-a-few-73aef3d49545
+- Polaris Documentation: https://polaris.shopify.com/components/get-started
 - AWS Console: https://umaine.signin.aws.amazon.com
 
 ## Structure
