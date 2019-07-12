@@ -27,14 +27,7 @@ export const createCourse = `mutation CreateCourse($input: CreateCourseInput!) {
       }
       nextToken
     }
-    enrollments {
-      id
-      family_name
-      middle_name
-      given_name
-      username
-      email
-    }
+    enrollments
     instructor {
       id
       family_name
@@ -80,14 +73,7 @@ export const updateCourse = `mutation UpdateCourse($input: UpdateCourseInput!) {
       }
       nextToken
     }
-    enrollments {
-      id
-      family_name
-      middle_name
-      given_name
-      username
-      email
-    }
+    enrollments
     instructor {
       id
       family_name
@@ -133,14 +119,7 @@ export const deleteCourse = `mutation DeleteCourse($input: DeleteCourseInput!) {
       }
       nextToken
     }
-    enrollments {
-      id
-      family_name
-      middle_name
-      given_name
-      username
-      email
-    }
+    enrollments
     instructor {
       id
       family_name
@@ -185,14 +164,7 @@ export const createQuiz = `mutation CreateQuiz($input: CreateQuizInput!) {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -249,14 +221,7 @@ export const updateQuiz = `mutation UpdateQuiz($input: UpdateQuizInput!) {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -313,14 +278,7 @@ export const deleteQuiz = `mutation DeleteQuiz($input: DeleteQuizInput!) {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -407,14 +365,7 @@ export const createQuizAttempt = `mutation CreateQuizAttempt($input: CreateQuizA
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -485,14 +436,7 @@ export const updateQuizAttempt = `mutation UpdateQuizAttempt($input: UpdateQuizA
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -563,14 +507,7 @@ export const deleteQuizAttempt = `mutation DeleteQuizAttempt($input: DeleteQuizA
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name

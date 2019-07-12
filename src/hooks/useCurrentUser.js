@@ -7,7 +7,10 @@ function getUserData() {
     Auth.currentUserInfo({ bypassCache: false }),
     Auth.currentSession({ bypassCache: false })
   ]).then(data => {
-    const { username, attributes, accessToken } = { ...data[0], ...data[1] }
+    const { sub, username, attributes, accessToken } = {
+      ...data[0],
+      ...data[1]
+    }
     const avatar = gravatarUrl(attributes.email, {
       default: 'identicon'
     })
@@ -20,6 +23,7 @@ function getUserData() {
     attributes.middleInitial = attributes.middleInitial || ''
 
     return {
+      id: sub,
       username,
       avatar,
       ...attributes,

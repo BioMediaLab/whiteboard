@@ -1,7 +1,6 @@
 import React from 'react'
 import { Router } from '@reach/router'
 import { LoadingPage } from 'components'
-import { useCurrentUser } from 'hooks'
 import Home from 'professor/Home'
 import { Course, CourseList, CourseCreate } from 'professor/Course'
 import {
@@ -32,11 +31,25 @@ const ProfessorsRouter = () => {
   )
 }
 
-export default () => {
-  const currentUser = useCurrentUser()
+const StudentsRouter = () => {
+  return (
+    <Router>
+      <Home path="/" />
+      <Home path="/home" />
 
+      <CourseList path="/courses" />
+      <CourseCreate path="/courses/create" />
+      <Course path="/courses/:courseId" />
+      <Course path="/courses/:courseId/:tabName" />
+    </Router>
+  )
+}
+
+export default ({ currentUser }) => {
   if (currentUser.isProfessor) {
     return <ProfessorsRouter />
+  } else if (currentUser.isStudent) {
+    return <StudentsRouter />
   } else {
     return <LoadingPage />
   }

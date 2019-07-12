@@ -1,7 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
-import * as serviceWorker from './serviceWorker'
+import Amplify from 'aws-amplify'
+import App from 'App'
+import * as serviceWorker from 'serviceWorker'
+import awsConfig from 'aws-exports'
+
+Amplify.configure(awsConfig)
 
 ReactDOM.render(<App />, document.getElementById('root'))
 

@@ -27,14 +27,7 @@ export const onCreateCourse = `subscription OnCreateCourse {
       }
       nextToken
     }
-    enrollments {
-      id
-      family_name
-      middle_name
-      given_name
-      username
-      email
-    }
+    enrollments
     instructor {
       id
       family_name
@@ -80,14 +73,7 @@ export const onUpdateCourse = `subscription OnUpdateCourse {
       }
       nextToken
     }
-    enrollments {
-      id
-      family_name
-      middle_name
-      given_name
-      username
-      email
-    }
+    enrollments
     instructor {
       id
       family_name
@@ -133,14 +119,7 @@ export const onDeleteCourse = `subscription OnDeleteCourse {
       }
       nextToken
     }
-    enrollments {
-      id
-      family_name
-      middle_name
-      given_name
-      username
-      email
-    }
+    enrollments
     instructor {
       id
       family_name
@@ -185,14 +164,7 @@ export const onCreateQuiz = `subscription OnCreateQuiz {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -249,14 +221,7 @@ export const onUpdateQuiz = `subscription OnUpdateQuiz {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -313,14 +278,7 @@ export const onDeleteQuiz = `subscription OnDeleteQuiz {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -407,14 +365,7 @@ export const onCreateQuizAttempt = `subscription OnCreateQuizAttempt {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -485,14 +436,7 @@ export const onUpdateQuizAttempt = `subscription OnUpdateQuizAttempt {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -563,14 +507,7 @@ export const onDeleteQuizAttempt = `subscription OnDeleteQuizAttempt {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name

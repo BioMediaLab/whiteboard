@@ -4,7 +4,6 @@ import { AppProvider, Frame } from '@shopify/polaris'
 import AppHeader from 'components/AppHeader'
 import AppNav from 'components/AppNav'
 import Link from 'components/Link'
-import { useCurrentUser } from 'hooks'
 
 export const AppShellContext = React.createContext({
   sheetContent: null
@@ -22,11 +21,11 @@ const AppShell = ({ children, currentUser, logout }) => {
       topBarSource:
         'https://umaine.edu/wp-content/themes/umaine/assets/images/temp-umaine-logo@2x.png',
       url: 'https://umaine.edu',
-      accessibilityLabel: 'Whiteboard'
+      accessibilityLabel: 'BetterLMS'
     }
   }
-  const navigation = currentUser && <AppNav />
-  const topBar = currentUser && <AppHeader {...currentUser} logout={logout} />
+  const navigation = <AppNav {...currentUser} />
+  const topBar = <AppHeader {...currentUser} logout={logout} />
 
   return (
     <AppShellContext.Provider value={{}}>
@@ -39,9 +38,7 @@ const AppShell = ({ children, currentUser, logout }) => {
   )
 }
 
-export default ({ children }) => {
-  const currentUser = useCurrentUser()
-
+export default ({ children, currentUser }) => {
   return (
     <AppShell
       currentUser={currentUser}

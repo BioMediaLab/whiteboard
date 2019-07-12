@@ -8,7 +8,7 @@ type Course
   @auth(
     rules: [
       { allow: groups, groups: ["admin", "professor", "teacher_assistant"] }
-      { allow: groups, groups: ["student"], operations: [read] }
+      { allow: groups, groupsField: "enrollments", operations: [read] }
     ]
   ) {
   id: ID!
@@ -20,7 +20,7 @@ type Course
   semester: Semester
   settings: [KeyValue]
   quizzes: [Quiz] @connection(name: "CourseQuizzes")
-  enrollments: [Student]
+  enrollments: [String]
   instructor: Instructor
   quizAttempts: [QuizAttempt] @connection(name: "CourseQuizAttempts")
 }

@@ -49,14 +49,7 @@ export const getCourse = `query GetCourse($id: ID!) {
       }
       nextToken
     }
-    enrollments {
-      id
-      family_name
-      middle_name
-      given_name
-      username
-      email
-    }
+    enrollments
     instructor {
       id
       family_name
@@ -100,14 +93,7 @@ export const listCourses = `query ListCourses(
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -149,14 +135,7 @@ export const getQuiz = `query GetQuiz($id: ID!) {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -207,6 +186,7 @@ export const listQuizzes = `query ListQuizzes(
         courseId
         title
         description
+        enrollments
       }
       questions {
         key
@@ -276,14 +256,7 @@ export const getQuizAttempt = `query GetQuizAttempt($id: ID!) {
       quizzes {
         nextToken
       }
-      enrollments {
-        id
-        family_name
-        middle_name
-        given_name
-        username
-        email
-      }
+      enrollments
       instructor {
         id
         family_name
@@ -332,6 +305,7 @@ export const listQuizAttempts = `query ListQuizAttempts(
         courseId
         title
         description
+        enrollments
       }
     }
     nextToken

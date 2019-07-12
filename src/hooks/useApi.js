@@ -37,7 +37,9 @@ export function useApi(operationName, props) {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   function execute(props) {
-    return executeOperation(operationName, props)
+    if (!state.pending) {
+      return executeOperation(operationName, props)
+    }
   }
 
   function executeOperation(operationName, props) {
@@ -194,12 +196,6 @@ export function useApi(operationName, props) {
       errors
     })
   }
-
-  useEffect(() => {
-    if (!state.pending && !state.succeeded && !state.errored) {
-      execute(operationName, props)
-    }
-  })
 
   return [state, execute]
 }

@@ -1,14 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { useDataLoader, useApi } from 'hooks'
-import {
-  Card,
-  EmptyState,
-  ResourceList,
-  Title,
-  Stack,
-  TextContainer,
-  TextStyle
-} from 'components'
+import { Card, ResourceList, Title, TextContainer, TextStyle } from 'components'
 
 const CourseStudent = item => {
   const { id, given_name, family_name, email, middle_name, isEnrolled } = item
@@ -29,7 +21,8 @@ const CourseStudent = item => {
 
 const CourseStudents = ({ course }) => {
   const { id, enrollments = [] } = course
-  const [courseEnrollments] = useState(enrollments)
+  const _enrollments = enrollments || []
+  const [courseEnrollments] = useState(_enrollments)
   const { pending, succeeded, errored, data = [] } = useDataLoader(
     'listStudents'
   )
@@ -40,42 +33,42 @@ const CourseStudents = ({ course }) => {
     setSelectedStudents(selectedItems)
   }
   const enrollStudents = () => {
-    const _enrollments = enrollments
+    const _currentEnrollments = _enrollments
       .filter(enrollment => {
         return !selectedStudents.includes(enrollment.email)
       })
       .map(enrollment => {
-        const { id, ...props } = enrollment
+        const { email } = enrollment
 
-        return props
+        return email
       })
     const _newEnrollments = allStudents
       .filter(student => {
         return selectedStudents.includes(student.email)
       })
       .map(enrollment => {
-        const { id, ...props } = enrollment
+        const { email } = enrollment
 
-        return props
+        return email
       })
     updateCourse({
       id,
-      enrollments: [..._enrollments, ..._newEnrollments]
+      enrollments: [..._currentEnrollments, ..._newEnrollments]
     })
   }
   const unenrollStudents = () => {
-    const _enrollments = enrollments
+    const _currentEnrollments = _enrollments
       .filter(enrollment => {
         return !selectedStudents.includes(enrollment.email)
       })
       .map(enrollment => {
-        const { id, ...props } = enrollment
+        const { email } = enrollment
 
-        return props
+        return email
       })
     updateCourse({
       id,
-      enrollments: _enrollments
+      enrollments: _currentEnrollments
     })
   }
   const bulkActions = [
@@ -95,7 +88,7 @@ const CourseStudents = ({ course }) => {
         items={allStudents}
         renderItem={item => {
           const isEnrolled = courseEnrollments.some(courseEnrollment => {
-            return courseEnrollment.email === item.email
+            return courseEnrollment === item.email
           })
           return <CourseStudent {...item} isEnrolled={isEnrolled} />
         }}
