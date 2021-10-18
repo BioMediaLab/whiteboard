@@ -15,7 +15,7 @@
     "aws-amplify-react": "2.3.7",
     "aws-appsync": "^1.8.1",
     "dot-prop": "^5.1.0",
-    "graphql-tag": "^2.10.1",
+    "graphql-tag": "2.10.1",
     "gravatar-url": "3.0.1",
     "lodash.merge": "^4.6.1",
     "react": "16.8.6",
